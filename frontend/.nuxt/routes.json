@@ -2,8 +2,8 @@
   {
     "name": "index",
     "path": "/",
-    "component": "/home/monster/app/nuxt-press/frontend/pages/index.vue",
+    "component": "/home/monster/app/weddinghouse-max/frontend/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_22da855e"
+    "_name": "_238b3ab4"
   }
 ]
