@@ -1,4 +1,10 @@
-version: '3'
+version: '3.7'
+
+# networks:
+#   wordpress:
+#     ipam:
+#       config:
+#         - subnet: 172.25.0.0/16
 
 services:
   # Database
@@ -34,15 +40,17 @@ services:
     networks:
       - wpsite
 
-  # Wordpress
+  #Wordpress
   nuxtpress.wp:
     container_name: ${NUXTPRESS_WP_CONTAINER:-nuxtpress.wp}
-    image: wordpress:5.8.2-php7.4-apache
+    build:
+      context: ./backend
+      dockerfile: docker/Dockerfile
     depends_on:
       - ${NUXTPRESS_MYSQL_CONTAINER:-nuxtpress.mysql}
-    restart: always
     ports:
       - '${NUXTPRESS_WP_PORT:-3080}:80'
+    restart: always
     volumes:
       - ./backend/wp-content:/var/www/html/wp-content
     environment:
@@ -64,7 +72,6 @@ services:
         define( 'WP_DEBUG_LOG', true );
 
         include( ABSPATH . '.env.php' );
-    # command: bash -c "RUN docker-php-ext-install mysqli pdo pdo_mysql"
     networks:
       - wpsite
 

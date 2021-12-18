@@ -16,6 +16,8 @@
   - JWT authentication
 
  # Project Logs
+* DONE add user error
+  CLOSED: [2021-12-18 Sat 22:19]
   - Note taken on [2021-12-15 Wed 06:04] \\
     - wordpress cant add user to perform JWT token yet
        ```
