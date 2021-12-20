@@ -1,20 +1,38 @@
 # frontend
 
-## Build Setup
+* User auth setup
+@package : @nuxtjs/next-auth
+@package : @axios
 
-```bash
-# install dependencies
-$ npm install
+middleware : are use to extend the plugins, store at plugis folder as well
+( example if you need login to have some extra secure check, you could extend the plugin to validation some part )
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+ssr : checking does it need to be validation | true : false |
+If your app is isomorphic (basically has a ssr: true), the auth module will still disable the access to those pages (you can double check).
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+At the end, the critical info is received when:
 
-# generate static project
-$ npm run generate
-```
+you do have a valid JWT token (after some login)
+you submit an HTTP query to the backend
+the backend acknowledges it and the token is valid
+the backend gives you the sensitive info via an HTTP response
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+auth: {
+  user: {
+    // property flag is important, if the backend return payload having mulitple data, this need to set false.
+    ```jsx
+    {
+      id: '',
+      email: '',
+      name: '',
+      role: '',
+    }
+    ```
+    propery: false | 'user' |
+    // method post or get will show different payload (data) return.
+    method: post | get |
+  }
+}
+
+
+* Logs

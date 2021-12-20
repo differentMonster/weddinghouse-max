@@ -1,10 +1,20 @@
 # Wedding House Max
 
 # Frontend [ Nuxt 2 ]
-* TODO [#B] user authentication
+* DONE [#A] user authentication
+  CLOSED: [2021-12-21 Tue 02:54]
+  - Note taken on [2021-12-19 Sun 04:15] \\
+    - cookies already have userdata, nuxt is need validation on that else CORS will show up
+  - Note taken on [2021-12-19 Sun 01:15] \\
+    - @nuxt/auth successful get user data back from backend
   - auth module
+** TODO add logout and register page
+** FIXME login redirect back to home
+   - Note taken on [2021-12-21 Tue 02:55] \\
+     - /profile/user.vue : when login it some how it redirect and undirect sometime
 
-* TODO [#A] build cart system
+
+* TODO [#B] build cart system
  - cart page implate
  - cart system implate
  - test cart system

@@ -4,6 +4,16 @@
     # apt-get update && \
     # docker-php-ext-install pdo pdo_mysql
 
+    # FROM wordpress:5.0.3-php7.1-apache
+
+    # #install some base extensions
+    # RUN apt-get update \
+    # && apt-get install -y \
+    # libzip-dev \
+    # zip \
+    # && docker-php-ext-configure zip --with-libzip \
+    # && docker-php-ext-install zip pdo pdo_mysql
+
     # update
     RUN apt-get update
 

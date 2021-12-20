@@ -53,7 +53,7 @@ export default {
                 endpoint: `${wpUrl}/wp-json/`,
             },
         ],
-
+        '@nuxtjs/auth-next'
     ],
 
     axios: {
@@ -61,7 +61,41 @@ export default {
         proxyHeaders: false,
         credentials: false
     },
-
+    auth: {
+        strategies: {
+            local: {
+                token: {
+                    property: 'token',
+                    global: true,
+                    required: true,
+                    type: 'Bearer'
+                },
+                user: {
+                    property: false,
+                    autoFetch: false
+                },
+                endpoints: {
+                    login: {
+                        url: 'http://localhost:3080/wp-json/jwt-auth/v1/token',
+                        method: 'post',
+                    },
+                    user: {
+                        url: 'http://localhost:3080/wp-json/wp/v2/users/me',
+                        method: 'post',
+                    },
+                    logout: false
+                }
+            }
+        },
+        redirect: {
+            home: '/',
+            login: '/auth/login',
+            logout: '/auth/logout'
+        }
+    },
+    router: {
+        middleware: ['auth']
+    },
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {}
 }

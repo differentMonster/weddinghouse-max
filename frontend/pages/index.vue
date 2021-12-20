@@ -34,7 +34,7 @@
             console.log(this.$wp)
             this.posts = postx
         },
-    };
+    }
 </script>
 
 <style>

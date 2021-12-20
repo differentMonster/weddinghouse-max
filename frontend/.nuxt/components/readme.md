@@ -9,3 +9,4 @@ You can directly use them in pages and other components without the need to impo
 - `<APostItem>` | `<apost-item>` (components/APostItem.vue)
 - `<Logo>` | `<logo>` (components/Logo.vue)
 - `<PostItem>` | `<post-item>` (components/PostItem.vue)
+- `<Header>` | `<header>` (components/Header/index.vue)
