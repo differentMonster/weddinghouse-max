@@ -6,7 +6,8 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
-- `<APostItem>` | `<apost-item>` (components/APostItem.vue)
-- `<Logo>` | `<logo>` (components/Logo.vue)
-- `<PostItem>` | `<post-item>` (components/PostItem.vue)
-- `<Header>` | `<header>` (components/Header/index.vue)
+- `<MyAccountLogin>` | `<my-account-login>` (modules/my-account/components/MyAccountLogin.vue)
+- `<MyAccountRegister>` | `<my-account-register>` (modules/my-account/components/MyAccountRegister.vue)
+- `<Footer>` | `<footer>` (components/Footer.vue)
+- `<ImageSlider>` | `<image-slider>` (components/ImageSlider.vue)
+- `<MagaMenu>` | `<maga-menu>` (components/MagaMenu.vue)

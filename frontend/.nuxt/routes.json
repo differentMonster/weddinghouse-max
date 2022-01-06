@@ -1,30 +1,29 @@
 [
   {
-    "name": "auth-login",
-    "path": "/auth/login",
-    "component": "/home/monster/app/weddinghouse-max/frontend/pages/auth/login/index.vue",
-    "chunkName": "pages/auth/login/index",
-    "_name": "_084f6653"
+    "name": "products",
+    "path": "/products",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/products/pages/index.vue"
   },
   {
-    "name": "auth-register",
-    "path": "/auth/register",
-    "component": "/home/monster/app/weddinghouse-max/frontend/pages/auth/register/index.vue",
-    "chunkName": "pages/auth/register/index",
-    "_name": "_26c1d88f"
+    "name": "user",
+    "path": "/my-account/user",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/my-account/pages/user/index.vue"
   },
   {
-    "name": "profile-user",
-    "path": "/profile/user",
-    "component": "/home/monster/app/weddinghouse-max/frontend/pages/profile/user/index.vue",
-    "chunkName": "pages/profile/user/index",
-    "_name": "_bb115b7c"
+    "name": "my-account",
+    "path": "/my-account",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/my-account/pages/index.vue"
+  },
+  {
+    "name": "about-us",
+    "path": "/about-us",
+    "component": "/home/monster/app/weddinghouse-max/frontend/pages/about-us.vue",
+    "chunkName": "pages/about-us"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/home/monster/app/weddinghouse-max/frontend/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_238b3ab4"
+    "chunkName": "pages/index"
   }
 ]

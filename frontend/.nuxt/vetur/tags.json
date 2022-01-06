@@ -1,14 +1,17 @@
 {
-  "APostItem": {
-    "description": "Auto imported from components/APostItem.vue"
+  "MyAccountLogin": {
+    "description": "Auto imported from modules/my-account/components/MyAccountLogin.vue"
   },
-  "Logo": {
-    "description": "Auto imported from components/Logo.vue"
+  "MyAccountRegister": {
+    "description": "Auto imported from modules/my-account/components/MyAccountRegister.vue"
   },
-  "PostItem": {
-    "description": "Auto imported from components/PostItem.vue"
+  "Footer": {
+    "description": "Auto imported from components/Footer.vue"
   },
-  "Header": {
-    "description": "Auto imported from components/Header/index.vue"
+  "ImageSlider": {
+    "description": "Auto imported from components/ImageSlider.vue"
+  },
+  "MagaMenu": {
+    "description": "Auto imported from components/MagaMenu.vue"
   }
 }

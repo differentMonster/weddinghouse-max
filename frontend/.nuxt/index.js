@@ -5,7 +5,7 @@ import ClientOnly from 'vue-client-only'
 import NoSsr from 'vue-no-ssr'
 import { createRouter } from './router.js'
 import NuxtChild from './components/nuxt-child.js'
-import NuxtError from './components/nuxt-error.vue'
+import NuxtError from '../layouts/error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
@@ -14,6 +14,8 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_03e91954 from 'nuxt_plugin_plugin_03e91954' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_storeregisterProductsStore5923acfa_1de0796b from 'nuxt_plugin_storeregisterProductsStore5923acfa_1de0796b' // Source: ./store.registerProductsStore.5923acfa.js (mode: 'all')
+import nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8 from 'nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8' // Source: ./store.registerMyAccountStore.50622214.js (mode: 'all')
 import nuxt_plugin_plugin_67945e5b from 'nuxt_plugin_plugin_67945e5b' // Source: ./plugin.js (mode: 'all')
 import nuxt_plugin_axios_70f0bb2c from 'nuxt_plugin_axios_70f0bb2c' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_auth_f3eddcf4 from 'nuxt_plugin_auth_f3eddcf4' // Source: ./auth.js (mode: 'all')
@@ -80,7 +82,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"frontend","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"frontend","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"favicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap"}],"script":[{"src":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Fjquery\u002F1.12.4\u002Fjquery.min.js","ssr":false},{"src":"bootstrap4\u002Fjs\u002Fbootstrap.min.js"},{"src":"owl-carousel\u002Fjs\u002Fowl.carousel.min.js"},{"src":"images-loaded\u002Fimagesloaded.pkgd.js"},{"src":"masonry\u002Fmasonry.pkgd.min.js"},{"src":"jquery\u002Fjquery-ui\u002Fjquery-ui.min.js"},{"src":"jquery\u002Fjquery-match-height\u002Fjquery.matchHeight-min.js"},{"src":"wedding-house\u002Fjs\u002Findex.js"},{"src":"lightGallery-master\u002Fdist\u002Fjs\u002Flightgallery-all.min.js"}],"style":[]},
 
     store,
     router,
@@ -211,6 +213,14 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_03e91954 === 'function') {
     await nuxt_plugin_plugin_03e91954(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_storeregisterProductsStore5923acfa_1de0796b === 'function') {
+    await nuxt_plugin_storeregisterProductsStore5923acfa_1de0796b(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8 === 'function') {
+    await nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8(app.context, inject)
   }
 
   if (typeof nuxt_plugin_plugin_67945e5b === 'function') {

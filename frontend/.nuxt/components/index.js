@@ -1,9 +1,11 @@
-export { default as APostItem } from '../../components/APostItem.vue'
-export { default as Logo } from '../../components/Logo.vue'
-export { default as PostItem } from '../../components/PostItem.vue'
-export { default as Header } from '../../components/Header/index.vue'
+export { default as MyAccountLogin } from '../../modules/my-account/components/MyAccountLogin.vue'
+export { default as MyAccountRegister } from '../../modules/my-account/components/MyAccountRegister.vue'
+export { default as Footer } from '../../components/Footer.vue'
+export { default as ImageSlider } from '../../components/ImageSlider.vue'
+export { default as MagaMenu } from '../../components/MagaMenu.vue'
 
-export const LazyAPostItem = import('../../components/APostItem.vue' /* webpackChunkName: "components/apost-item" */).then(c => c.default || c)
-export const LazyLogo = import('../../components/Logo.vue' /* webpackChunkName: "components/logo" */).then(c => c.default || c)
-export const LazyPostItem = import('../../components/PostItem.vue' /* webpackChunkName: "components/post-item" */).then(c => c.default || c)
-export const LazyHeader = import('../../components/Header/index.vue' /* webpackChunkName: "components/header" */).then(c => c.default || c)
+export const LazyMyAccountLogin = import('../../modules/my-account/components/MyAccountLogin.vue' /* webpackChunkName: "components/my-account-login" */).then(c => c.default || c)
+export const LazyMyAccountRegister = import('../../modules/my-account/components/MyAccountRegister.vue' /* webpackChunkName: "components/my-account-register" */).then(c => c.default || c)
+export const LazyFooter = import('../../components/Footer.vue' /* webpackChunkName: "components/footer" */).then(c => c.default || c)
+export const LazyImageSlider = import('../../components/ImageSlider.vue' /* webpackChunkName: "components/image-slider" */).then(c => c.default || c)
+export const LazyMagaMenu = import('../../components/MagaMenu.vue' /* webpackChunkName: "components/maga-menu" */).then(c => c.default || c)

@@ -1,4 +1,6 @@
 # frontend
+static
+  - wedding-house/js/index.js : Template Jquery
 
 * User auth setup
 @package : @nuxtjs/next-auth
@@ -34,5 +36,8 @@ auth: {
   }
 }
 
+nuxt-auth : have it own nuxt store, call auth.js, you can access on mapState
+- loggedIn
+- user
 
 * Logs
