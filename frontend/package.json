@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -11,8 +11,8 @@
   "dependencies": {
     "@nuxtjs/auth-next": "5.0.0-1637745161.ea53f98",
     "@nuxtjs/axios": "^5.13.6",
+    "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "core-js": "^3.8.3",
-    "nuxt": "^2.14.12",
-    "wpapi": "^1.2.2"
+    "nuxt": "^2.14.12"
   }
 }

@@ -14,6 +14,14 @@ if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
+// Frontend origin.
+require_once 'inc/frontend-origin.php';
+
+
+// CORS handling.
+require_once 'inc/cors.php';
+
+
 if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -312,6 +320,7 @@ if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 				),
 			)
 		);
+
 
 		/*
 		* Adds starter content to highlight the theme on fresh sites.

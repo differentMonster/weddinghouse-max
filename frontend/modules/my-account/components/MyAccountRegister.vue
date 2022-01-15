@@ -25,6 +25,23 @@
 </template>
 
 <script>
+    import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api"
+
+    // initialise the WooCommerceRestApi //
+    const api = new WooCommerceRestApi({
+        url: "http://localhost:3080",
+        consumerKey: "ck_ca8dc3da04a18c79601e7b49c6e8e216da06cf82",
+        consumerSecret: "cs_e8fdcde1886ae82182ef3fc7507b09ee20ede897",
+        version: "wc/v3",
+        // axiosConfig: {
+        //     headers: {
+        //         'Access-Control-Allow-Origin': 'http://localhost:3000/',
+        //         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        //
+        //     }
+        // }
+    });
+
     export default {
 
         data() {
@@ -36,20 +53,25 @@
         },
 
         methods: {
-            registerUsers() {
-                this.$axios({
-                    method: 'post',
-                    url: '/api/auth/users/',
+            async registerUsers() {
+                await api.post('customers', {
+                    // headers: {
+                    //     "consumerKey": "KEY",
+                    //     "consumerSecret": "SECRET",
+                    // },
                     data: {
                         email: this.email,
                         username: this.username,
-                        password: this.password
+                        password: this.password,
                     }
                 }).then((response) => {
                     console.log('Response: ', response.data)
+                    console.log("consumer create")
                 }).catch((e) => {
-                    console.log('Could not register users, please try again')
-
+                    throw new Error('Could not register users, please try again')
+                    console.log("Response Status:", error.response.status);
+                    console.log("Response Headers:", error.response.headers);
+                    console.log("Response Data:", error.response.data);
                 })
             },
         }

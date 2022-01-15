@@ -13,7 +13,10 @@
 ** FIXME login redirect back to home
    - Note taken on [2021-12-21 Tue 02:55] \\
      - /profile/user.vue : when login it some how it redirect and undirect sometime
-
+** PROGRESS Forntend data to backend having Cross Orgin blocked
+   - Note taken on [2022-01-08 Sat 06:11] \\
+     - assume it was wordpress problem, check functions.php to allow-control-origin-access
+     -
 * TODO [#A] Frontend Template setup [1/3]
   - [X] Index
     - MagaMenu

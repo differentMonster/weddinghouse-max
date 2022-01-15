@@ -114,20 +114,22 @@ export default {
     modules: [
         '@nuxtjs/axios',
         '@nuxtjs/auth-next',
-        [
-            '~/modules/wp-api/index',
-            {
-                endpoint: `${wpUrl}/wp-json/`,
-            },
-        ],
         '~/modules/my-account',
         '~/modules/products'
     ],
-
     axios: {
         baseURL: 'http://localhost:3080',
-        proxyHeaders: false,
-        credentials: false
+        // proxyHeaders: false,
+        // credentials: false
+        proxy: true
+    },
+    proxy: {
+        '/api': {
+            target: 'https://weddinghousemax.com/',
+            // pathRewrite: {
+            //     '^/api': '/',
+            // }
+        }
     },
     auth: {
         strategies: {
