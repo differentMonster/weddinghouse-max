@@ -9,7 +9,7 @@
                 <div class="header__navigation">
                     <ul class="menu">
                         <li class="menu-item-has-children has-mega-menu">
-                            <nuxt-link to="/shop/cheongsam">Shop</nuxt-link><span class="sub-toggle"></span>
+                            <nuxt-link to="/products">Shop</nuxt-link><span class="sub-toggle"></span>
                             <div class="mega-menu">
                                 <div class="mega-menu__column">
                                     <h4>Shop Pages<span class="sub-toggle"></span></h4>

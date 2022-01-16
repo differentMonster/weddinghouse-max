@@ -17,6 +17,9 @@ import nuxt_plugin_plugin_03e91954 from 'nuxt_plugin_plugin_03e91954' // Source:
 import nuxt_plugin_storeregisterProductsStore5923acfa_1de0796b from 'nuxt_plugin_storeregisterProductsStore5923acfa_1de0796b' // Source: ./store.registerProductsStore.5923acfa.js (mode: 'all')
 import nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8 from 'nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8' // Source: ./store.registerMyAccountStore.50622214.js (mode: 'all')
 import nuxt_plugin_axios_70f0bb2c from 'nuxt_plugin_axios_70f0bb2c' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_classWooCommerceOrigin_a346f0fe from 'nuxt_plugin_classWooCommerceOrigin_a346f0fe' // Source: ../plugins/classWooCommerceOrigin.js (mode: 'all')
+import nuxt_plugin_classWooCommerceProducts_ff8192e4 from 'nuxt_plugin_classWooCommerceProducts_ff8192e4' // Source: ../modules/products/plugins/classWooCommerceProducts.js (mode: 'all')
+import nuxt_plugin_classWooCommerceCustomers_d6cb2902 from 'nuxt_plugin_classWooCommerceCustomers_d6cb2902' // Source: ../modules/my-account/plugins/classWooCommerceCustomers.js (mode: 'all')
 import nuxt_plugin_auth_f3eddcf4 from 'nuxt_plugin_auth_f3eddcf4' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -224,6 +227,18 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_axios_70f0bb2c === 'function') {
     await nuxt_plugin_axios_70f0bb2c(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_classWooCommerceOrigin_a346f0fe === 'function') {
+    await nuxt_plugin_classWooCommerceOrigin_a346f0fe(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_classWooCommerceProducts_ff8192e4 === 'function') {
+    await nuxt_plugin_classWooCommerceProducts_ff8192e4(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_classWooCommerceCustomers_d6cb2902 === 'function') {
+    await nuxt_plugin_classWooCommerceCustomers_d6cb2902(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_f3eddcf4 === 'function') {

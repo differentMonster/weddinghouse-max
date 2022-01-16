@@ -42,6 +42,7 @@
                     data: this.loginuserdata
                 }).then((resp) => {
                     this.$router.go("/my-account/user")
+                    console.log("login successful")
                 }).catch((error) => {
                     throw new Error(error)
                     throw new Error('login failure')

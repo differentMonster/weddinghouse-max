@@ -102,7 +102,11 @@ export default {
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-    plugins: [],
+    plugins: [
+        '~/plugins/classWooCommerceOrigin.js',
+        '~/modules/products/plugins/classWooCommerceProducts.js',
+        '~/modules/my-account/plugins/classWooCommerceCustomers.js',
+    ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -119,17 +123,8 @@ export default {
     ],
     axios: {
         baseURL: 'http://localhost:3080',
-        // proxyHeaders: false,
-        // credentials: false
-        proxy: true
-    },
-    proxy: {
-        '/api': {
-            target: 'https://weddinghousemax.com/',
-            // pathRewrite: {
-            //     '^/api': '/',
-            // }
-        }
+        proxyHeaders: false,
+        credentials: false
     },
     auth: {
         strategies: {

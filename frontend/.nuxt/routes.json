@@ -1,5 +1,11 @@
 [
   {
+    "name": "products_id",
+    "path": "/products/:id",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/products/pages/_id.vue",
+    "_name": "_697e3caf"
+  },
+  {
     "name": "products",
     "path": "/products",
     "component": "/home/monster/app/weddinghouse-max/frontend/modules/products/pages/index.vue",

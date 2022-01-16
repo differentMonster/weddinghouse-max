@@ -20,6 +20,14 @@ export default function registerModules(moduleOptions) {
         })
     })
 
+    this.extendRoutes((routes) => {
+        routes.unshift({
+            name: 'products_id',
+            path: '/products/:id',
+            component: path.resolve(__dirname, 'pages/_id.vue')
+        })
+    })
+
     // register store plugin
     this.addPlugin(path.resolve(__dirname, 'store/registerProductsStore.js'))
 
