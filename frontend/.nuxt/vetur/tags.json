@@ -5,13 +5,22 @@
   "MyAccountRegister": {
     "description": "Auto imported from modules/my-account/components/MyAccountRegister.vue"
   },
+  "ProductCard": {
+    "description": "Auto imported from modules/shop/components/ProductCard.vue"
+  },
+  "CartOverview": {
+    "description": "Auto imported from modules/cart/components/CartOverview.vue"
+  },
+  "CartOverviewProduct": {
+    "description": "Auto imported from modules/cart/components/CartOverviewProduct.vue"
+  },
   "Footer": {
     "description": "Auto imported from components/Footer.vue"
   },
-  "ImageSlider": {
-    "description": "Auto imported from components/ImageSlider.vue"
-  },
   "MagaMenu": {
     "description": "Auto imported from components/MagaMenu.vue"
+  },
+  "HomeImageSlider": {
+    "description": "Auto imported from components/Home/ImageSlider.vue"
   }
 }

@@ -40,72 +40,191 @@ export default {
         ],
         script: [
             /* **jquery js*/
-            {
-                src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js',
-                ssr: false
-            },
+            // {
+            //     src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js',
+            //     ssr: false
+            // },
             // { src: 'jquery/jquery-1.12.4.min.js', ssr: false },
             /* **bootstrap4 js */
-            {
-                src: 'bootstrap4/js/bootstrap.min.js',
-            },
+            // {
+            //     src: '@/static/bootstrap4/js/bootstrap.min.js',
+            // },
             /* **owl carousel js */
-            {
-                src: 'owl-carousel/js/owl.carousel.min.js'
-            },
-            /* **images loaded js */
-            {
-                src: 'images-loaded/imagesloaded.pkgd.js',
-            },
-            /* **mansory js */
-            {
-                src: 'masonry/masonry.pkgd.min.js'
-            },
-            /* **jquery ui js */
-            {
-                src: 'jquery/jquery-ui/jquery-ui.min.js',
-            },
-            /* **match height js */
-            {
-                src: 'jquery/jquery-match-height/jquery.matchHeight-min.js'
-            },
-            /* **wedding house + supro main js */
-            {
-                src: 'wedding-house/js/index.js',
-            },
+            // {
+            //     src: '@/static/owl-carousel/js/owl.carousel.min.js'
+            // },
+            // /* **images loaded js */
+            // {
+            //     src: '@/static/images-loaded/imagesloaded.pkgd.js',
+            // },
+            // /* **mansory js */
+            // {
+            //     src: '@/static/masonry/masonry.pkgd.min.js'
+            // },
+            // /* **match height js */
+            // {
+            //     src: '@/static/jquery/jquery-match-height/jquery.matchHeight-min.js'
+            // },
+            // /* **slick js */
+            // {
+            //     src: '@/static/slick/slick/slick.min.js',
+            // },
+            // /* **jquery bar rating js */
+            // {
+            //     src: '@/static/jquery/jquery-bar-rating/dist/jquery.barrating.min.js'
+            // },
             /* **light gallery js */
-            {
-                src: 'lightGallery-master/dist/js/lightgallery-all.min.js'
-            },
+            // {
+            //     src: '@/static/lightGallery-master/dist/js/lightgallery-all.min.js'
+            // },
+            /* **jquery ui js */
+            // {
+            //     src: '@/static/jquery/jquery-ui/jquery-ui.min.js',
+            // },
+            // /* **sticky sidebar js */
+            // {
+            //     src: '@/static/sticky-sidebar/dist/sticky-sidebar.min.js'
+            // },
+            // /* **select2 js */
+            // {
+            //     src: '@/static/select2/dist/js/select2.full.min.js'
+            // },
+            // /* **slick animation js */
+            // {
+            //     src: '@/static/slick-animation/slick-animation.min.js'
+            // },
+            // /* **isotope js */
+            // {
+            //     src: '@/static/isotope/isotope.pkgd.min.js'
+            // },
+            // /* **slim scroll js */
+            // {
+            //     src: '@/static/jquery/jquery.slimscroll.min.js'
+            // },
+            // /* **sticky sidebar js */
+            // {
+            //     src: '@/static/sticky-sidebar/dist/sticky-sidebar.min.js'
+            // },
+            /* **wedding house + supro main js */
+            // {
+            //     src: '@/static/wedding-house/js/main.js',
+            // },
         ]
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
+        /* **main-customize */
         '@/assets/css/main-customize.css',
         /* **supro font-awesome */
-        '@/static/font-awesome/css/font-awesome.min.css',
+        '@/node_modules/font-awesome/css/font-awesome.min.css',
         /* **supro bootstrap */
-        '@static/bootstrap4/css/bootstrap.min.css',
-        /* **owl carousel*/
-        '@static/owl-carousel/css/owl.carousel.css',
-        /* **light gallery */
-        '@static/lightGallery-master/dist/css/lightgallery.min.css',
-        /* **jquery ui */
-        '@static/jquery/jquery-ui/jquery-ui.min.css',
+        '@/node_modules/bootstrap//dist/css/bootstrap.min.css',
+        /* **slick */
+        '@/static/slick/slick/slick.css',
+        /* **owl-carousel*/
+        '@/static/owl-carousel/css/owl.carousel.css',
+        /* **lightgallery */
+        '@/static/lightGallery-master/dist/css/lightgallery.min.css',
+        /* **jquery bar rating*/
+        '@/static/jquery/jquery-bar-rating/dist/themes/fontawesome-stars.css',
+        /* **jquery-ui */
+        '@/static/jquery/jquery-ui/jquery-ui.min.css',
+        /* **select2 - infite scroll */
+        '@/static/select2/dist/css/select2.min.css',
         /* **supro icons */
-        '@static/wedding-house/fonts/Linearicons/Linearicons/Font/demo-files/demo.css',
-        /* **wedding house basic css */
-        '@static/wedding-house/css/style.css',
-        /* **wedding house css */
-        '@static/wedding-house/css/home-default.css',
+        '@/static/wedding-house/fonts/Linearicons/Linearicons/Font/demo-files/demo.css',
+        /* **wedding-house basic css */
+        '@/static/wedding-house/css/style.css',
+        /* **wedding-house css */
+        '@/static/wedding-house/css/home-default.css',
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
-        '~/plugins/classWooCommerceOrigin.js',
-        '~/modules/products/plugins/classWooCommerceProducts.js',
-        '~/modules/my-account/plugins/classWooCommerceCustomers.js',
+        '@/plugins/classWooCommerceOrigin.js',
+        '@/modules/shop/plugins/classWooCommerceProducts.js',
+        '@/modules/my-account/plugins/classWooCommerceCustomers.js',
+        /* **images-loaded js */
+        // {
+        //     src: '@/static/images-loaded/imagesloaded.pkgd.js',
+        //     mode: 'client'
+        // },
+        /* **mansory js */
+        // {
+        //     src: '~/static/masonry/masonry.pkgd.min.js',
+        //     mode: 'client'
+        // },
+        /* **match-height js */
+        // {
+        //     src: '~/static/jquery/jquery-match-height/jquery.matchHeight-min.js',
+        //     mode: 'client'
+        // },
+        /* **slick js */
+        // {
+        //     src: '~/static/slick/slick/slick.min.js',
+        //     mode: 'client'
+        // },
+        /* **jquery-bar rating js */
+        {
+            src: '~/static/jquery/jquery-bar-rating/dist/jquery.barrating.min.js',
+            mode: 'client'
+        },
+        /* **sticky sidebar js */
+        // {
+        //     src: '~static/sticky-sidebar/dist/sticky-sidebar.min.js',
+        //     mode: 'client'
+        // },
+        /* **slick animation js */
+        // {
+        //     src: '~/static/slick-animation/slick-animation.min.js',
+        //     mode: 'client'
+        // },
+        /* **isotope js */
+        // {
+        //     src: '@/static/isotope/isotope.pkgd.min.js',
+        //     mode: 'client'
+        // },
+        /* **slim scroll js */
+        // {
+        //     src: '~/static/jquery/jquery.slimscroll.min.js',
+        //     mode: 'client'
+        // },
+        /* **sticky sidebar js */
+        // {
+        //     src: '~/static/sticky-sidebar/dist/sticky-sidebar.min.js',
+        //     mode: 'client'
+        // },
+        /* **owl-carousel js */
+        /* **dependency: home - image slider */
+        {
+            src: '@/static/owl-carousel/js/owl.carousel.js',
+            mode: 'client'
+        },
+        /* **light-gallery js */
+        /* **dependency: home - image slider */
+        {
+            src: '@/static/lightGallery-master/dist/js/lightgallery-all.min.js',
+            mode: 'client'
+        },
+        /* **jquery-ui js */
+        /* **dependency: home - image slider */
+        {
+            src: '@/static/jquery/jquery-ui/jquery-ui.min.js',
+            mode: 'client'
+        },
+        /* **select2 js */
+        /* **dependency: home - image slider */
+        {
+            src: '@/static/select2/dist/js/select2.full.min.js',
+            mode: 'client'
+        },
+        /* **wedding-house + supro main js */
+        /* **dependency: home - image slider */
+        {
+            src: '@/static/wedding-house/js/main.js',
+            mode: 'client'
+        }
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -118,8 +237,12 @@ export default {
     modules: [
         '@nuxtjs/axios',
         '@nuxtjs/auth-next',
+        ['@nuxtjs/bootstrap-vue', {
+            css: false
+        }],
         '~/modules/my-account',
-        '~/modules/products'
+        '~/modules/shop',
+        '~/modules/cart',
     ],
     axios: {
         baseURL: 'http://localhost:3080',

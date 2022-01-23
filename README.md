@@ -1,6 +1,36 @@
 # Wedding House Max
 
 # Frontend [ Nuxt 2 ]
+* Landing pages [3/3]
+  - [X] landinge images
+  - [X] MageMenu
+    - Shop
+      - wedding lamp
+      - teaset
+      - others
+      - new arrival
+      - cheongsam
+    - Heiday Calendar
+    - Blog
+    - About us
+    Icons:
+    - MyAccount
+    - Cart
+    - Burger Menu
+  - [X] Footer
+
+* TODO [#B] Cart Pages [/]
+  - [ ] Cart Systems
+    - add products
+    - remove products
+    - edit quatity
+    - caculation totally price
+    - note additional comments
+    - one click check out process
+
+
+---
+# Frontend logs
 * DONE user authentication
   CLOSED: [2021-12-21 Tue 02:54]
   - Note taken on [2021-12-19 Sun 04:15] \\
@@ -8,33 +38,23 @@
   - Note taken on [2021-12-19 Sun 01:15] \\
     - @nuxt/auth successful get user data back from backend
   - auth module
-** PROGRESS add logout and register page
+** DONE add logout and register page
+   CLOSED: [2022-01-19 Wed 01:33]
    - Logout, Login, Register API arleay setup
 ** FIXME login redirect back to home
    - Note taken on [2021-12-21 Tue 02:55] \\
      - /profile/user.vue : when login it some how it redirect and undirect sometime
-** PROGRESS Forntend data to backend having Cross Orgin blocked
+** DONE Forntend data to backend having Cross Orgin blocked
+   CLOSED: [2022-01-19 Wed 01:33]
    - Note taken on [2022-01-08 Sat 06:11] \\
      - assume it was wordpress problem, check functions.php to allow-control-origin-access
-     -
-* TODO [#A] Frontend Template setup [1/3]
-  - [X] Index
-    - MagaMenu
-    - LandingPage [ single images ]
-    - Footer
+** DONE add product by each catergory (teaset, cheongsam)
+   CLOSED: [2022-01-22 Sat 02:30]
+   - Note taken on [2022-01-19 Wed 05:05] \\
+     - need to return same data from woocommerce, images, name, price, sku
+    building Categorly using inversion component, to call back on each product categorly fliter.
 
-  - [ ] Products
-    - Categorly
-    - Single Products Page
-
-  - [ ] Cart
-
-
-* TODO [#B] build cart system
- - cart page implate
- - cart system implate
- - test cart system
-
+---
 # Backend [ wordpress ]
 testing woocommerce
 Consumer key = ck_ca8dc3da04a18c79601e7b49c6e8e216da06cf82
@@ -45,10 +65,19 @@ Consumer secret = cs_e8fdcde1886ae82182ef3fc7507b09ee20ede897
   - eghl as payment gateway
   - JWT authentication
 
- # Project Logs
+---
+ # Backend Logs
 * DONE add user error
   CLOSED: [2021-12-18 Sat 22:19]
   - Note taken on [2021-12-15 Wed 06:04] \\
     - wordpress cant add user to perform JWT token yet
        ```
        MailPoet Error: MailPoet requires a PDO_MYSQL PHP extension. Please read our instructions on how to resolve this issue.
+
+* CANCELLED add woocommerce return product by catergory
+  Reason cancelled : switch to frontend fliter
+  CLOSED: [2022-01-22 Sat 02:30]
+  - Note taken on [2022-01-19 Wed 05:03] \\
+    - woocommerce restapi dont have return catergory by slug, add on
+    - catergory=catergory_id
+    - catergory/teaset

@@ -1,15 +1,33 @@
 [
   {
-    "name": "products_id",
-    "path": "/products/:id",
-    "component": "/home/monster/app/weddinghouse-max/frontend/modules/products/pages/_id.vue",
-    "_name": "_697e3caf"
+    "name": "cart",
+    "path": "/cart",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/cart/pages/index.vue",
+    "_name": "_7477d07a"
   },
   {
-    "name": "products",
-    "path": "/products",
-    "component": "/home/monster/app/weddinghouse-max/frontend/modules/products/pages/index.vue",
-    "_name": "_32cac487"
+    "name": "cheongsam",
+    "path": "/shop/cheongsam",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/cheongsam/index.vue",
+    "_name": "_31114de1"
+  },
+  {
+    "name": "teaset",
+    "path": "/shop/teaset",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/teaset/index.vue",
+    "_name": "_4d03c244"
+  },
+  {
+    "name": "shop_id",
+    "path": "/shop/:id",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/_id.vue",
+    "_name": "_558b2041"
+  },
+  {
+    "name": "shop",
+    "path": "/shop",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/index.vue",
+    "_name": "_4f2d0b99"
   },
   {
     "name": "user",

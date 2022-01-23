@@ -1,0 +1,62 @@
+<template>
+    <!-- start Shop  -->
+    <div class="ps-page">
+        <div class="ps-shop ps-shop--sidebar reverse banner">
+            <div class="container">
+                <div class="ps-shop__container">
+
+                    <ProductCard :products="products"></ProductCard>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Shop -->
+</template>
+
+<script>
+    import {
+        WooCommerceProducts
+    } from "@/modules/shop/plugins/classWooCommerceProducts.js";
+    import ProductCard from "@/modules/shop/components/ProductCard.vue"
+
+    export default {
+        data() {
+            return {
+                products: [],
+            }
+        },
+        component: {
+            ProductCard
+        },
+        async fetch() {
+            const WooComProducts = new WooCommerceProducts()
+            const getProducts = await WooComProducts.getProducts().then((response) => {
+                this.products = response[0]
+                console.log(this.products)
+                console.log(response[1])
+            }).catch((error) => {
+                console.log(error)
+            })
+            return {
+                getProducts
+            }
+        },
+        mounted() {}
+    }
+</script>
+
+
+<style>
+    .product_container {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        margin-top: 100px;
+    }
+
+    .product--images img {
+        width: 500px;
+        height: 670px;
+    }
+</style>

@@ -1,23 +1,24 @@
 <template>
-    <ImageSlider />
+    <div>
+        <ImageSlider />
+    </div>
 </template>
 
 <script>
-    import ImageSlider from '@/components/ImageSlider'
+    import ImageSlider from "@/components/Home/ImageSlider.vue";
 
     export default {
         components: {
-            ImageSlider
+            ImageSlider,
         },
         data() {
-            return {}
+            return {};
         },
         computed: {},
         methods: {},
         fetch: {},
-        mounted() {}
-    }
+        mounted() {},
+    };
 </script>
 
-<style>
-</style>
+<style></style>

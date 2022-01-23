@@ -8,21 +8,29 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../assets/css/main-customize.css'
 
-import '../static/font-awesome/css/font-awesome.min.css'
+import '../node_modules/font-awesome/css/font-awesome.min.css'
 
-import '../static/bootstrap4/css/bootstrap.min.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+import '../static/slick/slick/slick.css'
 
 import '../static/owl-carousel/css/owl.carousel.css'
 
 import '../static/lightGallery-master/dist/css/lightgallery.min.css'
 
+import '../static/jquery/jquery-bar-rating/dist/themes/fontawesome-stars.css'
+
 import '../static/jquery/jquery-ui/jquery-ui.min.css'
+
+import '../static/select2/dist/css/select2.min.css'
 
 import '../static/wedding-house/fonts/Linearicons/Linearicons/Font/demo-files/demo.css'
 
 import '../static/wedding-house/css/style.css'
 
 import '../static/wedding-house/css/home-default.css'
+
+import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
 
 import _6f6c098b from '../layouts/default.vue'
 

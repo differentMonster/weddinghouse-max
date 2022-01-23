@@ -4,8 +4,11 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _697e3caf = () => interopDefault(import('../modules/products/pages/_id.vue' /* webpackChunkName: "" */))
-const _32cac487 = () => interopDefault(import('../modules/products/pages/index.vue' /* webpackChunkName: "" */))
+const _7477d07a = () => interopDefault(import('../modules/cart/pages/index.vue' /* webpackChunkName: "" */))
+const _31114de1 = () => interopDefault(import('../modules/shop/pages/cheongsam/index.vue' /* webpackChunkName: "" */))
+const _4d03c244 = () => interopDefault(import('../modules/shop/pages/teaset/index.vue' /* webpackChunkName: "" */))
+const _558b2041 = () => interopDefault(import('../modules/shop/pages/_id.vue' /* webpackChunkName: "" */))
+const _4f2d0b99 = () => interopDefault(import('../modules/shop/pages/index.vue' /* webpackChunkName: "" */))
 const _764ae541 = () => interopDefault(import('../modules/my-account/pages/user/index.vue' /* webpackChunkName: "" */))
 const _2d56a96f = () => interopDefault(import('../modules/my-account/pages/index.vue' /* webpackChunkName: "" */))
 const _07cb2828 = () => interopDefault(import('../pages/about-us.vue' /* webpackChunkName: "pages/about-us" */))
@@ -23,13 +26,25 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/products/:id",
-    component: _697e3caf,
-    name: "products_id"
+    path: "/cart",
+    component: _7477d07a,
+    name: "cart"
   }, {
-    path: "/products",
-    component: _32cac487,
-    name: "products"
+    path: "/shop/cheongsam",
+    component: _31114de1,
+    name: "cheongsam"
+  }, {
+    path: "/shop/teaset",
+    component: _4d03c244,
+    name: "teaset"
+  }, {
+    path: "/shop/:id",
+    component: _558b2041,
+    name: "shop_id"
+  }, {
+    path: "/shop",
+    component: _4f2d0b99,
+    name: "shop"
   }, {
     path: "/my-account/user",
     component: _764ae541,

@@ -21,6 +21,44 @@ require_once 'inc/frontend-origin.php';
 // CORS handling.
 require_once 'inc/cors.php';
 
+// add_action( 'rest_api_init', function () {
+//     register_rest_route( 'wc/v3', '/products/category/(?P<slug>[^/]+)', array(
+//         'methods' => 'GET',
+//         'callback' => 'wc_get_products_by_category',
+//     ) );
+// } );
+
+// function wc_get_products_by_category( $data ) {
+
+//     $products = array();
+//     $images_data = new stdClass;
+//     $images_data->images = new stdClass;
+
+//     try {
+//     $p = wc_get_products(array('status' => 'publish', 'category' => $data['slug']));
+//       foreach ($p as $product) {
+//           $products_data[] = array($product->get_data());
+//           $attachment_ids = $product->get_gallery_image_ids();
+
+//           foreach ($attachment_ids as $position => $attachment_id) {
+//               $attachment = wp_get_attachment_image_src($attachment_id, 'full');
+//               if (!is_array($attachment)) {
+//                   continue;
+//               }
+//               $images_data->images->src = current($attachment);
+//           }
+//           $products[] = $images_data;
+//       }
+//     }catch(HttpClientException $e){
+//         die("Reaspone wc_get_products_by_category : failure + $e");
+//     }
+
+//     return new WP_REST_Response($products, 200);
+// }
+
+// function get_images_by_category($src){
+
+// }
 
 if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 	/**
