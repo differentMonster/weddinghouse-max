@@ -20,13 +20,6 @@ export default function registerModules(moduleOptions) {
         })
     })
 
-    this.extendRoutes((routes) => {
-        routes.unshift({
-            name: 'shop_id',
-            path: '/shop/:id',
-            component: path.resolve(__dirname, 'pages/_id.vue')
-        })
-    })
 
     // add modules routes teaset list
     this.extendRoutes((routes) => {
@@ -37,6 +30,13 @@ export default function registerModules(moduleOptions) {
         })
     })
 
+    this.extendRoutes((routes) => {
+        routes.unshift({
+            name: 'teaset_id',
+            path: '/shop/teaset/:id',
+            component: path.resolve(__dirname, 'pages/teaset/_id.vue')
+        })
+    })
 
     // add modules routes cheongsam list
     this.extendRoutes((routes) => {
@@ -44,6 +44,15 @@ export default function registerModules(moduleOptions) {
             name: 'cheongsam',
             path: '/shop/cheongsam',
             component: path.resolve(__dirname, 'pages/cheongsam/index.vue')
+        })
+    })
+
+
+    this.extendRoutes((routes) => {
+        routes.unshift({
+            name: 'cheongsam_id',
+            path: '/shop/cheongsam/:id',
+            component: path.resolve(__dirname, 'pages/cheongsam/_id.vue')
         })
     })
 

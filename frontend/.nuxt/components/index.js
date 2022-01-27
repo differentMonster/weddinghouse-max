@@ -1,5 +1,6 @@
 export { default as MyAccountLogin } from '../../modules/my-account/components/MyAccountLogin.vue'
 export { default as MyAccountRegister } from '../../modules/my-account/components/MyAccountRegister.vue'
+export { default as Show } from '../../modules/my-account/components/Show.vue'
 export { default as ProductCard } from '../../modules/shop/components/ProductCard.vue'
 export { default as CartOverview } from '../../modules/cart/components/CartOverview.vue'
 export { default as CartOverviewProduct } from '../../modules/cart/components/CartOverviewProduct.vue'
@@ -9,6 +10,7 @@ export { default as HomeImageSlider } from '../../components/Home/ImageSlider.vu
 
 export const LazyMyAccountLogin = import('../../modules/my-account/components/MyAccountLogin.vue' /* webpackChunkName: "components/my-account-login" */).then(c => c.default || c)
 export const LazyMyAccountRegister = import('../../modules/my-account/components/MyAccountRegister.vue' /* webpackChunkName: "components/my-account-register" */).then(c => c.default || c)
+export const LazyShow = import('../../modules/my-account/components/Show.vue' /* webpackChunkName: "components/show" */).then(c => c.default || c)
 export const LazyProductCard = import('../../modules/shop/components/ProductCard.vue' /* webpackChunkName: "components/product-card" */).then(c => c.default || c)
 export const LazyCartOverview = import('../../modules/cart/components/CartOverview.vue' /* webpackChunkName: "components/cart-overview" */).then(c => c.default || c)
 export const LazyCartOverviewProduct = import('../../modules/cart/components/CartOverviewProduct.vue' /* webpackChunkName: "components/cart-overview-product" */).then(c => c.default || c)

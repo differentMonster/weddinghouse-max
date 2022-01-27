@@ -87,7 +87,8 @@ export default {
             // },
             // /* **select2 js */
             // {
-            //     src: '@/static/select2/dist/js/select2.full.min.js'
+            //     src: '@/static/select2/dist/js/select2.full.min.js',
+            //     defer: true
             // },
             // /* **slick animation js */
             // {
@@ -197,33 +198,37 @@ export default {
         // },
         /* **owl-carousel js */
         /* **dependency: home - image slider */
-        {
-            src: '@/static/owl-carousel/js/owl.carousel.js',
-            mode: 'client'
-        },
+        // {
+        //     src: '@/plugins/owl-carousel.js',
+        //     // ssr: false
+        //     defer: true
+        // },
         /* **light-gallery js */
         /* **dependency: home - image slider */
-        {
-            src: '@/static/lightGallery-master/dist/js/lightgallery-all.min.js',
-            mode: 'client'
-        },
+        // {
+        //     src: '@/plugins/lightgallery.js',
+        //     // ssr: false
+        //     defer: true
+        // },
         /* **jquery-ui js */
         /* **dependency: home - image slider */
-        {
-            src: '@/static/jquery/jquery-ui/jquery-ui.min.js',
-            mode: 'client'
-        },
+        // {
+        //     src: '@/plugins/jquery-ui.js',
+        //     // ssr: false
+        //     defer: true
+        // },
         /* **select2 js */
         /* **dependency: home - image slider */
-        {
-            src: '@/static/select2/dist/js/select2.full.min.js',
-            mode: 'client'
-        },
+        // {
+        //     src: '@/plugins/select2.js',
+        //     // ssr: false
+        //     defer: true
+        // },
         /* **wedding-house + supro main js */
         /* **dependency: home - image slider */
         {
-            src: '@/static/wedding-house/js/main.js',
-            mode: 'client'
+            src: '@/plugins/supro.js',
+            ssr: false
         }
     ],
 
@@ -286,6 +291,8 @@ export default {
     },
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
+        // vendor: ['owl-carousel.js', 'lightgallery.js', 'select2.js', 'jquery-ui.js', 'weddinghouse.js'],
+        vendor: ['jquery', 'bootstrap', 'supro.js'],
         plugins: [
             new webpack.ProvidePlugin({
                 $: 'jquery',

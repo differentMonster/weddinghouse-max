@@ -5,9 +5,10 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _7477d07a = () => interopDefault(import('../modules/cart/pages/index.vue' /* webpackChunkName: "" */))
+const _02a956ee = () => interopDefault(import('../modules/shop/pages/cheongsam/_id.vue' /* webpackChunkName: "" */))
 const _31114de1 = () => interopDefault(import('../modules/shop/pages/cheongsam/index.vue' /* webpackChunkName: "" */))
+const _692240c6 = () => interopDefault(import('../modules/shop/pages/teaset/_id.vue' /* webpackChunkName: "" */))
 const _4d03c244 = () => interopDefault(import('../modules/shop/pages/teaset/index.vue' /* webpackChunkName: "" */))
-const _558b2041 = () => interopDefault(import('../modules/shop/pages/_id.vue' /* webpackChunkName: "" */))
 const _4f2d0b99 = () => interopDefault(import('../modules/shop/pages/index.vue' /* webpackChunkName: "" */))
 const _764ae541 = () => interopDefault(import('../modules/my-account/pages/user/index.vue' /* webpackChunkName: "" */))
 const _2d56a96f = () => interopDefault(import('../modules/my-account/pages/index.vue' /* webpackChunkName: "" */))
@@ -30,17 +31,21 @@ export const routerOptions = {
     component: _7477d07a,
     name: "cart"
   }, {
+    path: "/shop/cheongsam/:id",
+    component: _02a956ee,
+    name: "cheongsam_id"
+  }, {
     path: "/shop/cheongsam",
     component: _31114de1,
     name: "cheongsam"
   }, {
+    path: "/shop/teaset/:id",
+    component: _692240c6,
+    name: "teaset_id"
+  }, {
     path: "/shop/teaset",
     component: _4d03c244,
     name: "teaset"
-  }, {
-    path: "/shop/:id",
-    component: _558b2041,
-    name: "shop_id"
   }, {
     path: "/shop",
     component: _4f2d0b99,

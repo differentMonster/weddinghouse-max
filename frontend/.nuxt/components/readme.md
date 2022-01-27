@@ -8,6 +8,7 @@ You can directly use them in pages and other components without the need to impo
 
 - `<MyAccountLogin>` | `<my-account-login>` (modules/my-account/components/MyAccountLogin.vue)
 - `<MyAccountRegister>` | `<my-account-register>` (modules/my-account/components/MyAccountRegister.vue)
+- `<Show>` | `<show>` (modules/my-account/components/Show.vue)
 - `<ProductCard>` | `<product-card>` (modules/shop/components/ProductCard.vue)
 - `<CartOverview>` | `<cart-overview>` (modules/cart/components/CartOverview.vue)
 - `<CartOverviewProduct>` | `<cart-overview-product>` (modules/cart/components/CartOverviewProduct.vue)

@@ -1,7 +1,7 @@
 <template>
     <div>
         <MagaMenu />
-        <Nuxt />
+        <Nuxt keep-alive :keep-alive-props="{include: ['pages/index.vue']}" />
         <Footer />
     </div>
 </template>
@@ -19,4 +19,4 @@
 </script>
 
 <style>
-</style>
+    </style

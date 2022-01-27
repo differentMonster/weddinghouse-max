@@ -48,6 +48,6 @@
                     throw new Error('login failure')
                 })
             }
-        }
+        },
     }
 </script>

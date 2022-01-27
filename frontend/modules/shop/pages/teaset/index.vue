@@ -25,23 +25,21 @@
          data() {
              return {
                  products: [],
-                 brand: 'teaset'
+                 categories: 'teaset'
              }
          },
          component: {
              ProductCard
          },
          async fetch() {
-             const WooComProducts = new WooCommerceProducts()
-             const getProductsByCategory = await WooComProducts.getProductsByCategory(this.brand).then((response) => {
-                 this.products = response[0]
+             try {
+                 const WooComProducts = new WooCommerceProducts()
+                 const getProductsByCategory = await WooComProducts.getProductsByCategory(this.categories)
+                 this.products = getProductsByCategory[0]
                  console.log(this.products)
-                 console.log(response[1])
-             }).catch((error) => {
+                 console.log(getProductsByCategory[1])
+             } catch (error) {
                  console.log(error)
-             })
-             return {
-                 getProductsByCategory
              }
          },
          mounted() {}

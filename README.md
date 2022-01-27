@@ -53,20 +53,25 @@
    - Note taken on [2022-01-19 Wed 05:05] \\
      - need to return same data from woocommerce, images, name, price, sku
     building Categorly using inversion component, to call back on each product categorly fliter.
+** DONE image slider fixing image loading and also switch other component use try and await
+   CLOSED: [2022-01-24 Mon 06:38]
+** DONE Login and Register component fix
+   CLOSED: [2022-01-28 Fri 00:25]
+** BUG Image Slider using keep-alive but have load plugin problem
 
----
-# Backend [ wordpress ]
-testing woocommerce
-Consumer key = ck_ca8dc3da04a18c79601e7b49c6e8e216da06cf82
-Consumer secret = cs_e8fdcde1886ae82182ef3fc7507b09ee20ede897
+  ---
+  # Backend [ wordpress ]
+  testing woocommerce
+  Consumer key = ck_ca8dc3da04a18c79601e7b49c6e8e216da06cf82
+  Consumer secret = cs_e8fdcde1886ae82182ef3fc7507b09ee20ede897
 
-  - woocommerce as customer order management
-  - cocart as woocommerce restful api to brige frontend and backend
-  - eghl as payment gateway
-  - JWT authentication
+    - woocommerce as customer order management
+    - cocart as woocommerce restful api to brige frontend and backend
+    - eghl as payment gateway
+    - JWT authentication
 
----
- # Backend Logs
+  ---
+   # Backend Logs
 * DONE add user error
   CLOSED: [2021-12-18 Sat 22:19]
   - Note taken on [2021-12-15 Wed 06:04] \\

@@ -6,22 +6,28 @@
     "_name": "_7477d07a"
   },
   {
+    "name": "cheongsam_id",
+    "path": "/shop/cheongsam/:id",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/cheongsam/_id.vue",
+    "_name": "_02a956ee"
+  },
+  {
     "name": "cheongsam",
     "path": "/shop/cheongsam",
     "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/cheongsam/index.vue",
     "_name": "_31114de1"
   },
   {
+    "name": "teaset_id",
+    "path": "/shop/teaset/:id",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/teaset/_id.vue",
+    "_name": "_692240c6"
+  },
+  {
     "name": "teaset",
     "path": "/shop/teaset",
     "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/teaset/index.vue",
     "_name": "_4d03c244"
-  },
-  {
-    "name": "shop_id",
-    "path": "/shop/:id",
-    "component": "/home/monster/app/weddinghouse-max/frontend/modules/shop/pages/_id.vue",
-    "_name": "_558b2041"
   },
   {
     "name": "shop",

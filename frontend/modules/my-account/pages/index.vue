@@ -19,18 +19,13 @@
 
                     <div class="ps-form--auth">
                         <ul class="ps-tab-list">
-                            <li class="active"><a href="#tab-1" @click="visibilityLogin">Login</a></li>
-                            <li><a href="#tab-2" @click="visibilityRegister">Register</a></li>
+                            <li v-for="tab in tabs" :key="tab"><a @click="selected = tab">
+                                    {{tab}}
+                                </a></li>
                         </ul>
                     </div>
 
-                    <!-- start Account / Login Component -->
-                    <MyAccountLogin />
-                    <!-- end Account / Login Component -->
-
-                    <!-- start Account / Register Component -->
-                    <MyAccountRegister />
-                    <!-- end Account / Register Component -->
+                    <component :is="selected"></component>
 
 
                     <!-- start Account Social Network Content-->
@@ -56,16 +51,21 @@
 </template>
 
 <script>
+    import Login from '@/modules/my-account/components/MyAccountLogin.vue'
+    import Register from '@/modules/my-account/components/MyAccountRegister.vue'
+    // import Show from '@/modules/my-account/components/Show.vue'
+
     export default {
-        methods: {
-            visibilityLogin() {
-                document.getElementById("register__tab").style.display = "none";
-                document.getElementById("login__tab").style.display = "block";
-            },
-            visibilityRegister() {
-                document.getElementById("login__tab").style.display = "none";
-                document.getElementById("register__tab").style.display = "block";
-            },
-        }
+        components: {
+            Login,
+            Register
+        },
+        data() {
+            return {
+                tabs: ["Login", "Register"],
+                selected: "Login"
+            }
+        },
+        methods: {}
     }
 </script>
