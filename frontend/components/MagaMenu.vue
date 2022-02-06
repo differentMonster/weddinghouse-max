@@ -101,8 +101,8 @@
                         <div v-else>
                             <nuxt-link class="header__user" to="/my-account/user"><i class="icon-user-plus"></i></nuxt-link>
                         </div>
-                        <nuxt-link class="header__cart ps-toggle--sidebar" :to="{ name: 'cart'}"><i class="icon-cart"></i><span>2</span></nuxt-link>
-                        <a class="header__menu-toggle ps-toggle--sidebar" href="#navigation-mobile"><i class="icon-menu"></i></a>
+                        <nuxt-link class="header__cart" to="/cart"><i class="icon-cart"></i><span>{{ getCart.length }}</span></nuxt-link>
+                        <a class="header__menu-toggle" href="#navigation-mobile"><i class="icon-menu"></i></a>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,9 @@
             <div class="header__left"><a class="ps-logo" href="index.html"><img src="img/logo.png" alt=""></a></div>
             <div class="header__right">
                 <div class="header__container"><a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a></div>
-                <div class="header__actions"><a class="header__user" href="#"><i class="icon-user"></i></a><a class="header__favorite" href="whishlist.html"><i class="icon-heart"></i></a><a class="header__cart ps-toggle--sidebar" href="#cart"><i class="icon-cart"></i><span>2</span></a><a class="header__menu-toggle ps-toggle--sidebar" href="#navigation-mobile"><i class="icon-menu"></i></a></div>
+                <div class="header__actions"><a class="header__user" href="#"><i class="icon-user"></i></a><a class="header__favorite" href="whishlist.html"><i class="icon-heart"></i></a>
+                    <nuxt-link class="header__cart" to="/cart"><i class="icon-cart"></i><span>{{ getCart.length }}</span></nuxt-link><a class="header__menu-toggle" href="#navigation-mobile"><i class="icon-menu"></i></a>
+                </div>
             </div>
         </header>
         <!-- end Mage Menu-Mobile Content  -->
@@ -124,10 +126,11 @@
 
 <script>
     import {
-        mapState
+        mapState,
+        mapGetters,
     } from 'vuex'
     export default {
-        name: 'magamenu',
+        name: 'Magamenu',
         methods: {
             // this method will logout the user and make token to false on the local storage of the user browser
             async logout() {
@@ -136,8 +139,11 @@
             }
         },
         computed: {
-            ...mapState('auth', ['loggedIn'])
-        }
+            ...mapState('auth', ['loggedIn']),
+            ...mapGetters('cart', ['getCart'])
+        },
+        mounted() {}
+
     };
 </script>
 

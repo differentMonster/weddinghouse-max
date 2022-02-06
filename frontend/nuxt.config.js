@@ -146,6 +146,7 @@ export default {
         '@/plugins/classWooCommerceOrigin.js',
         '@/modules/shop/plugins/classWooCommerceProducts.js',
         '@/modules/my-account/plugins/classWooCommerceCustomers.js',
+        '@/modules/cart/plugins/classWooCommerceCart.js',
         /* **images-loaded js */
         // {
         //     src: '@/static/images-loaded/imagesloaded.pkgd.js',

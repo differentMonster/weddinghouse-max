@@ -20,6 +20,8 @@
   - [X] Footer
 
 * TODO [#B] Cart Pages [/]
+  - Note taken on [2022-02-06 Sun 21:02] \\
+    - build cart page as component
   - [ ] Cart Systems
     - add products
     - remove products
@@ -58,6 +60,9 @@
 ** DONE Login and Register component fix
    CLOSED: [2022-01-28 Fri 00:25]
 ** BUG Image Slider using keep-alive but have load plugin problem
+** TODO test new import plugin to fix keep alive problem
+** build cart
+   - storage
 
   ---
   # Backend [ wordpress ]

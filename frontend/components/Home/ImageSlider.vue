@@ -1,5 +1,6 @@
 <template>
     <div id="homepage-default">
+        <div class="select2" :data-select2-id="select2" />
         <!-- start Image Slider -->
         <div class="ps-home-banner">
             <!-- start Image Slider - Options -->
@@ -71,6 +72,8 @@
 </template>
 
 <script>
+    let loadState = "unloaded";
+
     export default {
         data() {
             return {
@@ -79,6 +82,7 @@
                 landingPoster_3: [],
             }
         },
+        props: ["select2"],
         async fetch() {
             const getLandingPage = await this.$axios.get('http://localhost:3080/wp-json/wp/v2/media?id=28').then((response) => {
                 this.landingPoster_1 = response.data[8].source_url
@@ -94,20 +98,23 @@
             }
         },
         methods: {
-            // getLandingPage() {
-            //     this.$axios.get('http://localhost:3080/wp-json/wp/v2/media?id=28').then((response) => {
-            //         this.landingPoster_1 = response.data[8].source_url
-            //         this.landingPoster_2 = response.data[7].source_url
-            //         this.landingPoster_3 = response.data[6].source_url
-            //         console.log(response.data)
-            //         console.log('Responese landing poster : get successful')
-            //     }).catch((error) => {
-            //         console.log('Responese landing poster : get failure')
-            //     })
+            // loadScript(attrs) {
+            //     const script = document.createElement("script")
+            //     for (let attr in attrs) script[attr] = attrs[attr];
+            //     script.type = "text/javascript";
+            //     const node = document.getElementsByTagName("script")[0];
+            //     node.parentNode.insertBefore(script, node);
+            //     console.log("sucesseful")
             // }
         },
         mounted() {
-            // this.getLandingPage()
+            // if (loadState === "unloaded") {
+            //     loadState = "loading";
+            //     this.loadScript({
+            //         src: "~/../static/select2/dist/js/select2.full.min.js",
+            //         onload: () => (loadState = "loaded")
+            //     })
+            // }
         }
     }
 </script>

@@ -11,11 +11,14 @@
   "ProductCard": {
     "description": "Auto imported from modules/shop/components/ProductCard.vue"
   },
-  "CartOverview": {
-    "description": "Auto imported from modules/cart/components/CartOverview.vue"
+  "CartCard": {
+    "description": "Auto imported from modules/cart/components/CartCard.vue"
   },
-  "CartOverviewProduct": {
-    "description": "Auto imported from modules/cart/components/CartOverviewProduct.vue"
+  "CartCheckOut": {
+    "description": "Auto imported from modules/cart/components/CartCheckOut.vue"
+  },
+  "CartDiscountCode": {
+    "description": "Auto imported from modules/cart/components/CartDiscountCode.vue"
   },
   "Footer": {
     "description": "Auto imported from components/Footer.vue"

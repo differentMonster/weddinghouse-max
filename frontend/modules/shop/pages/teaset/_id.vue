@@ -63,7 +63,7 @@
                                         <button class="up"></button>
                                         <button class="down"></button>
                                         <input class="form-control" type="text">
-                                    </div><button class="ps-btn ps-btn--black">Add to cart</button><a class="ps-product__favorite" href="#"><i class="fa fa-heart-o"></i></a>
+                                    </div><button class="ps-btn ps-btn--black" @click="addProduct()">Add to cart</button><a class="ps-product__favorite" href="#"><i class="fa fa-heart-o"></i></a>
                                 </figure>
                                 <div class="ps-product__buynow"><a class="ps-btn ps-btn--black ps-btn--fullwidth" href="#">Buy Now</a></div>
                             </div>
@@ -347,10 +347,11 @@
     } from "@/modules/shop/plugins/classWooCommerceProducts.js";
 
     export default {
+        name: 'Product',
         data() {
             return {
                 product: [],
-                id: this.$route.params.id
+                id: this.$route.params.id,
             }
         },
         methods: {
@@ -363,24 +364,21 @@
                 }).catch((error) => {
                     console.log(error)
                 })
+            },
+            addProduct() {
+                const newProduct = {
+                    id: this.product.id,
+                    name: this.product.name,
+                    price: this.product.price,
+                    image: this.product.images[0],
+                    quantity: 2
+                }
+                this.$store.dispatch("cart/addItemToCart", newProduct)
             }
         },
         mounted() {
             this.getProduct()
         }
-        // async fetch() {
-        //     const WooComProducts = new WooCommerceProducts()
-        //     const getProduct = await WooComProducts.getProduct(this.$route.params.id).then((response) => {
-        //         this.product = response[0]
-        //         console.log(response[1])
-        //     }).catch((error) => {
-        //         console.log(error)
-        //     })
-        //     return {
-        //         getProduct
-        //     }
-        // },
-        // mounted() {}
     }
 </script>
 
