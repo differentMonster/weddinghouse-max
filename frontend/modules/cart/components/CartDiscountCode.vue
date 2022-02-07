@@ -1,5 +1,4 @@
 <template>
-
     <div class="ps-section__actions">
         <figure><a class="ps-btn ps-btn--outline" href="checkout.html">Continue shopping</a><a class="ps-btn ps-btn--outline" href="checkout.html">Update Cart</a></figure>
         <div class="form-group">
@@ -9,7 +8,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>

@@ -367,10 +367,9 @@
             },
             addProduct() {
                 const newProduct = {
-                    id: this.product.id,
+                    product_id: this.product.id,
                     name: this.product.name,
                     price: this.product.price,
-                    image: this.product.images[0],
                     quantity: 2
                 }
                 this.$store.dispatch("cart/addItemToCart", newProduct)

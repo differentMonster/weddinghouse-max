@@ -1,9 +1,12 @@
+import {
+    WooComRestApi
+} from "~/plugins/classWooCommerceOrigin.js";
+
 export const namespaced = true
 
 export const state = () => ({
-    cartItem: []
+    cartItem: [],
 })
-
 
 export const getters = {
     getCart: (state) => state.cartItem,
@@ -11,7 +14,6 @@ export const getters = {
         state.cartItem.length < 1 ?
         '0' : state.cartItem.map((el) => el.price * el.quantity).reduce((a, b) => a + b),
 }
-
 
 export const actions = {
     async addItemToCart({
@@ -23,6 +25,17 @@ export const actions = {
         commit
     }, id) {
         await commit('removeCartItem', id)
+    },
+    async addOrders({
+        commit
+    }, checkoutCart) {
+        try {
+            const response = await WooComRestApi.post("orders", checkoutCart)
+            const responseConsole = 'WooCommerceCart add Orders = succesful'
+            return [response.data, responseConsole]
+        } catch {
+            throw new Error('WooCommerceCart add Orders' + data + '=' + ' ' + error)
+        }
     }
 }
 

@@ -16,7 +16,7 @@
                 <tr v-for="(item, i) in getCart" :key="item.id">
                     <td>
                         <div class="ps-product--sidebar">
-                            <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img :src="`${item.image.src}`" alt=""></div>
+                            <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="" alt=""></div>
                             <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">{{ item.name }}</a>
                                 <p class="ps-product__price">T-Shirt</p>
                             </div>

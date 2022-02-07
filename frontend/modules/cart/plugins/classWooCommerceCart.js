@@ -7,7 +7,7 @@ export class WooCommerceCart {
 
     }
 
-    async addOrders(data) {
+    async addProductToCart(data) {
         try {
             const response = await WooComRestApi.post("orders", data)
             const responseConsole = 'WooCommerceCart add Orders = succesful'

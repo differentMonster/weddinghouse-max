@@ -25,6 +25,16 @@ export class WooCommerceCustomers {
         }
     }
 
+    async getInfo(id) {
+        try {
+            const response = await WooComRestApi.get('customers/' + id)
+            const responseConsole = 'WooCommerceCustomer getInfo = successful';
+            return [response.data, responseConsole]
+        } catch {
+            throw new Error('WooCommerceCustomer getInfo =' + ' ' + error)
+        }
+    }
+
     delete() {
         console.log("delete")
     }

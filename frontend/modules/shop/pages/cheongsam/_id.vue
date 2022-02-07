@@ -367,7 +367,7 @@
             },
             addProduct() {
                 const newProduct = {
-                    id: this.product.id,
+                    product_id: this.product.id,
                     name: this.product.name,
                     price: this.product.price,
                     quantity: 1
