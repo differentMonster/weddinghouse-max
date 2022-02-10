@@ -147,6 +147,10 @@ export default {
         '@/modules/shop/plugins/classWooCommerceProducts.js',
         '@/modules/my-account/plugins/classWooCommerceCustomers.js',
         '@/modules/cart/plugins/classWooCommerceCart.js',
+        {
+            src: '~/plugins/cypress.js',
+            mode: 'client'
+        },
         /* **images-loaded js */
         // {
         //     src: '@/static/images-loaded/imagesloaded.pkgd.js',
@@ -252,8 +256,6 @@ export default {
     ],
     axios: {
         baseURL: 'http://localhost:3080',
-        proxyHeaders: false,
-        credentials: false
     },
     auth: {
         strategies: {

@@ -53,7 +53,6 @@
 <script>
     import Login from '@/modules/my-account/components/MyAccountLogin.vue'
     import Register from '@/modules/my-account/components/MyAccountRegister.vue'
-    // import Show from '@/modules/my-account/components/Show.vue'
 
     export default {
         components: {

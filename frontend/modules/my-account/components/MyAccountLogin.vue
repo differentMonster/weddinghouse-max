@@ -5,10 +5,10 @@
                 <!-- start Account Content - Login -->
                 <div class="ps-tab active" id="tab-1">
                     <div class="form-group">
-                        <input v-model="loginuserdata.username" class="form-control" type="text" placeholder="Username">
+                        <input v-model="userData.username" class="form-control" type="text" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input v-model="loginuserdata.password" class="form-control" type="text" placeholder="Password">
+                        <input v-model="userData.password" class="form-control" type="text" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <div class="ps-checkbox">
@@ -30,7 +30,7 @@
         name: 'login',
         data() {
             return {
-                loginuserdata: {
+                userData: {
                     username: '',
                     password: ''
                 }
@@ -39,13 +39,13 @@
         methods: {
             async login() {
                 await this.$auth.loginWith("local", {
-                    data: this.loginuserdata
-                }).then((resp) => {
-                    this.$router.go("/my-account/user")
-                    console.log("login successful")
+                    data: this.userData
+                }).then((response) => {
+                    if (response.status === 200) {
+                        this.$router.go("/my-account/user")
+                    }
                 }).catch((error) => {
                     throw new Error(error)
-                    throw new Error('login failure')
                 })
             }
         },

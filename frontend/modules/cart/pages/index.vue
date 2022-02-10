@@ -106,10 +106,10 @@
                     shipping_lines: [{
                         method_id: "flat_rate",
                         method_title: "Flat Rate",
-                        // total: "" + this.getCartTotal + ""
                         total: "36"
                     }]
                 };
+                const datax = {}
                 console.log(data)
                 this.$store.dispatch("cart/addOrders", data)
             }

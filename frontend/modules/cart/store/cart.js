@@ -29,12 +29,16 @@ export const actions = {
     async addOrders({
         commit
     }, checkoutCart) {
-        try {
-            const response = await WooComRestApi.post("orders", checkoutCart)
-            const responseConsole = 'WooCommerceCart add Orders = succesful'
-            return [response.data, responseConsole]
-        } catch {
-            throw new Error('WooCommerceCart add Orders' + data + '=' + ' ' + error)
+        if (Object.keys(checkoutCart).length === 0 || null) {
+            throw new Error('WooCommerceCart Cart is empty, please select buying product and try again')
+        } else {
+            try {
+                const response = await WooComRestApi.post("orders", checkoutCart)
+                const responseConsole = 'WooCommerceCart add Orders = succesful'
+                return [response.data, responseConsole]
+            } catch {
+                throw new Error('WooCommerceCart add Orders' + data + '=' + ' ' + error)
+            }
         }
     }
 }

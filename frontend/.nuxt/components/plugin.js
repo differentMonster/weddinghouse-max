@@ -3,7 +3,6 @@ import Vue from 'vue'
 const components = {
   MyAccountLogin: () => import('../../modules/my-account/components/MyAccountLogin.vue' /* webpackChunkName: "components/my-account-login" */).then(c => c.default || c),
   MyAccountRegister: () => import('../../modules/my-account/components/MyAccountRegister.vue' /* webpackChunkName: "components/my-account-register" */).then(c => c.default || c),
-  Show: () => import('../../modules/my-account/components/Show.vue' /* webpackChunkName: "components/show" */).then(c => c.default || c),
   ProductCard: () => import('../../modules/shop/components/ProductCard.vue' /* webpackChunkName: "components/product-card" */).then(c => c.default || c),
   CartCard: () => import('../../modules/cart/components/CartCard.vue' /* webpackChunkName: "components/cart-card" */).then(c => c.default || c),
   CartCheckOut: () => import('../../modules/cart/components/CartCheckOut.vue' /* webpackChunkName: "components/cart-check-out" */).then(c => c.default || c),

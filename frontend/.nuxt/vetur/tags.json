@@ -5,9 +5,6 @@
   "MyAccountRegister": {
     "description": "Auto imported from modules/my-account/components/MyAccountRegister.vue"
   },
-  "Show": {
-    "description": "Auto imported from modules/my-account/components/Show.vue"
-  },
   "ProductCard": {
     "description": "Auto imported from modules/shop/components/ProductCard.vue"
   },

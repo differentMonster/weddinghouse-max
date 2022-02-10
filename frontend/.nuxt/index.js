@@ -23,6 +23,7 @@ import nuxt_plugin_classWooCommerceOrigin_7443d27a from 'nuxt_plugin_classWooCom
 import nuxt_plugin_classWooCommerceProducts_298b731e from 'nuxt_plugin_classWooCommerceProducts_298b731e' // Source: ../modules/shop/plugins/classWooCommerceProducts.js (mode: 'all')
 import nuxt_plugin_classWooCommerceCustomers_7ac03d41 from 'nuxt_plugin_classWooCommerceCustomers_7ac03d41' // Source: ../modules/my-account/plugins/classWooCommerceCustomers.js (mode: 'all')
 import nuxt_plugin_classWooCommerceCart_6871558c from 'nuxt_plugin_classWooCommerceCart_6871558c' // Source: ../modules/cart/plugins/classWooCommerceCart.js (mode: 'all')
+import nuxt_plugin_cypress_69effd80 from 'nuxt_plugin_cypress_69effd80' // Source: ../plugins/cypress.js (mode: 'client')
 import nuxt_plugin_jquerybarratingmin_a9e25e2c from 'nuxt_plugin_jquerybarratingmin_a9e25e2c' // Source: ../static/jquery/jquery-bar-rating/dist/jquery.barrating.min.js (mode: 'client')
 import nuxt_plugin_supro_1689aa00 from 'nuxt_plugin_supro_1689aa00' // Source: ../plugins/supro.js (mode: 'client')
 import nuxt_plugin_auth_f3eddcf4 from 'nuxt_plugin_auth_f3eddcf4' // Source: ./auth.js (mode: 'all')
@@ -256,6 +257,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_classWooCommerceCart_6871558c === 'function') {
     await nuxt_plugin_classWooCommerceCart_6871558c(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_cypress_69effd80 === 'function') {
+    await nuxt_plugin_cypress_69effd80(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_jquerybarratingmin_a9e25e2c === 'function') {
