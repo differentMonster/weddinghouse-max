@@ -19,10 +19,11 @@
     - Burger Menu
   - [X] Footer
 
-* TODO [#B] Cart Pages [/]
+* DONE [#B] Cart Pages [1/1]
+  CLOSED: [2022-02-13 Sun 23:32]
   - Note taken on [2022-02-06 Sun 21:02] \\
     - build cart page as component
-  - [ ] Cart Systems
+  - [X] Cart Systems
     - add products
     - remove products
     - edit quatity
@@ -30,6 +31,8 @@
     - note additional comments
     - one click check out process
 
+* PROGRESS Adding Jest for TTD test
+  - unable to test vuex with nuxt 3
 
 ---
 # Frontend logs

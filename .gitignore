@@ -2,6 +2,15 @@
 # Created by https://www.toptal.com/developers/gitignore/api/nuxtjs,wordpress
 # Edit at https://www.toptal.com/developers/gitignore?templates=nuxtjs,wordpress
 
+### Node
+# Logs
+/logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
 ### Nuxtjs ###
 # Nuxt build
 .nuxt
@@ -9,6 +18,9 @@
 /frontend/node_modules
 /frontend/cypress/screenshots
 /frontend/cypress/videos
+* jest.config.js
+* jest.setup.js
+* __tests__/*
 
 /db_data
 
