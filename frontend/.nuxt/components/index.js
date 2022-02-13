@@ -6,6 +6,7 @@ export { default as CartCheckOut } from '../../modules/cart/components/CartCheck
 export { default as CartDiscountCode } from '../../modules/cart/components/CartDiscountCode.vue'
 export { default as Footer } from '../../components/Footer.vue'
 export { default as MagaMenu } from '../../components/MagaMenu.vue'
+export { default as NuxtLogo } from '../../components/NuxtLogo.vue'
 export { default as HomeImageSlider } from '../../components/Home/ImageSlider.vue'
 
 // nuxt/nuxt.js#8607

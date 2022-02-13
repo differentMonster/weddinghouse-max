@@ -11,7 +11,7 @@ module.exports = {
         // process js with `babel-jest`
         "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
         // process `*.vue` files with `vue-jest`
-        ".*\\.(vue)$": "@vue/vue3-jest"
+        ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
     },
     // set jsdom
     testEnvironment: "jsdom",

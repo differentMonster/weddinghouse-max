@@ -23,6 +23,9 @@
   "MagaMenu": {
     "description": "Auto imported from components/MagaMenu.vue"
   },
+  "NuxtLogo": {
+    "description": "Auto imported from components/NuxtLogo.vue"
+  },
   "HomeImageSlider": {
     "description": "Auto imported from components/Home/ImageSlider.vue"
   }

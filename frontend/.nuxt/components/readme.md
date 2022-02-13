@@ -14,4 +14,5 @@ You can directly use them in pages and other components without the need to impo
 - `<CartDiscountCode>` | `<cart-discount-code>` (modules/cart/components/CartDiscountCode.vue)
 - `<Footer>` | `<footer>` (components/Footer.vue)
 - `<MagaMenu>` | `<maga-menu>` (components/MagaMenu.vue)
+- `<NuxtLogo>` | `<nuxt-logo>` (components/NuxtLogo.vue)
 - `<HomeImageSlider>` | `<home-image-slider>` (components/Home/ImageSlider.vue)
