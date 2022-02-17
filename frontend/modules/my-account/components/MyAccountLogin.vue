@@ -5,10 +5,10 @@
                 <!-- start Account Content - Login -->
                 <div class="ps-tab active" id="tab-1">
                     <div class="form-group">
-                        <input v-model="userData.username" class="form-control" type="text" placeholder="Username">
+                        <input v-model="userData.username" id="username" class="form-control" type="text" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input v-model="userData.password" class="form-control" type="text" placeholder="Password">
+                        <input v-model="userData.password" id="password" class="form-control" type="text" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <div class="ps-checkbox">
@@ -26,6 +26,10 @@
 </template>
 
 <script>
+    import {
+        Authentication
+    } from '@/modules/my-account/plugins/classWooCommerceCustomers.js'
+
     export default {
         name: 'login',
         data() {
@@ -37,17 +41,26 @@
             }
         },
         methods: {
+            // login() {
+            //     const Auth = new Authentication(this.username, this.password)
+            //     // import class create with failure return from it.
+            //     Auth.login().then((response) => {
+            //         console.log(response[1])
+            //     }).catch((error) => {
+            //         console.log(error)
+            //     })
+            // }
             async login() {
                 await this.$auth.loginWith("local", {
                     data: this.userData
                 }).then((response) => {
                     if (response.status === 200) {
-                        this.$router.go("/my-account/user")
+                        this.$router.go("/")
                     }
                 }).catch((error) => {
                     throw new Error(error)
                 })
-            }
-        },
+            },
+        }
     }
 </script>

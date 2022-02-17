@@ -38,79 +38,7 @@ export default {
                 href: 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap'
             }
         ],
-        script: [
-            /* **jquery js*/
-            // {
-            //     src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js',
-            //     ssr: false
-            // },
-            // { src: 'jquery/jquery-1.12.4.min.js', ssr: false },
-            /* **bootstrap4 js */
-            // {
-            //     src: '@/static/bootstrap4/js/bootstrap.min.js',
-            // },
-            /* **owl carousel js */
-            // {
-            //     src: '@/static/owl-carousel/js/owl.carousel.min.js'
-            // },
-            // /* **images loaded js */
-            // {
-            //     src: '@/static/images-loaded/imagesloaded.pkgd.js',
-            // },
-            // /* **mansory js */
-            // {
-            //     src: '@/static/masonry/masonry.pkgd.min.js'
-            // },
-            // /* **match height js */
-            // {
-            //     src: '@/static/jquery/jquery-match-height/jquery.matchHeight-min.js'
-            // },
-            // /* **slick js */
-            // {
-            //     src: '@/static/slick/slick/slick.min.js',
-            // },
-            // /* **jquery bar rating js */
-            // {
-            //     src: '@/static/jquery/jquery-bar-rating/dist/jquery.barrating.min.js'
-            // },
-            /* **light gallery js */
-            // {
-            //     src: '@/static/lightGallery-master/dist/js/lightgallery-all.min.js'
-            // },
-            /* **jquery ui js */
-            // {
-            //     src: '@/static/jquery/jquery-ui/jquery-ui.min.js',
-            // },
-            // /* **sticky sidebar js */
-            // {
-            //     src: '@/static/sticky-sidebar/dist/sticky-sidebar.min.js'
-            // },
-            // /* **select2 js */
-            // {
-            //     src: '@/static/select2/dist/js/select2.full.min.js',
-            //     defer: true
-            // },
-            // /* **slick animation js */
-            // {
-            //     src: '@/static/slick-animation/slick-animation.min.js'
-            // },
-            // /* **isotope js */
-            // {
-            //     src: '@/static/isotope/isotope.pkgd.min.js'
-            // },
-            // /* **slim scroll js */
-            // {
-            //     src: '@/static/jquery/jquery.slimscroll.min.js'
-            // },
-            // /* **sticky sidebar js */
-            // {
-            //     src: '@/static/sticky-sidebar/dist/sticky-sidebar.min.js'
-            // },
-            /* **wedding house + supro main js */
-            // {
-            //     src: '@/static/wedding-house/js/main.js',
-            // },
-        ]
+        script: []
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
@@ -148,93 +76,9 @@ export default {
         '@/modules/my-account/plugins/classWooCommerceCustomers.js',
         '@/modules/cart/plugins/classWooCommerceCart.js',
         {
-            src: '~/plugins/cypress.js',
+            src: '@/plugins/cypress.js',
             mode: 'client'
         },
-        /* **images-loaded js */
-        // {
-        //     src: '@/static/images-loaded/imagesloaded.pkgd.js',
-        //     mode: 'client'
-        // },
-        /* **mansory js */
-        // {
-        //     src: '~/static/masonry/masonry.pkgd.min.js',
-        //     mode: 'client'
-        // },
-        /* **match-height js */
-        // {
-        //     src: '~/static/jquery/jquery-match-height/jquery.matchHeight-min.js',
-        //     mode: 'client'
-        // },
-        /* **slick js */
-        // {
-        //     src: '~/static/slick/slick/slick.min.js',
-        //     mode: 'client'
-        // },
-        /* **jquery-bar rating js */
-        {
-            src: '~/static/jquery/jquery-bar-rating/dist/jquery.barrating.min.js',
-            mode: 'client'
-        },
-        /* **sticky sidebar js */
-        // {
-        //     src: '~static/sticky-sidebar/dist/sticky-sidebar.min.js',
-        //     mode: 'client'
-        // },
-        /* **slick animation js */
-        // {
-        //     src: '~/static/slick-animation/slick-animation.min.js',
-        //     mode: 'client'
-        // },
-        /* **isotope js */
-        // {
-        //     src: '@/static/isotope/isotope.pkgd.min.js',
-        //     mode: 'client'
-        // },
-        /* **slim scroll js */
-        // {
-        //     src: '~/static/jquery/jquery.slimscroll.min.js',
-        //     mode: 'client'
-        // },
-        /* **sticky sidebar js */
-        // {
-        //     src: '~/static/sticky-sidebar/dist/sticky-sidebar.min.js',
-        //     mode: 'client'
-        // },
-        /* **owl-carousel js */
-        /* **dependency: home - image slider */
-        // {
-        //     src: '@/plugins/owl-carousel.js',
-        //     // ssr: false
-        //     defer: true
-        // },
-        /* **light-gallery js */
-        /* **dependency: home - image slider */
-        // {
-        //     src: '@/plugins/lightgallery.js',
-        //     // ssr: false
-        //     defer: true
-        // },
-        /* **jquery-ui js */
-        /* **dependency: home - image slider */
-        // {
-        //     src: '@/plugins/jquery-ui.js',
-        //     // ssr: false
-        //     defer: true
-        // },
-        /* **select2 js */
-        /* **dependency: home - image slider */
-        // {
-        //     src: '@/plugins/select2.js',
-        //     // ssr: false
-        //     defer: true
-        // },
-        /* **wedding-house + supro main js */
-        /* **dependency: home - image slider */
-        {
-            src: '@/plugins/supro.js',
-            ssr: false
-        }
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -253,6 +97,7 @@ export default {
         '~/modules/my-account',
         '~/modules/shop',
         '~/modules/cart',
+        '@nuxtjs/style-resources',
     ],
     axios: {
         baseURL: 'http://localhost:3080',
@@ -292,30 +137,11 @@ export default {
     router: {
         middleware: ['auth']
     },
+    styleResources: {
+        scss: [
+            '@/assets/scss/variables.scss',
+        ]
+    },
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {
-        // vendor: ['owl-carousel.js', 'lightgallery.js', 'select2.js', 'jquery-ui.js', 'weddinghouse.js'],
-        vendor: ['jquery', 'bootstrap', 'supro.js'],
-        plugins: [
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jquery: 'jquery',
-                'window.jQuery': 'jquery',
-                jQuery: 'jquery'
-            })
-        ],
-        extend(config, {
-            isDev,
-            isClient
-        }) {
-            if (isDev && isClient) {
-                config.module.rules.push({
-                    enforce: 'pre',
-                    test: /\.(js|vue)$/,
-                    exclude: /(node_modules)/
-                })
-            }
-        }
-
-    }
+    build: {}
 }

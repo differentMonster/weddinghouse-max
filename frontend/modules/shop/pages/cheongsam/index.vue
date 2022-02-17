@@ -6,7 +6,7 @@
                  <div class="ps-shop__container">
 
                      <h1>Cheongsam Pages</h1>
-                     <ProductCard :products="products"></ProductCard>
+                     <ShopProductCard :products="products"></ShopProductCard>
 
                  </div>
              </div>
@@ -19,7 +19,7 @@
      import {
          WooCommerceProducts
      } from "@/modules/shop/plugins/classWooCommerceProducts.js";
-     import ProductCard from "@/modules/shop/components/ProductCard.vue"
+     import ShopProductCard from "@/modules/shop/components/ShopProductCard.vue"
 
      export default {
          data() {
@@ -29,7 +29,7 @@
              }
          },
          component: {
-             ProductCard
+             ShopProductCard
          },
          async fetch() {
              try {

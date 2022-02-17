@@ -1,7 +1,7 @@
 <template>
     <div>
         <MagaMenu />
-        <Nuxt keep-alive :keep-alive-props="{include: ['pages/index.vue']}" />
+        <Nuxt />
         <Footer />
     </div>
 </template>

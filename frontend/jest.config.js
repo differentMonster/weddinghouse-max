@@ -1,4 +1,5 @@
 module.exports = {
+    setupFiles: ['<rootDir>/jest.setup.js'],
     // tell Jest to handle `*.vue` files
     moduleFileExtensions: ["js", "json", "vue"],
     watchman: false,
@@ -21,6 +22,12 @@ module.exports = {
     collectCoverage: true,
     collectCoverageFrom: [
         "<rootDir>/components/**/*.vue",
-        "<rootDir>/pages/*.vue"
-    ]
+        "<rootDir>/pages/*.vue",
+        '<rootDir>/layouts/**/*.vue',
+        '<rootDir>/middleware/**/*.js',
+        '<rootDir>/store/**/*.js',
+        '<rootDir>/mixins/**/*.js',
+        '<rootDir>/services/**/*.js',
+    ],
+    forceExit: !!process.env.CI // almost every CI platform sets this by default
 };

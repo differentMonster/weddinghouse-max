@@ -5,8 +5,26 @@
   "MyAccountRegister": {
     "description": "Auto imported from modules/my-account/components/MyAccountRegister.vue"
   },
-  "ProductCard": {
-    "description": "Auto imported from modules/shop/components/ProductCard.vue"
+  "ShopProductAddition": {
+    "description": "Auto imported from modules/shop/components/ShopProductAddition.vue"
+  },
+  "ShopProductBreadcrumbs": {
+    "description": "Auto imported from modules/shop/components/ShopProductBreadcrumbs.vue"
+  },
+  "ShopProductCard": {
+    "description": "Auto imported from modules/shop/components/ShopProductCard.vue"
+  },
+  "ShopProductDescription": {
+    "description": "Auto imported from modules/shop/components/ShopProductDescription.vue"
+  },
+  "ShopProductHeader": {
+    "description": "Auto imported from modules/shop/components/ShopProductHeader.vue"
+  },
+  "ShopProductRelated": {
+    "description": "Auto imported from modules/shop/components/ShopProductRelated.vue"
+  },
+  "ShopProductReview": {
+    "description": "Auto imported from modules/shop/components/ShopProductReview.vue"
   },
   "CartCard": {
     "description": "Auto imported from modules/cart/components/CartCard.vue"

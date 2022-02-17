@@ -1,16 +1,8 @@
 <template>
     <div id="homepage-default">
-        <div class="select2" :data-select2-id="select2" />
+        <div class="select2" />
         <!-- start Image Slider -->
         <div class="ps-home-banner">
-            <!-- start Image Slider - Options -->
-            <ul class="ps-section__nav">
-                <li class="active"><a href="#"><small>Next SS Preview</small><span>All About Wedding</span></a></li>
-                <li><a href="#"><small>Pink</small><span>Sneaker</span></a></li>
-                <li><a href="#"><small>Winter</small><span>Collection</span></a></li>
-            </ul>
-            <!-- end Image Slider - Options -->
-
             <!-- start Image Slider - First Image -->
             <div class="ps-carousel--nav owl-slider" data-owl-auto="false" data-owl-loop="false" data-owl-speed="15000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
 
@@ -30,41 +22,6 @@
                 </div>
                 <!-- end Image Slider - First Image -->
 
-                <!-- start Image Slider - Second Image -->
-                <div class="ps-banner--3 bg--cover white" :style="{ background: `url(${landingPoster_2})` }">
-                    <div class="ps-banner__social">
-                        <ul class="ps-list--social">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="ps-banner__content">
-                        <p data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">Trendy Pink</p>
-                        <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">Sneakers</h3><a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">Discover more</a>
-                    </div>
-                </div>
-                <!-- end Image Slider - Second Image -->
-
-                <!-- start Image Slider - Thrid Image -->
-                <div class="ps-banner--3 bg--cover white" :style="{ background: `url(${landingPoster_3})` }">
-                    <div class="ps-banner__social">
-                        <ul class="ps-list--social">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="ps-banner__content">
-                        <h3 data-animation-in="fadeInRight" data-animation-out="animate-out fadeOutLeft">Winter <br /> Collection
-                        </h3><a class="ps-link--under" href="#" data-animation-in="fadeInUp" data-animation-out="animate-out fadeOutDown">Discover more</a>
-                    </div>
-                </div>
-                <!-- end Image Slider - Thrid Image -->
-
-
             </div>
         </div>
         <!-- end Image Slider -->
@@ -72,22 +29,15 @@
 </template>
 
 <script>
-    let loadState = "unloaded";
-
     export default {
         data() {
             return {
                 landingPoster_1: [],
-                landingPoster_2: [],
-                landingPoster_3: [],
             }
         },
-        props: ["select2"],
         async fetch() {
             const getLandingPage = await this.$axios.get('http://localhost:3080/wp-json/wp/v2/media?id=28').then((response) => {
                 this.landingPoster_1 = response.data[8].source_url
-                this.landingPoster_2 = response.data[7].source_url
-                this.landingPoster_3 = response.data[6].source_url
                 // console.log(response.data)
                 console.log('Responese landing poster : get successful')
             }).catch((error) => {
@@ -97,25 +47,8 @@
                 getLandingPage
             }
         },
-        methods: {
-            // loadScript(attrs) {
-            //     const script = document.createElement("script")
-            //     for (let attr in attrs) script[attr] = attrs[attr];
-            //     script.type = "text/javascript";
-            //     const node = document.getElementsByTagName("script")[0];
-            //     node.parentNode.insertBefore(script, node);
-            //     console.log("sucesseful")
-            // }
-        },
-        mounted() {
-            // if (loadState === "unloaded") {
-            //     loadState = "loading";
-            //     this.loadScript({
-            //         src: "~/../static/select2/dist/js/select2.full.min.js",
-            //         onload: () => (loadState = "loaded")
-            //     })
-            // }
-        }
+        methods: {},
+        mounted() {}
     }
 </script>
 

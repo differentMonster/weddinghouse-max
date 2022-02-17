@@ -34,8 +34,8 @@ export const actions = {
         } else {
             try {
                 const response = await WooComRestApi.post("orders", checkoutCart)
-                const responseConsole = 'WooCommerceCart add Orders = succesful'
-                return [response.data, responseConsole]
+                const responseMessages = 'WooCommerceCart add Orders = succesful'
+                return [response.data, responseMessages]
             } catch {
                 throw new Error('WooCommerceCart add Orders' + data + '=' + ' ' + error)
             }

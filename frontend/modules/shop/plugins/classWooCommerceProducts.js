@@ -3,15 +3,12 @@ import {
 } from "~/plugins/classWooCommerceOrigin.js";
 
 export class WooCommerceProducts {
-    constructor() {
-
-    }
 
     async getProducts() {
         try {
             const response = await WooComRestApi.get("products")
-            const responseConsole = 'WooCommerceProducts get products = successful';
-            return [response.data, responseConsole]
+            const responseMessages = 'WooCommerceProducts get products = successful';
+            return [response.data, responseMessages]
         } catch {
             throw new Error('WooCommerceProducts get products =' + ' ' + error)
         }
@@ -20,8 +17,8 @@ export class WooCommerceProducts {
     async getProduct(id) {
         try {
             const response = await WooComRestApi.get("products/" + id)
-            const responseConsole = 'WooCommerceProducts get product = successful';
-            return [response.data, responseConsole]
+            const responseMessages = 'WooCommerceProducts get product = successful';
+            return [response.data, responseMessages]
         } catch {
             throw new Error('WooCommerceProducts get product' + id + '=' + ' ' + error)
         }
@@ -32,8 +29,8 @@ export class WooCommerceProducts {
         try {
             const response = await WooComRestApi.get("products")
             const responseData = this.getProductsFilterByCategory(response.data, slug)
-            const responseConsole = 'WooCommerceProducts get products by category = successful';
-            return [responseData, responseConsole]
+            const responseMessages = 'WooCommerceProducts get products by category = successful';
+            return [responseData, responseMessages]
         } catch {
             throw new Error('WooCommerceProducts get products by category' + slug + '=' + ' ' + error)
         }

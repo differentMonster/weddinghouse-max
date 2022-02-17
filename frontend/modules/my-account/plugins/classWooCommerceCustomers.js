@@ -1,7 +1,6 @@
 import {
     WooComRestApi
-}
-from "~/plugins/classWooCommerceOrigin.js";
+} from "~/plugins/classWooCommerceOrigin.js";
 
 export class WooCommerceCustomers {
     constructor(email, username, password) {
@@ -18,8 +17,8 @@ export class WooCommerceCustomers {
         }
         try {
             const response = await WooComRestApi.post('customers', userData)
-            const responseConsole = 'WooCommerceCustomer create = successful';
-            return [response, responseConsole]
+            const responseMessages = 'WooCommerceCustomer create = successful';
+            return [response, responseMessages]
         } catch {
             throw new Error('WooCommerceCustomer create =' + ' ' + error)
         }
@@ -28,8 +27,8 @@ export class WooCommerceCustomers {
     async getInfo(id) {
         try {
             const response = await WooComRestApi.get('customers/' + id)
-            const responseConsole = 'WooCommerceCustomer getInfo = successful';
-            return [response.data, responseConsole]
+            const responseMessages = 'WooCommerceCustomer getInfo = successful';
+            return [response.data, responseMessages]
         } catch {
             throw new Error('WooCommerceCustomer getInfo =' + ' ' + error)
         }
@@ -39,3 +38,29 @@ export class WooCommerceCustomers {
         console.log("delete")
     }
 }
+
+// export class Authentication {
+//     constructor(username, password) {
+//         this.username = username
+//         this.password = password
+//         const userData = {
+//             username: this.username,
+//             password: this.password
+//         }
+//     }
+
+//     async login({
+//         $auth
+//     }) {
+//         try {
+//             const response = await this.$auth.loginWith("local", {
+//                 data: this.userData
+//             })
+
+//             const responseMessages = 'Authentication Succesful'
+//             return [response, responseMessages]
+//         } catch {
+//             throw new Error('Authentication Failure')
+//         }
+//     }
+// }

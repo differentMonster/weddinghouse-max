@@ -66,6 +66,8 @@
 ** TODO test new import plugin to fix keep alive problem
 ** build cart
    - storage
+** CANCELLED remove jquery for less buggy propose
+   CLOSED: [2022-02-18 Fri 00:06]
 
   ---
   # Backend [ wordpress ]
