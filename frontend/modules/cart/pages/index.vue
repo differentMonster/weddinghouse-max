@@ -78,30 +78,8 @@
                     payment_method_title: "Direct Bank Transfer",
                     set_paid: true,
                     customer_id: this.cartUser.id,
-                    billing: {
-                        first_name: this.cartUser.billing.first_name,
-                        last_name: this.cartUser.billing.last_name,
-                        address_1: this.cartUser.billing.address_1,
-                        address_2: this.cartUser.billing.address_2,
-                        city: this.cartUser.billing.city,
-                        state: this.cartUser.billing.state,
-                        postcode: this.cartUser.billing.postcode,
-                        country: this.cartUser.billing.locale,
-                        email: this.cartUser.billing.email,
-                        phone: this.cartUser.billing.phone
-                    },
-                    shipping: {
-                        first_name: this.cartUser.shipping.first_name,
-                        last_name: this.cartUser.shipping.last_name,
-                        address_1: this.cartUser.shipping.address_1,
-                        address_2: this.cartUser.shipping.address_2,
-                        city: this.cartUser.shipping.city,
-                        state: this.cartUser.shipping.state,
-                        postcode: this.cartUser.shipping.postcode,
-                        country: this.cartUser.shipping.locale,
-                        email: this.cartUser.shipping.email,
-                        phone: this.cartUser.shipping.phone
-                    },
+                    billing: this.cartUser.billing,
+                    shipping: this.cartUser.shipping,
                     line_items: this.getCart,
                     shipping_lines: [{
                         method_id: "flat_rate",
@@ -109,8 +87,6 @@
                         total: "36"
                     }]
                 };
-                const datax = {}
-                console.log(data)
                 this.$store.dispatch("cart/addOrders", data)
             }
         }

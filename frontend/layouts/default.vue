@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import MagaMenu from '~/components/MagaMenu'
-    import Footer from '~/components/Footer'
+    import MagaMenu from '@/components/MagaMenu.vue'
+    import Footer from '@/components/Footer/Footer.vue'
 
     export default {
         components: {
@@ -19,4 +19,4 @@
 </script>
 
 <style>
-    </style
+</style>

@@ -1,12 +1,12 @@
 <template>
     <div>
-        <ImageSlider />
+        <HomeImageSlider />
         <h1 class="wish">wish</h1>
     </div>
 </template>
 
 <script>
-    import ImageSlider from "@/components/Home/ImageSlider.vue";
+    import ImageSlider from "@/components/Home/HomeImageSlider.vue";
 
     export default {
         components: {
