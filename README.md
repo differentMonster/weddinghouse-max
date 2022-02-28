@@ -4,6 +4,8 @@
 [[accelerated-solution-design]]
 = Accelerated Solution Design
 
+[[accelerated-solution-design]]
+=== *Accelerated Solution Design*
 
 # Frontend [ Nuxt 2 ]
 * Landing pages [3/3]
