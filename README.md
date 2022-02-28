@@ -1,48 +1,40 @@
 # Wedding House Max
 
+# Business Logical
 
-[[accelerated-solution-design]]
-= Accelerated Solution Design
+# Idea Design Solution
 
-[[accelerated-solution-design]]
-=== *Accelerated Solution Design*
+## Purpose
+it was first design to be a B2C plaform targeting wedding product, setting up pick as package in product,
+ for customer more easy to purchase what they need in chinese wedding day, also so easy checkout and devlivery.
+## Goals
 
-# Frontend [ Nuxt 2 ]
-* Landing pages [3/3]
-  - [X] landinge images
-  - [X] MageMenu
-    - Shop
-      - wedding lamp
-      - teaset
-      - others
-      - new arrival
-      - cheongsam
-    - Heiday Calendar
-    - Blog
-    - About us
-    Icons:
-    - MyAccount
-    - Cart
-    - Burger Menu
-  - [X] Footer
+# Key Principles
+* Lean
+* Agile requirements flow
 
-* DONE [#B] Cart Pages [1/1]
-  CLOSED: [2022-02-13 Sun 23:32]
-  - Note taken on [2022-02-06 Sun 21:02] \\
-    - build cart page as component
-  - [X] Cart Systems
-    - add products
-    - remove products
-    - edit quatity
-    - caculation totally price
-    - note additional comments
-    - one click check out process
+# Project MVP - Design Decisions
 
-* PROGRESS Adding Jest for TTD test
-  - unable to test vuex with nuxt 3
+## Maintainability
+- [X] We prioritize productivity and time to market, so we plan to use Rails since the team is familiar with the technology even if it might be suboptimal.
+- [X]  automated tests only at login and cart checkout because of lack of time and money for the MVP
+## Scalability
+- [X] We expect from 500-2000 active users using our systems daily. This should be easily achievable with a modest deployment in Google Cloud and Kubernetes.
+## Performance
+- [X] We want to have < 1s response times on every page in our system
+## Fault-Tolerance
+## Security
+- [X] Our systems should restart automatically in case of a failure. We plan to use Docker and Kubernetes.
+## Architecture
+### NGINX
+### Frontend
+- [X] NUXT 2
+- [X] Domain Driven Design (DDD)
+### Backend
+- [X] WORDPPRESS
 
----
-# Frontend logs
+# Logs
+## Frontend
 * DONE user authentication
   CLOSED: [2021-12-21 Tue 02:54]
   - Note taken on [2021-12-19 Sun 04:15] \\
@@ -75,9 +67,21 @@
    - storage
 ** CANCELLED remove jquery for less buggy propose
    CLOSED: [2022-02-18 Fri 00:06]
+** DONE [#B] Cart Pages [1/1]
+  CLOSED: [2022-02-13 Sun 23:32]
+  - Note taken on [2022-02-06 Sun 21:02] \\
+    - build cart page as component
+  - [X] Cart Systems
+    - add products
+    - remove products
+    - edit quatity
+    - caculation totally price
+    - note additional comments
+    - one click check out process
+** PROGRESS Adding Jest for TTD test
+  - unable to test vuex with nuxt 3
 
-  ---
-  # Backend [ wordpress ]
+## Backend
   testing woocommerce
   Consumer key = ck_ca8dc3da04a18c79601e7b49c6e8e216da06cf82
   Consumer secret = cs_e8fdcde1886ae82182ef3fc7507b09ee20ede897
@@ -87,8 +91,6 @@
     - eghl as payment gateway
     - JWT authentication
 
-  ---
-   # Backend Logs
 * DONE add user error
   CLOSED: [2021-12-18 Sat 22:19]
   - Note taken on [2021-12-15 Wed 06:04] \\
@@ -103,3 +105,6 @@
     - woocommerce restapi dont have return catergory by slug, add on
     - catergory=catergory_id
     - catergory/teaset
+
+### Bugs
+[![Build Status](https://travis-ci.org/vitiral/artifact.svg?branch=master)](https://travis-ci.org/vitiral/artifact)
