@@ -41,15 +41,6 @@
             }
         },
         methods: {
-            // login() {
-            //     const Auth = new Authentication(this.username, this.password)
-            //     // import class create with failure return from it.
-            //     Auth.login().then((response) => {
-            //         console.log(response[1])
-            //     }).catch((error) => {
-            //         console.log(error)
-            //     })
-            // }
             async login() {
                 await this.$auth.loginWith("local", {
                     data: this.userData

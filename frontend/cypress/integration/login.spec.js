@@ -1,31 +1,25 @@
-Cypress.Commands.add('login', () => {
-    // Use as cy.login()
-    cy.server()
-    cy.fixture('userLogin').as('userLoginJson')
-    cy.fixture('userDetails').as('userDetailsJson')
-    cy.route({
-        method: 'POST',
-        url: '/api/auth/login',
-        response: '@userLoginJson'
-    }).as('postLogin')
-    cy.route({
-        method: 'GET',
-        url: '/api/user/details',
-        response: '@userDetailsJson'
+describe('Testing Login Access', () => {
+    const dummyUsername = 'wh-xadmin'
+    const dummyPassword = 'ASDjkl1234'
+
+    beforeEach(() => {
+        // Backend API Login testing, if this dont pass, error came from backend.
+        // cy.auth()
+        cy.login()
     })
-    cy.visit('/')
-    cy.window().should('have.property', 'nuxtApp') // is TRUE
-    cy.window().then(window => {
-        console.log('nuxtApp', window.nuxtApp) // Nuxt context visible in console
-        window.nuxtApp.$auth
-            .loginWith('local', {
-                data: {
-                    email: 'wh-xadmin',
-                    password: 'ASDjkl1234',
-                    remember_me: false
-                }
-            })
-            .then(response => response)
+
+    it('Should $auth user store loggedIn be equal true, length not be empty', () => {
+        cy.window().then(window => {
+            // cy.log(window.app.store.$auth.state.loggedIn)
+            expect(window.app.store.$auth.state.loggedIn).to.eq(true)
+        })
     })
-    cy.visit('/user') // Middleware denies this route. Consistent with being logged out.
+
+    it('Should able to get user data on account page', () => {
+        cy.visit('/my-account/user').then(() => {
+            cy.get('h1').should('contain', 'Hello Dear xadmin cheok');
+            cy.get('tr td').should('contain', 'wh-admin@gmail.com');
+        })
+    })
+
 })

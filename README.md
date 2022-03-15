@@ -32,6 +32,7 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
 - [X] Domain Driven Design (DDD)
 ### Backend
 - [X] WORDPPRESS
+- [X] WooCommerce
 
 # Logs
 ## Frontend
@@ -42,32 +43,32 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
   - Note taken on [2021-12-19 Sun 01:15] \\
     - @nuxt/auth successful get user data back from backend
   - auth module
-** DONE add logout and register page
+* DONE add logout and register page
    CLOSED: [2022-01-19 Wed 01:33]
    - Logout, Login, Register API arleay setup
-** FIXME login redirect back to home
+* FIXME login redirect back to home
    - Note taken on [2021-12-21 Tue 02:55] \\
      - /profile/user.vue : when login it some how it redirect and undirect sometime
-** DONE Forntend data to backend having Cross Orgin blocked
+* DONE Forntend data to backend having Cross Orgin blocked
    CLOSED: [2022-01-19 Wed 01:33]
    - Note taken on [2022-01-08 Sat 06:11] \\
      - assume it was wordpress problem, check functions.php to allow-control-origin-access
-** DONE add product by each catergory (teaset, cheongsam)
+* DONE add product by each catergory (teaset, cheongsam)
    CLOSED: [2022-01-22 Sat 02:30]
    - Note taken on [2022-01-19 Wed 05:05] \\
      - need to return same data from woocommerce, images, name, price, sku
     building Categorly using inversion component, to call back on each product categorly fliter.
-** DONE image slider fixing image loading and also switch other component use try and await
+* DONE image slider fixing image loading and also switch other component use try and await
    CLOSED: [2022-01-24 Mon 06:38]
-** DONE Login and Register component fix
+* DONE Login and Register component fix
    CLOSED: [2022-01-28 Fri 00:25]
-** BUG Image Slider using keep-alive but have load plugin problem
-** TODO test new import plugin to fix keep alive problem
-** build cart
+* BUG Image Slider using keep-alive but have load plugin problem
+* TODO test new import plugin to fix keep alive problem
+* build cart
    - storage
-** CANCELLED remove jquery for less buggy propose
+* CANCELLED remove jquery for less buggy propose
    CLOSED: [2022-02-18 Fri 00:06]
-** DONE [#B] Cart Pages [1/1]
+* DONE [#B] Cart Pages [1/1]
   CLOSED: [2022-02-13 Sun 23:32]
   - Note taken on [2022-02-06 Sun 21:02] \\
     - build cart page as component
@@ -78,8 +79,11 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
     - caculation totally price
     - note additional comments
     - one click check out process
-** PROGRESS Adding Jest for TTD test
-  - unable to test vuex with nuxt 3
+* CANCELLED Adding Jest for TTD test
+  CLOSED: [2022-03-15 Tue 06:05]
+    Reason cancelled:
+    repalce component test to cypress, for much more quicker and easy test.
+
 
 ## Backend
   testing woocommerce
@@ -108,3 +112,15 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
 
 ### Bugs
 [![Build Status](https://travis-ci.org/vitiral/artifact.svg?branch=master)](https://travis-ci.org/vitiral/artifact)
+  - Note taken on [2022-03-15 Tue 06:07] \\
+    - sometime login will redirect to logout page possible cookie issuse.
+
+## Cypress
+* User Login Testing
+  - object return from backend
+  - able to redirect to main page after succseful login
+* Cart Testing
+  - add item
+  - delete item
+  - sent order
+  - backend recevied order

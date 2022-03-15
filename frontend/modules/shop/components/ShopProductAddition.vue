@@ -6,7 +6,7 @@
                 <tbody>
                     <tr>
                         <td>Weight</td>
-                        <td>2 kg</td>
+                        <td>{{ product.weight }}</td>
                     </tr>
                     <tr>
                         <td>Color</td>
@@ -14,7 +14,15 @@
                     </tr>
                     <tr>
                         <td>Dimensions</td>
-                        <td> 8 x 6 x 2cm</td>
+                        <td>
+                            <p>
+                                {{ product.dimensions.length }} cm
+                                x
+                                {{ product.dimensions.width }} cm
+                                x
+                                {{ product.dimensions.height }} cm
+                            </p>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -24,7 +32,15 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        name: 'ShopProductAddition',
+        props: {
+            product: {
+                type: Array,
+                required: true
+            }
+        },
+    }
 </script>
 
 <style>

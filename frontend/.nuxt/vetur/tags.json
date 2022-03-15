@@ -1,4 +1,7 @@
 {
+  "HelloWorld": {
+    "description": "Auto imported from modules/my-account/components/HelloWorld.vue"
+  },
   "MyAccountLogin": {
     "description": "Auto imported from modules/my-account/components/MyAccountLogin.vue"
   },
@@ -35,16 +38,16 @@
   "CartDiscountCode": {
     "description": "Auto imported from modules/cart/components/CartDiscountCode.vue"
   },
-  "Footer": {
-    "description": "Auto imported from components/Footer.vue"
+  "HelloWorld2": {
+    "description": "Auto imported from components/HelloWorld2.vue"
   },
   "MagaMenu": {
     "description": "Auto imported from components/MagaMenu.vue"
   },
-  "NuxtLogo": {
-    "description": "Auto imported from components/NuxtLogo.vue"
+  "Footer": {
+    "description": "Auto imported from components/Footer/Footer.vue"
   },
   "HomeImageSlider": {
-    "description": "Auto imported from components/Home/ImageSlider.vue"
+    "description": "Auto imported from components/Home/HomeImageSlider.vue"
   }
 }

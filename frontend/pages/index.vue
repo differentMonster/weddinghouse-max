@@ -1,16 +1,15 @@
 <template>
     <div>
         <HomeImageSlider />
-        <h1 class="wish">wish</h1>
     </div>
 </template>
 
 <script>
-    import ImageSlider from "@/components/Home/HomeImageSlider.vue";
+    import HomeImageSlider from "@/components/Home/HomeImageSlider.vue";
 
     export default {
         components: {
-            ImageSlider,
+            HomeImageSlider,
         },
         data() {
             return {};
@@ -32,8 +31,5 @@
     };
 </script>
 
-<style lang="scss">
-    .wish {
-        color: $base-colorx;
-    }
+<style>
 </style>

@@ -5,13 +5,13 @@
                 <!-- start Account Content - Register -->
                 <div id="tab-2">
                     <div class="form-group">
-                        <input class="form-control" v-model="username" type="text" placeholder="Username">
+                        <input class="form-control" id="register__tab--username" v-model="username" type="text" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" v-model="email" type="text" placeholder="Email">
+                        <input class="form-control" id="register__tab--email" v-model="email" type="text" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" v-model="password" type="text" placeholder="Password">
+                        <input class="form-control" id="register__tab--password" v-model="password" type="text" placeholder="Password">
                     </div>
                     <div class="ps-form__desc">
                         <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
@@ -31,6 +31,7 @@
         WooCommerceCustomers
     } from '@/modules/my-account/plugins/classWooCommerceCustomers.js'
     export default {
+        name: 'register',
         data() {
             return {
                 email: '',
@@ -44,6 +45,7 @@
                 // import class create with failure return from it.
                 WooComCustomers.create().then((response) => {
                     console.log(response[1])
+                    console.log(response[0])
                 }).catch((error) => {
                     console.log(error)
                 })

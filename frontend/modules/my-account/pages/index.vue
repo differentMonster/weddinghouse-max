@@ -19,9 +19,11 @@
 
                     <div class="ps-form--auth">
                         <ul class="ps-tab-list">
-                            <li v-for="tab in tabs" :key="tab"><a @click="selected = tab">
+                            <li class="ps-tab-li" v-for="tab in tabs" :key="tab">
+                                <a :id="`toggle__${tab}`" @click="selected = tab" :class="{ tabs__active : selected == tab }">
                                     {{tab}}
-                                </a></li>
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
@@ -68,3 +70,9 @@
         methods: {}
     }
 </script>
+
+<style lang="scss">
+    .ps-form--auth .ps-tab-list li .tabs__active {
+        color: black;
+    }
+</style>

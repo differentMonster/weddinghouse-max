@@ -77,7 +77,7 @@
                                     </li>
                                 </div>
                                 <div v-else>
-                                    <li class="nav-item" @click="logout">
+                                    <li class="nav-item" id="logout" @click="logout">
                                         <nuxt-link class="nav-link active" aria-current="page" to="#">Logout</nuxt-link>
                                     </li>
                                 </div>

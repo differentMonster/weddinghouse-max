@@ -40,8 +40,18 @@
                 <div class="ps-product__buynow"><a class="ps-btn ps-btn--black ps-btn--fullwidth" href="#">Buy Now</a></div>
             </div>
             <div class="ps-product__specification">
-                <p><strong>CATEGORY:</strong><a href="shop-4-column.html">Women</a><a href="shop-4-column.html"> Top</a><a href="shop-4-column.html"> Accessories</a><a href="shop-4-column.html"> Jewellery</a></p>
-                <p><strong>Tags:</strong><a href="shop-4-column.html">clothing</a><a href="shop-4-column.html"> t-shirt</a><a href="shop-4-column.html"> woman</a></p>
+                <p>
+                    <strong>CATEGORY:</strong>
+                    <nuxt-link :to="`/shop/${categorie.slug}`" v-for="categorie in product.categories" :key="categorie.id">
+                        {{ categorie.slug }}
+                    </nuxt-link>
+                </p>
+                <p>
+                    <strong>TAGS:</strong>
+                    <nuxt-link :to="`/shop/${tag.slug}`" v-for="tag in product.tags" :key="tag.id">
+                        {{ tag.slug }}
+                    </nuxt-link>
+                </p>
             </div>
             <div class="ps-product__sharing"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-pinterest"></i></a></div>
 

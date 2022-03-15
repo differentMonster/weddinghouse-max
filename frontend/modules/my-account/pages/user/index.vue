@@ -1,7 +1,6 @@
 <template>
     <div class="user__container">
-        <h1>Hello Dear</h1>
-        <b style="color:red">{{ user.name }}</b> you're in profile page
+        <h1>Hello Dear {{ user.name }}</h1> you're in profile page
         <hr />
         <br />
         <br />

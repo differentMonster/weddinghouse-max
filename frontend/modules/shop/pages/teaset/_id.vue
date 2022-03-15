@@ -14,15 +14,17 @@
 
                             <!-- start Tab Option -->
                             <ul class="ps-tab-list">
-                                <li v-for="tab in tabs" :key="tab"><a @click="selected = tab">
+                                <li v-for="tab in tabs" :key="tab">
+                                    <a @click="selected = tab" :class="{ tabs__active : selected == tab }">
                                         {{tab}}
-                                    </a></li>
+                                    </a>
+                                </li>
                             </ul>
                             <!-- end Tab Option -->
 
                             <!-- start Tab Content -->
                             <div class="ps-tabs">
-                                <component :is="selected"></component>
+                                <component :is="selected" :product="product"></component>
                             </div>
                             <!-- end Tab Content -->
                         </div>
@@ -96,5 +98,9 @@
     .product--images img {
         width: 500px;
         height: 670px;
+    }
+
+    .container .ps-tab-list li .tabs__active {
+        color: black;
     }
 </style>

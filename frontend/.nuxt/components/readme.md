@@ -6,6 +6,7 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<HelloWorld>` | `<hello-world>` (modules/my-account/components/HelloWorld.vue)
 - `<MyAccountLogin>` | `<my-account-login>` (modules/my-account/components/MyAccountLogin.vue)
 - `<MyAccountRegister>` | `<my-account-register>` (modules/my-account/components/MyAccountRegister.vue)
 - `<ShopProductAddition>` | `<shop-product-addition>` (modules/shop/components/ShopProductAddition.vue)
@@ -18,7 +19,7 @@ You can directly use them in pages and other components without the need to impo
 - `<CartCard>` | `<cart-card>` (modules/cart/components/CartCard.vue)
 - `<CartCheckOut>` | `<cart-check-out>` (modules/cart/components/CartCheckOut.vue)
 - `<CartDiscountCode>` | `<cart-discount-code>` (modules/cart/components/CartDiscountCode.vue)
-- `<Footer>` | `<footer>` (components/Footer.vue)
+- `<HelloWorld2>` | `<hello-world2>` (components/HelloWorld2.vue)
 - `<MagaMenu>` | `<maga-menu>` (components/MagaMenu.vue)
-- `<NuxtLogo>` | `<nuxt-logo>` (components/NuxtLogo.vue)
-- `<HomeImageSlider>` | `<home-image-slider>` (components/Home/ImageSlider.vue)
+- `<Footer>` | `<footer>` (components/Footer/Footer.vue)
+- `<HomeImageSlider>` | `<home-image-slider>` (components/Home/HomeImageSlider.vue)

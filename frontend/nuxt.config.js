@@ -48,7 +48,7 @@ export default {
         /* **supro font-awesome */
         '@/node_modules/font-awesome/css/font-awesome.min.css',
         /* **supro bootstrap */
-        '@/node_modules/bootstrap//dist/css/bootstrap.min.css',
+        '@/node_modules/bootstrap/dist/css/bootstrap.min.css',
         /* **slick */
         '@/static/slick/slick/slick.css',
         /* **owl-carousel*/
@@ -78,7 +78,7 @@ export default {
         {
             src: '@/plugins/cypress.js',
             mode: 'client'
-        },
+        }
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -94,9 +94,10 @@ export default {
         ['@nuxtjs/bootstrap-vue', {
             css: false
         }],
-        '~/modules/my-account',
-        '~/modules/shop',
-        '~/modules/cart',
+        '@nuxt/image',
+        '@/modules/my-account',
+        '@/modules/shop',
+        '@/modules/cart',
         '@nuxtjs/style-resources',
     ],
     axios: {
@@ -139,7 +140,8 @@ export default {
     },
     styleResources: {
         scss: [
-            '@/assets/scss/variables.scss',
+            '@/assets/scss/main.scss',
+            '@/assets/scss/abstracts/*.scss',
         ]
     },
     // Build Configuration: https://go.nuxtjs.dev/config-build
