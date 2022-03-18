@@ -46,8 +46,10 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
 * DONE add logout and register page
    CLOSED: [2022-01-19 Wed 01:33]
    - Logout, Login, Register API arleay setup
-* FIXME login redirect back to home
+* DONE login redirect back to home
+  CLOSED: [2022-03-17 Thu 02:17]
    - Note taken on [2021-12-21 Tue 02:55] \\
+     - might be cookie and auth setup problem, so far noting happen again after change logout = '/login'
      - /profile/user.vue : when login it some how it redirect and undirect sometime
 * DONE Forntend data to backend having Cross Orgin blocked
    CLOSED: [2022-01-19 Wed 01:33]
@@ -116,11 +118,12 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
     - sometime login will redirect to logout page possible cookie issuse.
 
 ## Cypress
-* User Login Testing
-  - object return from backend
-  - able to redirect to main page after succseful login
-* Cart Testing
-  - add item
-  - delete item
+* User Login Testing [2/2]
+  - [X] object return from backend
+  - [X] able to redirect to main page after succseful login
+* Cart Testing [1/1]
+  - [X] add item
+    - if directivly visit cart page in url, store item gone
+  - [ ] delete item
   - sent order
   - backend recevied order

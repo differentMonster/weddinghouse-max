@@ -68,23 +68,12 @@
                                 <li><a href="blog-detail.html">Blog Detail</a></li>
                             </ul>
                         </li>
-                        <li>
 
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <div v-if="!loggedIn">
-                                    <li class="nav-item">
-                                        <nuxt-link class="nav-link active" aria-current="page" to="/my-account">Login</nuxt-link>
-                                    </li>
-                                </div>
-                                <div v-else>
-                                    <li class="nav-item" id="logout" @click="logout">
-                                        <nuxt-link class="nav-link active" aria-current="page" to="#">Logout</nuxt-link>
-                                    </li>
-                                </div>
-                            </ul>
-
-
+                        <li class="navbar__auth">
+                            <nuxt-link v-if="!loggedIn" id="navbar__login" to="/signin">Login</nuxt-link>
+                            <nuxt-link v-else id="navbar__logout" to="" @click.native="logout()">Logout</nuxt-link>
                         </li>
+
                     </ul>
                 </div>
                 <div class="header__container">
@@ -99,7 +88,7 @@
                             <nuxt-link class="header__user" to=""><i class="icon-user"></i></nuxt-link>
                         </div>
                         <div v-else>
-                            <nuxt-link class="header__user" to="/my-account/user"><i class="icon-user-plus"></i></nuxt-link>
+                            <nuxt-link class="header__user" to="/my-account"><i class="icon-user-plus"></i></nuxt-link>
                         </div>
                         <nuxt-link class="header__cart" to="/cart"><i class="icon-cart"></i><span>{{ getCart.length }}</span></nuxt-link>
                         <a class="header__menu-toggle" href="#navigation-mobile"><i class="icon-menu"></i></a>
@@ -135,7 +124,7 @@
             // this method will logout the user and make token to false on the local storage of the user browser
             async logout() {
                 await this.$auth.logout();
-                this.$router.push('/my-account')
+                this.$router.push('/signin')
             }
         },
         computed: {
@@ -147,4 +136,5 @@
     };
 </script>
 
-<style></style>
+<style>
+</style>

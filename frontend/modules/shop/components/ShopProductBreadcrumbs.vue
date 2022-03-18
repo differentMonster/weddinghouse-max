@@ -23,13 +23,9 @@
         name: 'ShopProductBreadcrumbs',
         props: {
             product: {
-                type: Array,
+                type: Object,
                 required: true
             }
-            // productCategories: {
-            //     type: String,
-            //     required: true
-            // }
         }
     }
 </script>

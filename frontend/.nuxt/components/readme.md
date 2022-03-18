@@ -6,9 +6,7 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
-- `<HelloWorld>` | `<hello-world>` (modules/my-account/components/HelloWorld.vue)
-- `<MyAccountLogin>` | `<my-account-login>` (modules/my-account/components/MyAccountLogin.vue)
-- `<MyAccountRegister>` | `<my-account-register>` (modules/my-account/components/MyAccountRegister.vue)
+- `<ShopHeader>` | `<shop-header>` (modules/shop/components/ShopHeader.vue)
 - `<ShopProductAddition>` | `<shop-product-addition>` (modules/shop/components/ShopProductAddition.vue)
 - `<ShopProductBreadcrumbs>` | `<shop-product-breadcrumbs>` (modules/shop/components/ShopProductBreadcrumbs.vue)
 - `<ShopProductCard>` | `<shop-product-card>` (modules/shop/components/ShopProductCard.vue)
@@ -19,7 +17,6 @@ You can directly use them in pages and other components without the need to impo
 - `<CartCard>` | `<cart-card>` (modules/cart/components/CartCard.vue)
 - `<CartCheckOut>` | `<cart-check-out>` (modules/cart/components/CartCheckOut.vue)
 - `<CartDiscountCode>` | `<cart-discount-code>` (modules/cart/components/CartDiscountCode.vue)
-- `<HelloWorld2>` | `<hello-world2>` (components/HelloWorld2.vue)
 - `<MagaMenu>` | `<maga-menu>` (components/MagaMenu.vue)
 - `<Footer>` | `<footer>` (components/Footer/Footer.vue)
 - `<HomeImageSlider>` | `<home-image-slider>` (components/Home/HomeImageSlider.vue)

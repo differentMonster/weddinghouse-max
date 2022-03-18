@@ -16,14 +16,14 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_03e91954 from 'nuxt_plugin_plugin_03e91954' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_storeregisterCartStore48379303_444649e8 from 'nuxt_plugin_storeregisterCartStore48379303_444649e8' // Source: ./store.registerCartStore.48379303.js (mode: 'all')
 import nuxt_plugin_storeregisterShopStore8893b17a_25286d48 from 'nuxt_plugin_storeregisterShopStore8893b17a_25286d48' // Source: ./store.registerShopStore.8893b17a.js (mode: 'all')
-import nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8 from 'nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8' // Source: ./store.registerMyAccountStore.50622214.js (mode: 'all')
+import nuxt_plugin_storeregisterUserStore4457a523_a3d29ca2 from 'nuxt_plugin_storeregisterUserStore4457a523_a3d29ca2' // Source: ./store.registerUserStore.4457a523.js (mode: 'all')
 import nuxt_plugin_image_9ae2c136 from 'nuxt_plugin_image_9ae2c136' // Source: ./image.js (mode: 'all')
 import nuxt_plugin_bootstrapvue_2ab47699 from 'nuxt_plugin_bootstrapvue_2ab47699' // Source: ./bootstrap-vue.js (mode: 'all')
 import nuxt_plugin_axios_70f0bb2c from 'nuxt_plugin_axios_70f0bb2c' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_classWooCommerceOrigin_7443d27a from 'nuxt_plugin_classWooCommerceOrigin_7443d27a' // Source: ../plugins/classWooCommerceOrigin.js (mode: 'all')
-import nuxt_plugin_classWooCommerceProducts_298b731e from 'nuxt_plugin_classWooCommerceProducts_298b731e' // Source: ../modules/shop/plugins/classWooCommerceProducts.js (mode: 'all')
-import nuxt_plugin_classWooCommerceCustomers_7ac03d41 from 'nuxt_plugin_classWooCommerceCustomers_7ac03d41' // Source: ../modules/my-account/plugins/classWooCommerceCustomers.js (mode: 'all')
-import nuxt_plugin_classWooCommerceCart_6871558c from 'nuxt_plugin_classWooCommerceCart_6871558c' // Source: ../modules/cart/plugins/classWooCommerceCart.js (mode: 'all')
+import nuxt_plugin_woocommerce_a06cd18e from 'nuxt_plugin_woocommerce_a06cd18e' // Source: ../plugins/woocommerce.js (mode: 'all')
+import nuxt_plugin_getShop_a7de41f4 from 'nuxt_plugin_getShop_a7de41f4' // Source: ../modules/shop/plugins/getShop.js (mode: 'all')
+import nuxt_plugin_getUser_54fa21c8 from 'nuxt_plugin_getUser_54fa21c8' // Source: ../modules/user/plugins/getUser.js (mode: 'all')
+import nuxt_plugin_getCart_75103b9c from 'nuxt_plugin_getCart_75103b9c' // Source: ../modules/cart/plugins/getCart.js (mode: 'all')
 import nuxt_plugin_cypress_9c53d384 from 'nuxt_plugin_cypress_9c53d384' // Source: ../plugins/cypress.js (mode: 'client')
 import nuxt_plugin_auth_f3eddcf4 from 'nuxt_plugin_auth_f3eddcf4' // Source: ./auth.js (mode: 'all')
 
@@ -234,8 +234,8 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_storeregisterShopStore8893b17a_25286d48(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8 === 'function') {
-    await nuxt_plugin_storeregisterMyAccountStore50622214_672c17a8(app.context, inject)
+  if (typeof nuxt_plugin_storeregisterUserStore4457a523_a3d29ca2 === 'function') {
+    await nuxt_plugin_storeregisterUserStore4457a523_a3d29ca2(app.context, inject)
   }
 
   if (typeof nuxt_plugin_image_9ae2c136 === 'function') {
@@ -250,20 +250,20 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_axios_70f0bb2c(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_classWooCommerceOrigin_7443d27a === 'function') {
-    await nuxt_plugin_classWooCommerceOrigin_7443d27a(app.context, inject)
+  if (typeof nuxt_plugin_woocommerce_a06cd18e === 'function') {
+    await nuxt_plugin_woocommerce_a06cd18e(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_classWooCommerceProducts_298b731e === 'function') {
-    await nuxt_plugin_classWooCommerceProducts_298b731e(app.context, inject)
+  if (typeof nuxt_plugin_getShop_a7de41f4 === 'function') {
+    await nuxt_plugin_getShop_a7de41f4(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_classWooCommerceCustomers_7ac03d41 === 'function') {
-    await nuxt_plugin_classWooCommerceCustomers_7ac03d41(app.context, inject)
+  if (typeof nuxt_plugin_getUser_54fa21c8 === 'function') {
+    await nuxt_plugin_getUser_54fa21c8(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_classWooCommerceCart_6871558c === 'function') {
-    await nuxt_plugin_classWooCommerceCart_6871558c(app.context, inject)
+  if (typeof nuxt_plugin_getCart_75103b9c === 'function') {
+    await nuxt_plugin_getCart_75103b9c(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_cypress_9c53d384 === 'function') {

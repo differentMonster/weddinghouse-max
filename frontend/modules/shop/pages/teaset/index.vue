@@ -17,8 +17,8 @@
 
  <script>
      import {
-         WooCommerceProducts
-     } from "@/modules/shop/plugins/classWooCommerceProducts.js";
+         Shop
+     } from "@/modules/shop/plugins/getShop.js";
      import ShopProductCard from "@/modules/shop/components/ShopProductCard.vue"
 
      export default {
@@ -33,11 +33,11 @@
          },
          async fetch() {
              try {
-                 const WooComProducts = new WooCommerceProducts()
-                 const getProductsByCategory = await WooComProducts.getProductsByCategory(this.categories)
-                 this.products = getProductsByCategory[0]
+                 const setShop = new Shop()
+                 const getShopProductsByCategory = await setShop.getProductsByCategory(this.categories)
+                 this.products = getShopProductsByCategory[0]
                  console.log(this.products)
-                 console.log(getProductsByCategory[1])
+                 console.log(getShopProductsByCategory[1])
              } catch (error) {
                  console.log(error)
              }

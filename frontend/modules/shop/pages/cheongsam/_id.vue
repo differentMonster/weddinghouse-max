@@ -42,8 +42,8 @@
 
 <script>
     import {
-        WooCommerceProducts
-    } from "@/modules/shop/plugins/classWooCommerceProducts.js";
+        Shop
+    } from "@/modules/shop/plugins/getShop.js";
     import ShopProductRelated from "@/modules/shop/components/ShopProductRelated.vue"
     import ShopProductBreadcrumbs from "@/modules/shop/components/ShopProductBreadcrumbs.vue"
     import ShopProductHeader from "@/modules/shop/components/ShopProductHeader.vue"
@@ -63,7 +63,7 @@
         },
         data() {
             return {
-                product: [],
+                product: {},
                 id: this.$route.params.id,
                 tabs: ["Description", "Addition", "Review"],
                 selected: "Description"
@@ -71,11 +71,11 @@
         },
         methods: {
             getProduct() {
-                const WooComProducts = new WooCommerceProducts()
-                WooComProducts.getProduct(this.id).then((response) => {
+                const setShop = new Shop()
+                setShop.getProduct(this.id).then((response) => {
                     this.product = response[0]
-                    console.log(this.product)
-                    console.log(response[1])
+                    // console.log(this.product)
+                    // console.log(response[1])
                 }).catch((error) => {
                     console.log(error)
                 })

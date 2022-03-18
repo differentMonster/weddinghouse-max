@@ -64,10 +64,7 @@ Cypress.Commands.add('auth', () => {
 
 
 Cypress.Commands.add('login', () => {
-    cy.visit('my-account')
-    cy.get('.ps-tab-li #toggle__Login').click({
-        force: true
-    })
+    cy.visit('/signin')
     cy.get('.form-group #username').type(dummyUsername)
     cy.get('.form-group #password').type(dummyPassword)
     cy.get('button').contains('Login').click().wait(2000).then(() => {

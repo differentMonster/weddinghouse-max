@@ -36,16 +36,22 @@
     "_name": "_4f2d0b99"
   },
   {
-    "name": "user",
-    "path": "/my-account/user",
-    "component": "/home/monster/app/weddinghouse-max/frontend/modules/my-account/pages/user/index.vue",
-    "_name": "_764ae541"
-  },
-  {
     "name": "my-account",
     "path": "/my-account",
-    "component": "/home/monster/app/weddinghouse-max/frontend/modules/my-account/pages/index.vue",
-    "_name": "_2d56a96f"
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/user/pages/my-account.vue",
+    "_name": "_b3dde3c0"
+  },
+  {
+    "name": "signup",
+    "path": "/signup",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/user/pages/signup.vue",
+    "_name": "_4885afa8"
+  },
+  {
+    "name": "signin",
+    "path": "/signin",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/user/pages/signin.vue",
+    "_name": "_71b25c94"
   },
   {
     "name": "about-us",

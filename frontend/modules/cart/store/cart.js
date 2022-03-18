@@ -1,18 +1,18 @@
 import {
     WooComRestApi
-} from "~/plugins/classWooCommerceOrigin.js";
+} from "~/plugins/woocommerce.js";
 
 export const namespaced = true
 
 export const state = () => ({
-    cartItem: [],
+    cartItems: [],
 })
 
 export const getters = {
-    getCart: (state) => state.cartItem,
+    getCart: (state) => state.cartItems,
     getCartTotal: (state) =>
-        state.cartItem.length < 1 ?
-        '0' : state.cartItem.map((el) => el.price * el.quantity).reduce((a, b) => a + b),
+        state.cartItems.length < 1 ?
+        '0' : state.cartItems.map((el) => el.price * el.quantity).reduce((a, b) => a + b),
 }
 
 export const actions = {
@@ -44,10 +44,10 @@ export const actions = {
 }
 
 export const mutations = {
-    setCartItem: (state, item) => state.cartItem.push(item),
+    setCartItem: (state, item) => state.cartItems.push(item),
     removeCartItem: (state, id) =>
-        state.cartItem.splice(
-            state.cartItem.findIndex((el) => el.id === id),
+        state.cartItems.splice(
+            state.cartItems.findIndex((el) => el.id === id),
             1
         ),
 }

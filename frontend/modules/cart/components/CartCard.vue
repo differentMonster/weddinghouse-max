@@ -37,7 +37,7 @@
                     <td>
                         <p><strong>{{item.price}}</strong></p>
                     </td>
-                    <td><a class="ps-icon" @click="deleteCartItem()"><i class="icon-cross"></i></a></td>
+                    <td><a id="remove-cart-item" class="ps-icon" @click="deleteCartItem()"><i class="icon-cross"></i></a></td>
                 </tr>
             </tbody>
         </table>

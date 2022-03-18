@@ -35,8 +35,8 @@
     import CartDiscountCode from "@/modules/cart/components/CartDiscountCode.vue";
 
     import {
-        WooCommerceCustomers
-    } from "@/modules/my-account/plugins/classWooCommerceCustomers.js"
+        User
+    } from "@/modules/user/plugins/getUser.js"
 
 
     import {
@@ -63,10 +63,10 @@
         },
         async fetch() {
             try {
-                const WooComCustomers = new WooCommerceCustomers()
-                const getInfo = await WooComCustomers.getInfo(this.user.id)
-                this.cartUser = getInfo[0]
-                console.log(getInfo[1])
+                const setUser = new User()
+                const getUserInfo = await setUser.info(this.user.id)
+                this.cartUser = getUserInfo[0]
+                console.log(getUserInfo[1])
             } catch (error) {
                 console.log(error)
             }

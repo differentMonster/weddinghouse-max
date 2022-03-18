@@ -71,10 +71,10 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
-        '@/plugins/classWooCommerceOrigin.js',
-        '@/modules/shop/plugins/classWooCommerceProducts.js',
-        '@/modules/my-account/plugins/classWooCommerceCustomers.js',
-        '@/modules/cart/plugins/classWooCommerceCart.js',
+        '@/plugins/woocommerce.js',
+        '@/modules/shop/plugins/getShop.js',
+        '@/modules/user/plugins/getUser.js',
+        '@/modules/cart/plugins/getCart.js',
         {
             src: '@/plugins/cypress.js',
             mode: 'client'
@@ -95,7 +95,7 @@ export default {
             css: false
         }],
         '@nuxt/image',
-        '@/modules/my-account',
+        '@/modules/user',
         '@/modules/shop',
         '@/modules/cart',
         '@nuxtjs/style-resources',
@@ -112,9 +112,10 @@ export default {
                     required: true,
                     type: 'Bearer'
                 },
+                resetOnError: true, // kick the user if any error happnes w/ the auth
                 user: {
                     property: false,
-                    autoFetch: false
+                    autoFetch: false, // no need to fetch the user, will be done in gql
                 },
                 endpoints: {
                     login: {
@@ -131,8 +132,9 @@ export default {
         },
         redirect: {
             home: '/',
-            login: '/my-account',
-            logout: '/auth/logout'
+            login: '/signin',
+            logout: '/signin',
+            callback: false, // not used here in our case
         }
     },
     router: {

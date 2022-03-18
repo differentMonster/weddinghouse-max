@@ -1,12 +1,6 @@
 {
-  "HelloWorld": {
-    "description": "Auto imported from modules/my-account/components/HelloWorld.vue"
-  },
-  "MyAccountLogin": {
-    "description": "Auto imported from modules/my-account/components/MyAccountLogin.vue"
-  },
-  "MyAccountRegister": {
-    "description": "Auto imported from modules/my-account/components/MyAccountRegister.vue"
+  "ShopHeader": {
+    "description": "Auto imported from modules/shop/components/ShopHeader.vue"
   },
   "ShopProductAddition": {
     "description": "Auto imported from modules/shop/components/ShopProductAddition.vue"
@@ -37,9 +31,6 @@
   },
   "CartDiscountCode": {
     "description": "Auto imported from modules/cart/components/CartDiscountCode.vue"
-  },
-  "HelloWorld2": {
-    "description": "Auto imported from components/HelloWorld2.vue"
   },
   "MagaMenu": {
     "description": "Auto imported from components/MagaMenu.vue"

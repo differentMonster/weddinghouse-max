@@ -65,7 +65,7 @@
         name: 'ShopProductHeader',
         props: {
             product: {
-                type: Array,
+                type: Object,
                 required: true
             }
         },
@@ -75,7 +75,7 @@
                     product_id: this.product.id,
                     name: this.product.name,
                     price: this.product.price,
-                    quantity: 2
+                    quantity: 1
                 }
                 this.$store.dispatch("cart/addItemToCart", newProduct)
             }

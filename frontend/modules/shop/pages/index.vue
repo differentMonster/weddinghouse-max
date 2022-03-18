@@ -1,13 +1,15 @@
 <template>
     <!-- start Shop  -->
     <div class="ps-page">
-        <div class="ps-shop ps-shop--sidebar reverse banner">
-            <div class="container">
-                <div class="ps-shop__container">
+        <div class="ps-shop ps-shop--fullwidth">
+            <div class="container-fluid">
 
-                    <ShopProductCard :products="products"></ShopProductCard>
+                <ShopHeader></ShopHeader>
 
-                </div>
+
+                <ShopProductCard :products="products"></ShopProductCard>
+
+                <div class="ps-shop__footer"><a class="ps-link--under" href="#">Discover more</a></div>
             </div>
         </div>
     </div>
@@ -16,9 +18,10 @@
 
 <script>
     import {
-        WooCommerceProducts
-    } from "@/modules/shop/plugins/classWooCommerceProducts.js";
+        Shop
+    } from "@/modules/shop/plugins/getShop.js";
     import ShopProductCard from "@/modules/shop/components/ShopProductCard.vue"
+    import ShopHeader from "@/modules/shop/components/ShopHeader.vue"
 
     export default {
         data() {
@@ -28,15 +31,16 @@
             }
         },
         component: {
-            ShopProductCard
+            ShopHeader,
+            ShopProductCard,
         },
         async fetch() {
             try {
-                const WooComProducts = new WooCommerceProducts()
-                const getProducts = await WooComProducts.getProducts()
-                this.products = getProducts[0]
+                const setShop = new Shop()
+                const getShopProducts = await setShop.getProducts()
+                this.products = getShopProducts[0]
                 console.log(this.products)
-                console.log(getProducts[1])
+                console.log(getShopProducts[1])
             } catch (error) {
                 console.log(error)
             }
@@ -47,15 +51,19 @@
 
 
 <style>
-    .product_container {
-        width: 100%;
-        text-align: center;
-        position: relative;
-        margin-top: 100px;
-    }
+    /* .ps-shop__container {
 
-    .product--images img {
-        width: 500px;
-        height: 670px;
-    }
+     } */
+
+    /* .product_container {
+     width: 100%;
+     text-align: center;
+     position: relative;
+     margin-top: 100px;
+     }
+
+     .product--images img {
+     width: 500px;
+     height: 670px;
+     } */
 </style>
