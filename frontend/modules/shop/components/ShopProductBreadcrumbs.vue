@@ -5,7 +5,7 @@
             <li>
                 <nuxt-link to="/">Home</nuxt-link>
             </li>
-            <li v-for="item in product.categories" :key="item.id">
+            <li v-for="(item, index) in product.categories" :key="index">
                 <nuxt-link :to="`/shop/${item.slug}`">{{ item.slug }}</nuxt-link>
             </li>
             <li>{{product.name}}</li>

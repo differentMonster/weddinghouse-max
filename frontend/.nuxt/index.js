@@ -25,6 +25,7 @@ import nuxt_plugin_getShop_a7de41f4 from 'nuxt_plugin_getShop_a7de41f4' // Sourc
 import nuxt_plugin_getUser_54fa21c8 from 'nuxt_plugin_getUser_54fa21c8' // Source: ../modules/user/plugins/getUser.js (mode: 'all')
 import nuxt_plugin_getCart_75103b9c from 'nuxt_plugin_getCart_75103b9c' // Source: ../modules/cart/plugins/getCart.js (mode: 'all')
 import nuxt_plugin_cypress_9c53d384 from 'nuxt_plugin_cypress_9c53d384' // Source: ../plugins/cypress.js (mode: 'client')
+import nuxt_plugin_vuexpersist_61a29aad from 'nuxt_plugin_vuexpersist_61a29aad' // Source: ../plugins/vuex-persist (mode: 'client')
 import nuxt_plugin_auth_f3eddcf4 from 'nuxt_plugin_auth_f3eddcf4' // Source: ./auth.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -65,7 +66,7 @@ Object.defineProperty(Vue.prototype, '$nuxt', {
 
 Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n-head-ssr","tagIDKeyName":"hid"})
 
-const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
+const defaultTransition = {"name":"fade","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 const originalRegisterModule = Vuex.Store.prototype.registerModule
 
@@ -268,6 +269,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_cypress_9c53d384 === 'function') {
     await nuxt_plugin_cypress_9c53d384(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vuexpersist_61a29aad === 'function') {
+    await nuxt_plugin_vuexpersist_61a29aad(app.context, inject)
   }
 
   if (typeof nuxt_plugin_auth_f3eddcf4 === 'function') {

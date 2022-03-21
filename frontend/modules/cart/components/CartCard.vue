@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, i) in getCart" :key="item.id">
+                <tr v-for="(item, index) in getCart" :key="'cart-' + index">
                     <td>
                         <div class="ps-product--sidebar">
                             <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="" alt=""></div>
@@ -37,7 +37,7 @@
                     <td>
                         <p><strong>{{item.price}}</strong></p>
                     </td>
-                    <td><a id="remove-cart-item" class="ps-icon" @click="deleteCartItem()"><i class="icon-cross"></i></a></td>
+                    <td><a id="remove-cart-item" class="ps-icon" @click="deleteCartItem(item.product_id)"><i class="icon-cross"></i></a></td>
                 </tr>
             </tbody>
         </table>
@@ -59,9 +59,6 @@
         },
         methods: {
             ...mapActions('cart', ['deleteCartItem'])
-        },
-        mounted() {
-            console.log(this.getCart)
         }
     }
 </script>

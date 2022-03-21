@@ -10,16 +10,22 @@ export const state = () => ({
 
 export const getters = {
     getCart: (state) => state.cartItems,
+    getCartLength: (state) => state.cartItems.length,
     getCartTotal: (state) =>
         state.cartItems.length < 1 ?
         '0' : state.cartItems.map((el) => el.price * el.quantity).reduce((a, b) => a + b),
 }
 
 export const actions = {
-    async addItemToCart({
+    async addTesting({
+        commit
+    }, item) {
+        await commit('addTesting', item)
+    },
+    async addToCart({
         commit
     }, cartItem) {
-        await commit('setCartItem', cartItem)
+        await commit('addItemToCart', cartItem)
     },
     async deleteCartItem({
         commit
@@ -43,13 +49,33 @@ export const actions = {
     }
 }
 
+// searching must use product_id to match up woocommerce needs
 export const mutations = {
-    setCartItem: (state, item) => state.cartItems.push(item),
-    removeCartItem: (state, id) =>
-        state.cartItems.splice(
-            state.cartItems.findIndex((el) => el.id === id),
-            1
-        ),
+    setTesting(state, item) {
+        console.log('testing store')
+    },
+    addItemToCart(state, item) {
+        let checkItemId = state.cartItems.find(product => product.product_id === item.product_id)
+        if (checkItemId) {
+            checkItemId.quantity++
+        } else {
+            state.cartItems.push({
+                ...item,
+                quantity: 1
+            })
+        }
+
+    },
+    removeCartItem(state, id) {
+        let checkItemId = state.cartItems.find((product) => product.product_id === id)
+
+        if (checkItemId.quantity > 1) {
+            checkItemId.quantity--
+        } else {
+            const CheckItemIndex = state.cartItems.findIndex(product => product.product_id === id)
+            state.cartItems.splice(CheckItemIndex, 1)
+        }
+    }
 }
 
 export default {

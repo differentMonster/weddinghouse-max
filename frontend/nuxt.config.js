@@ -68,7 +68,7 @@ export default {
         /* **wedding-house css */
         '@/static/wedding-house/css/home-default.css',
     ],
-
+    pageTransition: "fade",
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         '@/plugins/woocommerce.js',
@@ -78,6 +78,10 @@ export default {
         {
             src: '@/plugins/cypress.js',
             mode: 'client'
+        },
+        {
+            src: '@/plugins/vuex-persist',
+            ssr: false
         }
     ],
 

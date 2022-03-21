@@ -41,7 +41,8 @@
 
     import {
         mapState,
-        mapGetters
+        mapGetters,
+        mapActions
     } from "vuex";
 
     export default {
@@ -88,7 +89,7 @@
                     }]
                 };
                 this.$store.dispatch("cart/addOrders", data)
-            }
+            },
         }
     }
 </script>

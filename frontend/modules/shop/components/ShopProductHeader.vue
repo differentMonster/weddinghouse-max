@@ -35,7 +35,7 @@
                         <button class="up"></button>
                         <button class="down"></button>
                         <input class="form-control" type="text">
-                    </div><button class="ps-btn ps-btn--black" @click="addProduct()">Add to cart</button><a class="ps-product__favorite" href="#"><i class="fa fa-heart-o"></i></a>
+                    </div><button class="ps-btn ps-btn--black" @click="$emit('add-product', product)">Add to cart</button><a class="ps-product__favorite" href="#"><i class="fa fa-heart-o"></i></a>
                 </figure>
                 <div class="ps-product__buynow"><a class="ps-btn ps-btn--black ps-btn--fullwidth" href="#">Buy Now</a></div>
             </div>
@@ -67,17 +67,6 @@
             product: {
                 type: Object,
                 required: true
-            }
-        },
-        methods: {
-            addProduct() {
-                const newProduct = {
-                    product_id: this.product.id,
-                    name: this.product.name,
-                    price: this.product.price,
-                    quantity: 1
-                }
-                this.$store.dispatch("cart/addItemToCart", newProduct)
             }
         }
     }

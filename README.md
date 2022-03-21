@@ -78,6 +78,8 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
     - add products
     - remove products
     - edit quatity
+      - add keep pressing add quantity
+      - must add minms and add on cart page
     - caculation totally price
     - note additional comments
     - one click check out process
@@ -121,9 +123,9 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
 * User Login Testing [2/2]
   - [X] object return from backend
   - [X] able to redirect to main page after succseful login
-* Cart Testing [1/1]
+* Cart Testing [2/2]
   - [X] add item
     - if directivly visit cart page in url, store item gone
-  - [ ] delete item
+  - [X] delete item
   - sent order
   - backend recevied order

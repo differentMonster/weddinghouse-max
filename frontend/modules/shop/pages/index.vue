@@ -23,6 +23,10 @@
     import ShopProductCard from "@/modules/shop/components/ShopProductCard.vue"
     import ShopHeader from "@/modules/shop/components/ShopHeader.vue"
 
+    import {
+        mapActions
+    } from "vuex"
+
     export default {
         data() {
             return {

@@ -36,7 +36,7 @@
         name: 'ShopProductAddition',
         props: {
             product: {
-                type: Array,
+                type: Object,
                 required: true
             }
         },

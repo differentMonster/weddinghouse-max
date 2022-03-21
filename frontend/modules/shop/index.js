@@ -47,7 +47,6 @@ export default function registerModules(moduleOptions) {
         })
     })
 
-
     this.extendRoutes((routes) => {
         routes.unshift({
             name: 'cheongsam_id',

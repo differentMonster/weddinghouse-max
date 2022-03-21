@@ -90,7 +90,7 @@
                         <div v-else>
                             <nuxt-link class="header__user" to="/my-account"><i class="icon-user-plus"></i></nuxt-link>
                         </div>
-                        <nuxt-link class="header__cart" to="/cart"><i class="icon-cart"></i><span>{{ getCart.length }}</span></nuxt-link>
+                        <nuxt-link class="header__cart" to="/cart"><i class="icon-cart"></i><span>{{ getCartLength }}</span></nuxt-link>
                         <a class="header__menu-toggle" href="#navigation-mobile"><i class="icon-menu"></i></a>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
             <div class="header__right">
                 <div class="header__container"><a class="header__search-mini" href="#"><i class="icon-magnifier"></i></a></div>
                 <div class="header__actions"><a class="header__user" href="#"><i class="icon-user"></i></a><a class="header__favorite" href="whishlist.html"><i class="icon-heart"></i></a>
-                    <nuxt-link class="header__cart" to="/cart"><i class="icon-cart"></i><span>{{ getCart.length }}</span></nuxt-link><a class="header__menu-toggle" href="#navigation-mobile"><i class="icon-menu"></i></a>
+                    <nuxt-link class="header__cart" to="/cart"><i class="icon-cart"></i><span>{{ getCartLength }}</span></nuxt-link><a class="header__menu-toggle" href="#navigation-mobile"><i class="icon-menu"></i></a>
                 </div>
             </div>
         </header>
@@ -129,7 +129,7 @@
         },
         computed: {
             ...mapState('auth', ['loggedIn']),
-            ...mapGetters('cart', ['getCart'])
+            ...mapGetters('cart', ['getCartLength'])
         },
         mounted() {}
 

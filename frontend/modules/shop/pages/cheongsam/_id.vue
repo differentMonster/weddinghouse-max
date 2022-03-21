@@ -6,7 +6,7 @@
                 <ShopProductBreadcrumbs :product="product"></ShopProductBreadcrumbs>
                 <!-- start Detail Content -->
                 <div class="ps-product--detail">
-                    <ShopProductHeader :product="product"></ShopProductHeader>
+                    <ShopProductHeader :product="product" v-on:add-product="addProduct()"></ShopProductHeader>
 
                     <!-- start Description, Addition Information, Review option -->
                     <div class="ps-product__content ps-tab-root">
@@ -69,21 +69,27 @@
                 selected: "Description"
             }
         },
-        methods: {
-            getProduct() {
+        async fetch() {
+            try {
                 const setShop = new Shop()
-                setShop.getProduct(this.id).then((response) => {
-                    this.product = response[0]
-                    // console.log(this.product)
-                    // console.log(response[1])
-                }).catch((error) => {
-                    console.log(error)
-                })
+                const getProduct = await setShop.getProduct(this.id)
+                this.product = getProduct[0]
+            } catch (error) {
+                console.log(error)
             }
         },
-        mounted() {
-            this.getProduct()
-        }
+        methods: {
+            addProduct() {
+                const newProduct = {
+                    product_id: this.product.id,
+                    name: this.product.name,
+                    price: this.product.price,
+                    // quantity: 1
+                }
+                this.$store.dispatch("cart/addToCart", newProduct)
+            }
+        },
+        mounted() {}
     }
 </script>
 
