@@ -17,30 +17,57 @@
             <div class="ps-page__content">
                 <div class="ps-tab-root">
 
+                    <ValidationObserver ref="observer">
+                        <b-form class="ps-form--auth" id="register__tab" slot-scope="{ validate }" @submit.prevent="validate().then(registerUser)">
+                            <div class="ps-tabs">
 
-                    <form class="ps-form--auth" id="register__tab" @submit.prevent="registerUser">
-                        <div class="ps-tabs">
-                            <!-- start Account Content - Register -->
-                            <div id="tab-2">
-                                <div class="form-group">
-                                    <input class="form-control" id="register__tab--username" v-model="username" type="text" placeholder="Username">
+                                <div id="tab-2">
+                                    <!-- Username Content -->
+                                    <ValidationProvider rules="required">
+                                        <b-form-group class="form-group form-group--space" slot-scope="{ valid, errors }">
+                                            <b-form-input class="form-control" type="text" v-model="username" :state="errors[0] ? false : (valid ? true : null)" placeholder="What should we call you ?">
+                                            </b-form-input>
+                                            <b-form-invalid-feedback class="form-error">
+                                                {{ errors[0] }}
+                                            </b-form-invalid-feedback>
+                                        </b-form-group>
+                                    </ValidationProvider>
+                                    <!-- end of Username Content -->
+
+                                    <!-- Email Content -->
+                                    <ValidationProvider rules="required|email">
+                                        <b-form-group class="form-group form-group--space" slot-scope="{ valid, errors }">
+                                            <b-form-input class="form-control" id="register__tab--email" type="email" v-model="email" :state="errors[0] ? false : (valid ? true : null)" placeholder="Enter your email">
+                                            </b-form-input>
+                                            <b-form-invalid-feedback class="form-error">
+                                                {{ errors[0] }}
+                                            </b-form-invalid-feedback>
+                                        </b-form-group>
+                                    </ValidationProvider>
+                                    <!-- end of Email Content -->
+
+                                    <!-- Password Content -->
+                                    <ValidationProvider rules="required" vid="password">
+                                        <b-form-group class="form-group form-group--space" slot-scope="{ valid, errors }">
+                                            <b-form-input class="form-control" id="register__tab--password" type="password" v-model="password" :state="errors[0] ? false : (valid ? true : null)" placeholder="Create a password">
+                                            </b-form-input>
+                                            <b-form-invalid-feedback class="form-error">
+                                                {{ errors[0] }}
+                                            </b-form-invalid-feedback>
+                                        </b-form-group>
+                                    </ValidationProvider>
+                                    <!-- end of Password Content -->
+                                    <div class="ps-form__desc">
+                                        <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
+                                    </div>
+                                    <div class="form-group submit">
+                                        <b-button type="submit" class="ps-btn ps-btn--fullwidth ps-btn--black">Register</b-button>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="register__tab--email" v-model="email" type="text" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="register__tab--password" v-model="password" type="text" placeholder="Password">
-                                </div>
-                                <div class="ps-form__desc">
-                                    <p>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our privacy policy.</p>
-                                </div>
-                                <div class="form-group submit">
-                                    <button class="ps-btn ps-btn--fullwidth ps-btn--black">Register</button>
-                                </div>
+
                             </div>
-                            <!-- end Account Content - Register -->
-                        </div>
-                    </form>
+                        </b-form>
+                    </ValidationObserver>
 
 
                     <!-- start Account Social Network Content-->
@@ -68,6 +95,10 @@
     import {
         User
     } from '@/modules/user/plugins/getUser.js'
+    import {
+        ValidationObserver,
+        ValidationProvider
+    } from 'vee-validate';
 
     export default {
         name: 'register',
@@ -77,6 +108,10 @@
                 username: '',
                 password: ''
             }
+        },
+        components: {
+            ValidationObserver,
+            ValidationProvider
         },
         methods: {
             registerUser() {
@@ -93,8 +128,22 @@
     }
 </script>
 
-<style lang="scss">
+<style scope lang="scss">
     .ps-form--auth .ps-tab-list li .tabs__active {
         color: black;
+    }
+
+    .form-control {
+        transition: none !important;
+    }
+
+    .form-error {
+        position: absolute !important;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .form-group--space {
+        margin-bottom: 35px;
     }
 </style>

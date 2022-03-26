@@ -20,7 +20,7 @@
                         <CartDiscountCode></CartDiscountCode>
                         <div class="ps-block--checkout-total">
                             <CartCheckOut :getCartTotal="getCartTotal"></CartCheckOut>
-                            <div class="ps-block__bottom"><a class="ps-btn ps-btn--black" @click="addOrders()">Proceed to checkout</a></div>
+                            <div class="ps-block__bottom"><a class="ps-btn ps-btn--black" @click="addOrders(cartData)">Proceed to checkout</a></div>
                         </div>
                     </div>
                 </div>
@@ -49,13 +49,30 @@
         name: "Cart",
         data() {
             return {
-                cartUser: []
+                cartUser: [],
+                cartData: {
+                    payment_method: "bacs",
+                    payment_method_title: "Direct Bank Transfer",
+                    set_paid: true,
+                    customer_id: null,
+                    billing: null,
+                    shipping: null,
+                    line_items: null,
+                    shipping_lines: [{
+                        method_id: "flat_rate",
+                        method_title: "Flat Rate",
+                        total: "36"
+                    }]
+                }
             }
         },
         computed: {
             ...mapGetters('cart', ['getCart']),
             ...mapGetters('cart', ['getCartTotal']),
             ...mapState('auth', ['user'])
+        },
+        methods: {
+            ...mapActions('cart', ['addOrders']),
         },
         components: {
             CartCard,
@@ -67,29 +84,14 @@
                 const setUser = new User()
                 const getUserInfo = await setUser.info(this.user.id)
                 this.cartUser = getUserInfo[0]
+                this.cartData.customer_id = this.cartUser.id
+                this.cartData.billing = this.cartUser.billing
+                this.cartData.shipping = this.cartUser.shipping
+                this.cartData.line_items = this.getCart
                 console.log(getUserInfo[1])
             } catch (error) {
                 console.log(error)
             }
-        },
-        methods: {
-            async addOrders() {
-                const data = {
-                    payment_method: "bacs",
-                    payment_method_title: "Direct Bank Transfer",
-                    set_paid: true,
-                    customer_id: this.cartUser.id,
-                    billing: this.cartUser.billing,
-                    shipping: this.cartUser.shipping,
-                    line_items: this.getCart,
-                    shipping_lines: [{
-                        method_id: "flat_rate",
-                        method_title: "Flat Rate",
-                        total: "36"
-                    }]
-                };
-                this.$store.dispatch("cart/addOrders", data)
-            },
         }
     }
 </script>

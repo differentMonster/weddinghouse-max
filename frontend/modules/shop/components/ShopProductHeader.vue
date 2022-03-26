@@ -34,7 +34,7 @@
                     <div class="form-group--number">
                         <button class="up"></button>
                         <button class="down"></button>
-                        <input class="form-control" type="text">
+                        <input class="form-control" type="text" value="1">
                     </div><button class="ps-btn ps-btn--black" @click="$emit('add-product', product)">Add to cart</button><a class="ps-product__favorite" href="#"><i class="fa fa-heart-o"></i></a>
                 </figure>
                 <div class="ps-product__buynow"><a class="ps-btn ps-btn--black ps-btn--fullwidth" href="#">Buy Now</a></div>

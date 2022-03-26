@@ -2,7 +2,7 @@
     <!-- start Shop Wrapper - Content -->
     <div class="ps-shop__content">
         <div class="row">
-            <div v-for="(product, index) in products" :key="'product-' + index" class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
+            <div v-for="(product, index) in products" :key="`product-${index}`" class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6 ">
                 <div class="ps-product">
                     <div class="ps-product__thumbnail">
                         <nuxt-img width="400" height="400" class="ps-product__image" :src="`${product.images[0].src}`" alt="" />

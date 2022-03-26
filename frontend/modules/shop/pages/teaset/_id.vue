@@ -42,9 +42,6 @@
 
 
 <script>
-    import {
-        Shop
-    } from "@/modules/shop/plugins/getShop.js";
     import ShopProductRelated from "@/modules/shop/components/ShopProductRelated.vue"
     import ShopProductBreadcrumbs from "@/modules/shop/components/ShopProductBreadcrumbs.vue"
     import ShopProductHeader from "@/modules/shop/components/ShopProductHeader.vue"
@@ -72,8 +69,7 @@
         },
         async fetch() {
             try {
-                const setShop = new Shop()
-                const getProduct = await setShop.getProduct(this.id)
+                const getProduct = await this.$shop.getProduct(this.id)
                 this.product = getProduct[0]
             } catch (error) {
                 console.log(error)
@@ -87,12 +83,11 @@
                     console.log('response is not array')
                 }
             },
-            addProduct() {
+            async addProduct() {
                 const newProduct = {
                     product_id: this.product.id,
                     name: this.product.name,
                     price: this.product.price,
-                    // quantity: 1
                 }
                 this.$store.dispatch("cart/addToCart", newProduct)
             }

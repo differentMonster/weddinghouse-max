@@ -11,7 +11,7 @@ export default {
         NUXTPRESS_WP_URL: wpUrl,
     },
     head: {
-        title: 'frontend',
+        title: 'weddinghouse',
         htmlAttrs: {
             lang: 'en'
         },
@@ -25,19 +25,14 @@ export default {
             {
                 hid: 'description',
                 name: 'description',
-                content: ''
+                content: 'eCommerce website'
             }
         ],
         link: [{
-                rel: 'icon',
-                type: 'image/x-icon',
-                href: 'favicon.ico'
-            },
-            {
-                rel: 'stylesheet',
-                href: 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap'
-            }
-        ],
+            rel: 'icon',
+            type: 'image/x-icon',
+            href: 'favicon.ico'
+        }],
         script: []
     },
 
@@ -72,9 +67,12 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         '@/plugins/woocommerce.js',
-        '@/modules/shop/plugins/getShop.js',
+        '@/plugins/modules.js',
+        // '@/modules/shop/plugins/getShop.js',
         '@/modules/user/plugins/getUser.js',
         '@/modules/cart/plugins/getCart.js',
+        '@/plugins/vue-sweetalert2.js',
+        '@/plugins/vee-validate.js',
         {
             src: '@/plugins/cypress.js',
             mode: 'client'
@@ -86,7 +84,7 @@ export default {
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
-    components: true,
+    // components: true,
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [],
@@ -103,6 +101,7 @@ export default {
         '@/modules/shop',
         '@/modules/cart',
         '@nuxtjs/style-resources',
+        'nuxt-font-loader'
     ],
     axios: {
         baseURL: 'http://localhost:3080',
@@ -150,6 +149,25 @@ export default {
             '@/assets/scss/abstracts/*.scss',
         ]
     },
+    fontLoader: {
+        // Paste a new custom link here (for example Typekit)
+        url: 'https://use.typekit.net/xxxxxxx.css',
+
+        prefetch: true,
+        preconnect: true
+    },
+    fontLoader: {
+        // Paste a new custom link here (for example Typekit)
+        url: 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap',
+        prefetch: true,
+        preconnect: true
+    },
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {}
+    build: {
+        transpile: ["vee-validate/dist/rules"],
+        /*
+         ** You can extend webpack config here
+         */
+        extend(config, ctx) {}
+    }
 }

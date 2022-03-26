@@ -17,9 +17,6 @@
 </template>
 
 <script>
-    import {
-        Shop
-    } from "@/modules/shop/plugins/getShop.js";
     import ShopProductCard from "@/modules/shop/components/ShopProductCard.vue"
     import ShopHeader from "@/modules/shop/components/ShopHeader.vue"
 
@@ -34,17 +31,15 @@
                 categories: []
             }
         },
-        component: {
+        components: {
             ShopHeader,
             ShopProductCard,
         },
         async fetch() {
             try {
-                const setShop = new Shop()
-                const getShopProducts = await setShop.getProducts()
+                const getShopProducts = await this.$shop.getProducts()
                 this.products = getShopProducts[0]
                 console.log(this.products)
-                console.log(getShopProducts[1])
             } catch (error) {
                 console.log(error)
             }

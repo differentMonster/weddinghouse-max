@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(item, index) in getCart" :key="'cart-' + index">
+                <tr v-for="(item, index) in getCart" :key="`cart-${index}`">
                     <td>
                         <div class="ps-product--sidebar">
                             <div class="ps-product__thumbnail"><a class="ps-product__overlay" href="product-default.html"></a><img src="" alt=""></div>
@@ -29,8 +29,8 @@
                     <td><strong>{{item.price}}</strong></td>
                     <td>
                         <div class="form-group--number">
-                            <button class="up"></button>
-                            <button class="down"></button>
+                            <button class="up" @click="increaseCartItem(item.product_id)"></button>
+                            <button class="down" @click="decreaseCartItem(item.product_id)"></button>
                             <input class="form-control" type="text" :placeholder="`${item.quantity}`">
                         </div>
                     </td>
@@ -58,6 +58,8 @@
             }
         },
         methods: {
+            ...mapActions('cart', ['increaseCartItem']),
+            ...mapActions('cart', ['decreaseCartItem']),
             ...mapActions('cart', ['deleteCartItem'])
         }
     }

@@ -13,7 +13,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_03e91954 from 'nuxt_plugin_plugin_03e91954' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_fontLoader_344e4b28 from 'nuxt_plugin_fontLoader_344e4b28' // Source: ./fontLoader.js (mode: 'client')
 import nuxt_plugin_storeregisterCartStore48379303_444649e8 from 'nuxt_plugin_storeregisterCartStore48379303_444649e8' // Source: ./store.registerCartStore.48379303.js (mode: 'all')
 import nuxt_plugin_storeregisterShopStore8893b17a_25286d48 from 'nuxt_plugin_storeregisterShopStore8893b17a_25286d48' // Source: ./store.registerShopStore.8893b17a.js (mode: 'all')
 import nuxt_plugin_storeregisterUserStore4457a523_a3d29ca2 from 'nuxt_plugin_storeregisterUserStore4457a523_a3d29ca2' // Source: ./store.registerUserStore.4457a523.js (mode: 'all')
@@ -21,9 +21,11 @@ import nuxt_plugin_image_9ae2c136 from 'nuxt_plugin_image_9ae2c136' // Source: .
 import nuxt_plugin_bootstrapvue_2ab47699 from 'nuxt_plugin_bootstrapvue_2ab47699' // Source: ./bootstrap-vue.js (mode: 'all')
 import nuxt_plugin_axios_70f0bb2c from 'nuxt_plugin_axios_70f0bb2c' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_woocommerce_a06cd18e from 'nuxt_plugin_woocommerce_a06cd18e' // Source: ../plugins/woocommerce.js (mode: 'all')
-import nuxt_plugin_getShop_a7de41f4 from 'nuxt_plugin_getShop_a7de41f4' // Source: ../modules/shop/plugins/getShop.js (mode: 'all')
+import nuxt_plugin_modules_3d596604 from 'nuxt_plugin_modules_3d596604' // Source: ../plugins/modules.js (mode: 'all')
 import nuxt_plugin_getUser_54fa21c8 from 'nuxt_plugin_getUser_54fa21c8' // Source: ../modules/user/plugins/getUser.js (mode: 'all')
 import nuxt_plugin_getCart_75103b9c from 'nuxt_plugin_getCart_75103b9c' // Source: ../modules/cart/plugins/getCart.js (mode: 'all')
+import nuxt_plugin_vuesweetalert2_2195d1e8 from 'nuxt_plugin_vuesweetalert2_2195d1e8' // Source: ../plugins/vue-sweetalert2.js (mode: 'all')
+import nuxt_plugin_veevalidate_21716614 from 'nuxt_plugin_veevalidate_21716614' // Source: ../plugins/vee-validate.js (mode: 'all')
 import nuxt_plugin_cypress_9c53d384 from 'nuxt_plugin_cypress_9c53d384' // Source: ../plugins/cypress.js (mode: 'client')
 import nuxt_plugin_vuexpersist_61a29aad from 'nuxt_plugin_vuexpersist_61a29aad' // Source: ../plugins/vuex-persist (mode: 'client')
 import nuxt_plugin_auth_f3eddcf4 from 'nuxt_plugin_auth_f3eddcf4' // Source: ./auth.js (mode: 'all')
@@ -94,7 +96,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"frontend","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"favicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap"}],"script":[],"style":[]},
+    head: {"title":"weddinghouse","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"eCommerce website"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"favicon.ico"},{"hid":"font-prefetch","rel":"dns-prefetch","href":"https:\u002F\u002Ffonts.gstatic.com\u002F"},{"hid":"font-preconnect","rel":"preconnect","href":"https:\u002F\u002Ffonts.gstatic.com\u002F","crossorigin":""},{"hid":"font-preload","rel":"preload","as":"style","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap"}],"script":[],"style":[],"noscript":[{"hid":"font-noscript","innerHTML":"\u003Clink rel=\"stylesheet\" href=\"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Cormorant+Garamond:300i,400,400i,500,500i,600,600i,700&display=swap\"\u003E"}],"__dangerouslyDisableSanitizersByTagID":{"font-noscript":["innerHTML"]}},
 
     store,
     router,
@@ -223,8 +225,8 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_03e91954 === 'function') {
-    await nuxt_plugin_plugin_03e91954(app.context, inject)
+  if (process.client && typeof nuxt_plugin_fontLoader_344e4b28 === 'function') {
+    await nuxt_plugin_fontLoader_344e4b28(app.context, inject)
   }
 
   if (typeof nuxt_plugin_storeregisterCartStore48379303_444649e8 === 'function') {
@@ -255,8 +257,8 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_woocommerce_a06cd18e(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_getShop_a7de41f4 === 'function') {
-    await nuxt_plugin_getShop_a7de41f4(app.context, inject)
+  if (typeof nuxt_plugin_modules_3d596604 === 'function') {
+    await nuxt_plugin_modules_3d596604(app.context, inject)
   }
 
   if (typeof nuxt_plugin_getUser_54fa21c8 === 'function') {
@@ -265,6 +267,14 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_getCart_75103b9c === 'function') {
     await nuxt_plugin_getCart_75103b9c(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_vuesweetalert2_2195d1e8 === 'function') {
+    await nuxt_plugin_vuesweetalert2_2195d1e8(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_veevalidate_21716614 === 'function') {
+    await nuxt_plugin_veevalidate_21716614(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_cypress_9c53d384 === 'function') {
