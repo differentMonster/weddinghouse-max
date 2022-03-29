@@ -25,7 +25,7 @@
                                     <!-- Username Content -->
                                     <ValidationProvider rules="required">
                                         <b-form-group class="form-group form-group--space" slot-scope="{ valid, errors }">
-                                            <b-form-input class="form-control" type="text" v-model="username" :state="errors[0] ? false : (valid ? true : null)" placeholder="What should we call you ?">
+                                            <b-form-input class="form-control" type="text" v-model="userData.username" :state="errors[0] ? false : (valid ? true : null)" placeholder="What should we call you ?">
                                             </b-form-input>
                                             <b-form-invalid-feedback class="form-error">
                                                 {{ errors[0] }}
@@ -37,7 +37,7 @@
                                     <!-- Email Content -->
                                     <ValidationProvider rules="required|email">
                                         <b-form-group class="form-group form-group--space" slot-scope="{ valid, errors }">
-                                            <b-form-input class="form-control" id="register__tab--email" type="email" v-model="email" :state="errors[0] ? false : (valid ? true : null)" placeholder="Enter your email">
+                                            <b-form-input class="form-control" id="register__tab--email" type="email" v-model="userData.email" :state="errors[0] ? false : (valid ? true : null)" placeholder="Enter your email">
                                             </b-form-input>
                                             <b-form-invalid-feedback class="form-error">
                                                 {{ errors[0] }}
@@ -49,7 +49,7 @@
                                     <!-- Password Content -->
                                     <ValidationProvider rules="required" vid="password">
                                         <b-form-group class="form-group form-group--space" slot-scope="{ valid, errors }">
-                                            <b-form-input class="form-control" id="register__tab--password" type="password" v-model="password" :state="errors[0] ? false : (valid ? true : null)" placeholder="Create a password">
+                                            <b-form-input class="form-control" id="register__tab--password" type="password" v-model="userData.password" :state="errors[0] ? false : (valid ? true : null)" placeholder="Create a password">
                                             </b-form-input>
                                             <b-form-invalid-feedback class="form-error">
                                                 {{ errors[0] }}
@@ -93,9 +93,6 @@
 
 <script>
     import {
-        User
-    } from '@/modules/user/plugins/getUser.js'
-    import {
         ValidationObserver,
         ValidationProvider
     } from 'vee-validate';
@@ -104,9 +101,11 @@
         name: 'register',
         data() {
             return {
-                email: '',
-                username: '',
-                password: ''
+                userData: {
+                    email: '',
+                    username: '',
+                    password: ''
+                }
             }
         },
         components: {
@@ -115,9 +114,9 @@
         },
         methods: {
             registerUser() {
-                const setUser = new User(this.email, this.username, this.password)
+                // check Dom Tree is not matching server
                 // import class create with failure return from it.
-                setUser.register().then((response) => {
+                this.$user.register(this.userData).then((response) => {
                     console.log(response[1])
                 }).catch((error) => {
                     console.log(error)

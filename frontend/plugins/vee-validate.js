@@ -9,9 +9,6 @@ import {
     alpha,
     email
 } from "vee-validate/dist/rules";
-import BootstrapVue from 'bootstrap-vue';
-// import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 // setting your own rules
 extend("required", {
@@ -35,6 +32,5 @@ extend("alpha", {
 // });
 
 // Install components globally
-Vue.use(BootstrapVue);
 Vue.component('ValidationObserver', ValidationObserver);
 Vue.component('ValidationProvider', ValidationProvider);

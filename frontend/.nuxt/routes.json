@@ -1,5 +1,11 @@
 [
   {
+    "name": "checkout",
+    "path": "/cart/checkout",
+    "component": "/home/monster/app/weddinghouse-max/frontend/modules/cart/pages/checkout.vue",
+    "_name": "_f6216636"
+  },
+  {
     "name": "cart",
     "path": "/cart",
     "component": "/home/monster/app/weddinghouse-max/frontend/modules/cart/pages/index.vue",

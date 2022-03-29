@@ -20,6 +20,15 @@ export default function registerModules(moduleOptions) {
         })
     })
 
+    // add modules routes to global router list
+    this.extendRoutes((routes) => {
+        routes.unshift({
+            name: 'checkout',
+            path: '/cart/checkout',
+            component: path.resolve(__dirname, 'pages/checkout.vue')
+        })
+    })
+
     // register store plugin
     this.addPlugin(path.resolve(__dirname, 'store/registerCartStore.js'))
 

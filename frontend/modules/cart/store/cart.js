@@ -1,11 +1,6 @@
 import {
     WooComRestApi
 } from "~/plugins/woocommerce.js";
-import {
-    CartAlert
-} from "@/modules/cart/plugins/getCart.js"
-
-const setCartAlert = new CartAlert()
 
 export const namespaced = true
 
@@ -55,14 +50,14 @@ export const mutations = {
         let checkCartLength = state.cartItems.length
 
         try {
-            setCartAlert.OrderProcess().then(() => {
+            this.$cartalert.OrderProcess().then(() => {
                 if (checkCartLength === 0 || null) {
-                    setCartAlert.EmptyCart()
+                    this.$cartalert.EmptyCart()
                     // throw new Error('WooCommerceCart Cart is empty, please select buying product and try again')
                 } else {
                     const response = WooComRestApi.post("orders", checkoutItem)
                     const responseMessages = 'WooCommerceCart add Orders = succesful'
-                    setCartAlert.OrderSuccess()
+                    this.$cartalert.OrderSuccess()
                     return [response.data, responseMessages]
                 }
             })
@@ -74,33 +69,33 @@ export const mutations = {
         let checkItemId = state.cartItems.find(product => product.product_id === item.product_id)
         if (checkItemId) {
             checkItemId.quantity++
-            setCartAlert.CartUpdate()
+            this.$cartalert.CartUpdate()
         } else {
             state.cartItems.push({
                 ...item,
                 quantity: 1
             })
-            setCartAlert.addProductSuccess()
+            this.$cartalert.addProductSuccess()
         }
     },
     removeCartItem(state, id) {
         const CheckItemIndex = state.cartItems.findIndex(product => product.product_id === id)
         state.cartItems.splice(CheckItemIndex, 1)
-        setCartAlert.removeProductSuccess()
+        this.$cartalert.removeProductSuccess()
     },
     increaseItem(state, id) {
         let checkItemId = state.cartItems.find(product => product.product_id === id)
 
         if (checkItemId) {
             checkItemId.quantity++
-            setCartAlert.CartUpdate()
+            this.$cartalert.CartUpdate()
         }
     },
     decreaseItem(state, id) {
         let checkItemId = state.cartItems.find(product => product.product_id === id)
         if (checkItemId.quantity > 1) {
             checkItemId.quantity--
-            setCartAlert.CartUpdate()
+            this.$cartalert.CartUpdate()
         }
     }
 }

@@ -4,6 +4,7 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _f6216636 = () => interopDefault(import('../modules/cart/pages/checkout.vue' /* webpackChunkName: "" */))
 const _7477d07a = () => interopDefault(import('../modules/cart/pages/index.vue' /* webpackChunkName: "" */))
 const _02a956ee = () => interopDefault(import('../modules/shop/pages/cheongsam/_id.vue' /* webpackChunkName: "" */))
 const _31114de1 = () => interopDefault(import('../modules/shop/pages/cheongsam/index.vue' /* webpackChunkName: "" */))
@@ -28,6 +29,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/cart/checkout",
+    component: _f6216636,
+    name: "checkout"
+  }, {
     path: "/cart",
     component: _7477d07a,
     name: "cart"

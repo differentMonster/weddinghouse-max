@@ -1,18 +1,18 @@
 <template>
     <div>
-        <MagaMenu />
+        <Menu />
         <Nuxt />
         <Footer />
     </div>
 </template>
 
 <script>
-    import MagaMenu from '@/components/MagaMenu.vue'
+    import Menu from '@/components/Menu/Menu.vue'
     import Footer from '@/components/Footer/Footer.vue'
 
     export default {
         components: {
-            MagaMenu,
+            Menu,
             Footer
         }
     }

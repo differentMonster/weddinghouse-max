@@ -3,18 +3,7 @@ import {
 } from "~/plugins/woocommerce.js";
 
 class User {
-    constructor(email, username, password) {
-        this.email = email
-        this.username = username
-        this.password = password
-    }
-
-    async register() {
-        const userData = {
-            email: this.email,
-            username: this.username,
-            password: this.password
-        }
+    async register(userData) {
         try {
             const response = await WooComRestApi.post('customers', userData)
             const responseMessages = 'WooCommerceCustomer create = successful';

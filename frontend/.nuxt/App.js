@@ -30,8 +30,6 @@ import '../static/wedding-house/css/style.css'
 
 import '../static/wedding-house/css/home-default.css'
 
-import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css'
-
 import _6f6c098b from '../layouts/default.vue'
 
 const layouts = { "_default": sanitizeComponent(_6f6c098b) }

@@ -1,14 +1,15 @@
  <template>
      <!-- start Shop  -->
      <div class="ps-page">
-         <div class="ps-shop ps-shop--sidebar reverse banner">
-             <div class="container">
-                 <div class="ps-shop__container">
+         <div class="ps-shop ps-shop--fullwidth">
+             <div class="container-fluid">
 
-                     <h1>Cheongsam Pages</h1>
-                     <ShopProductCard :products="products"></ShopProductCard>
+                 <ShopHeader></ShopHeader>
 
-                 </div>
+
+                 <ShopProductCard :products="products"></ShopProductCard>
+
+                 <div class="ps-shop__footer"><a class="ps-link--under" href="#">Discover more</a></div>
              </div>
          </div>
      </div>
@@ -17,6 +18,7 @@
 
  <script>
      import ShopProductCard from "@/modules/shop/components/ShopProductCard.vue"
+     import ShopHeader from "@/modules/shop/components/ShopHeader.vue"
 
      export default {
          data() {
@@ -26,6 +28,7 @@
              }
          },
          components: {
+             ShopHeader,
              ShopProductCard
          },
          async fetch() {
@@ -42,15 +45,15 @@
 
 
  <style>
-     .product_container {
-         width: 100%;
-         text-align: center;
-         position: relative;
-         margin-top: 100px;
-     }
+     /* .product_container {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      margin-top: 100px;
+      }
 
-     .product--images img {
-         width: 500px;
-         height: 670px;
-     }
+      .product--images img {
+      width: 500px;
+      height: 670px;
+      } */
  </style>

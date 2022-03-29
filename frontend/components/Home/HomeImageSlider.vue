@@ -52,16 +52,5 @@
     }
 </script>
 
-<style>
-    /* .fade-enter-active {
-     transition: opacity 3s ease-in-out;
-     }
-
-     .fade-enter-to {
-     opacity: 1;
-     }
-
-     .fade-enter {
-     opacity: 0;
-     } */
+<style scope>
 </style>

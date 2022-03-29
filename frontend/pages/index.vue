@@ -7,6 +7,7 @@
 <script>
     import HomeImageSlider from "@/components/Home/HomeImageSlider.vue";
 
+
     export default {
         components: {
             HomeImageSlider,

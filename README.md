@@ -64,8 +64,16 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
    CLOSED: [2022-01-24 Mon 06:38]
 * DONE Login and Register component fix
    CLOSED: [2022-01-28 Fri 00:25]
+* DONE User and Product Item Store in cookie
+  CLOSED: [2022-03-30 Wed 03:31]
+* DONE UX cart sidebar added
+  CLOSED: [2022-03-30 Wed 03:32]
+* PROGRESS Checkout Page added
 * BUG Image Slider using keep-alive but have load plugin problem
-* TODO test new import plugin to fix keep alive problem
+* CANCELLED test new import plugin to fix keep alive problem
+  CLOSED: [2022-03-30 Wed 03:30]
+  - Note taken on [2022-03-30 Wed 03:30] \\
+    already that switch to vue-presist and inject methods on modules folder
 * build cart
    - storage
 * CANCELLED remove jquery for less buggy propose
@@ -75,14 +83,14 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
   - Note taken on [2022-02-06 Sun 21:02] \\
     - build cart page as component
   - [X] Cart Systems
-    - add products
-    - remove products
-    - edit quatity
+    - [X] add products
+    - [X] remove products
+    - [X] edit quatity
       - add keep pressing add quantity
       - must add minms and add on cart page
-    - caculation totally price
-    - note additional comments
-    - one click check out process
+    - [X] caculation totally price
+    - [ ] note additional comments
+    - [ ] one click check out process
 * CANCELLED Adding Jest for TTD test
   CLOSED: [2022-03-15 Tue 06:05]
     Reason cancelled:
@@ -118,12 +126,13 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
 [![Build Status](https://travis-ci.org/vitiral/artifact.svg?branch=master)](https://travis-ci.org/vitiral/artifact)
   - Note taken on [2022-03-15 Tue 06:07] \\
     - sometime login will redirect to logout page possible cookie issuse.
+    - check Dom render on signup page
 
 ## Cypress
 * User Login Testing [2/2]
   - [X] object return from backend
   - [X] able to redirect to main page after succseful login
-* Cart Testing [2/2]
+* Cart Testing [4/4]
   - [X] add item
     - if directivly visit cart page in url, store item gone
   - [X] delete item

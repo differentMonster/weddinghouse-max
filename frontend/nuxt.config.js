@@ -67,10 +67,10 @@ export default {
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         '@/plugins/woocommerce.js',
-        '@/plugins/modules.js',
-        // '@/modules/shop/plugins/getShop.js',
-        '@/modules/user/plugins/getUser.js',
-        '@/modules/cart/plugins/getCart.js',
+        '@/modules/shop/plugins/setShop.js',
+        '@/modules/user/plugins/setUser.js',
+        '@/modules/cart/plugins/setCart.js',
+        '@/plugins/bootstrap-vue.js',
         '@/plugins/vue-sweetalert2.js',
         '@/plugins/vee-validate.js',
         {
@@ -93,9 +93,6 @@ export default {
     modules: [
         '@nuxtjs/axios',
         '@nuxtjs/auth-next',
-        ['@nuxtjs/bootstrap-vue', {
-            css: false
-        }],
         '@nuxt/image',
         '@/modules/user',
         '@/modules/shop',

@@ -18,12 +18,12 @@ import nuxt_plugin_storeregisterCartStore48379303_444649e8 from 'nuxt_plugin_sto
 import nuxt_plugin_storeregisterShopStore8893b17a_25286d48 from 'nuxt_plugin_storeregisterShopStore8893b17a_25286d48' // Source: ./store.registerShopStore.8893b17a.js (mode: 'all')
 import nuxt_plugin_storeregisterUserStore4457a523_a3d29ca2 from 'nuxt_plugin_storeregisterUserStore4457a523_a3d29ca2' // Source: ./store.registerUserStore.4457a523.js (mode: 'all')
 import nuxt_plugin_image_9ae2c136 from 'nuxt_plugin_image_9ae2c136' // Source: ./image.js (mode: 'all')
-import nuxt_plugin_bootstrapvue_2ab47699 from 'nuxt_plugin_bootstrapvue_2ab47699' // Source: ./bootstrap-vue.js (mode: 'all')
 import nuxt_plugin_axios_70f0bb2c from 'nuxt_plugin_axios_70f0bb2c' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_woocommerce_a06cd18e from 'nuxt_plugin_woocommerce_a06cd18e' // Source: ../plugins/woocommerce.js (mode: 'all')
-import nuxt_plugin_modules_3d596604 from 'nuxt_plugin_modules_3d596604' // Source: ../plugins/modules.js (mode: 'all')
-import nuxt_plugin_getUser_54fa21c8 from 'nuxt_plugin_getUser_54fa21c8' // Source: ../modules/user/plugins/getUser.js (mode: 'all')
-import nuxt_plugin_getCart_75103b9c from 'nuxt_plugin_getCart_75103b9c' // Source: ../modules/cart/plugins/getCart.js (mode: 'all')
+import nuxt_plugin_setShop_1f822c7a from 'nuxt_plugin_setShop_1f822c7a' // Source: ../modules/shop/plugins/setShop.js (mode: 'all')
+import nuxt_plugin_setUser_48f43c90 from 'nuxt_plugin_setUser_48f43c90' // Source: ../modules/user/plugins/setUser.js (mode: 'all')
+import nuxt_plugin_setCart_38e92fa6 from 'nuxt_plugin_setCart_38e92fa6' // Source: ../modules/cart/plugins/setCart.js (mode: 'all')
+import nuxt_plugin_bootstrapvue_0776ace4 from 'nuxt_plugin_bootstrapvue_0776ace4' // Source: ../plugins/bootstrap-vue.js (mode: 'all')
 import nuxt_plugin_vuesweetalert2_2195d1e8 from 'nuxt_plugin_vuesweetalert2_2195d1e8' // Source: ../plugins/vue-sweetalert2.js (mode: 'all')
 import nuxt_plugin_veevalidate_21716614 from 'nuxt_plugin_veevalidate_21716614' // Source: ../plugins/vee-validate.js (mode: 'all')
 import nuxt_plugin_cypress_9c53d384 from 'nuxt_plugin_cypress_9c53d384' // Source: ../plugins/cypress.js (mode: 'client')
@@ -245,10 +245,6 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_image_9ae2c136(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_bootstrapvue_2ab47699 === 'function') {
-    await nuxt_plugin_bootstrapvue_2ab47699(app.context, inject)
-  }
-
   if (typeof nuxt_plugin_axios_70f0bb2c === 'function') {
     await nuxt_plugin_axios_70f0bb2c(app.context, inject)
   }
@@ -257,16 +253,20 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_woocommerce_a06cd18e(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_modules_3d596604 === 'function') {
-    await nuxt_plugin_modules_3d596604(app.context, inject)
+  if (typeof nuxt_plugin_setShop_1f822c7a === 'function') {
+    await nuxt_plugin_setShop_1f822c7a(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_getUser_54fa21c8 === 'function') {
-    await nuxt_plugin_getUser_54fa21c8(app.context, inject)
+  if (typeof nuxt_plugin_setUser_48f43c90 === 'function') {
+    await nuxt_plugin_setUser_48f43c90(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_getCart_75103b9c === 'function') {
-    await nuxt_plugin_getCart_75103b9c(app.context, inject)
+  if (typeof nuxt_plugin_setCart_38e92fa6 === 'function') {
+    await nuxt_plugin_setCart_38e92fa6(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_bootstrapvue_0776ace4 === 'function') {
+    await nuxt_plugin_bootstrapvue_0776ace4(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vuesweetalert2_2195d1e8 === 'function') {
