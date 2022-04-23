@@ -19,12 +19,14 @@
                             <CheckOutCoupon></CheckOutCoupon>
                         </div>
                     </div>
-                    <form class="ps-form--checkout" action="index.html" method="get">
-                        <div class="row">
-                            <CheckOutBilling></CheckOutBilling>
-                            <CheckOutOrder></CheckOutOrder>
-                        </div>
-                    </form>
+                    <ValidationObserver ref="observer">
+                        <b-form class="ps-form--checkout" slot-scope="{ validate }" @submit.prevent="validate().then(addOrders(cartData))">
+                            <div class="row">
+                                <CheckOutBilling :value="cartData" @input="(newCartData) => { CartData = newCartData }"></CheckOutBilling>
+                                <CheckOutOrder :getCart="getCart" :getCartTotal="getCartTotal"></CheckOutOrder>
+                            </div>
+                        </b-form>
+                    </ValidationObserver>
                 </div>
             </div>
         </div>
@@ -44,8 +46,8 @@
     } from "vuex";
 
     import {
-        User
-    } from "@/modules/user/plugins/getUser.js"
+        ValidationObserver,
+    } from 'vee-validate';
 
     export default {
         name: "Checkout",
@@ -57,7 +59,18 @@
                     payment_method_title: "Direct Bank Transfer",
                     set_paid: true,
                     customer_id: null,
-                    billing: null,
+                    customer_note: "",
+                    billing: {
+                        first_name: "",
+                        last_name: "",
+                        address_1: "",
+                        address_2: "",
+                        city: "",
+                        company: "",
+                        email: "",
+                        phone: "",
+                        postcode: ""
+                    },
                     shipping: null,
                     line_items: null,
                     shipping_lines: [{
@@ -69,6 +82,9 @@
             }
         },
         computed: {
+            ...mapGetters(
+                'cart', ['getCart', 'getCartTotal']
+            ),
             ...mapState('auth', ['user'])
         },
         methods: {
@@ -78,21 +94,12 @@
             CheckOutLogin,
             CheckOutCoupon,
             CheckOutBilling,
-            CheckOutOrder
+            CheckOutOrder,
+            ValidationObserver
         },
-        async fetch() {
-            try {
-                const setUser = new User()
-                const getUserInfo = await setUser.info(this.user.id)
-                this.cartUser = getUserInfo[0]
-                this.cartData.customer_id = this.cartUser.id
-                this.cartData.billing = this.cartUser.billing
-                this.cartData.shipping = this.cartUser.shipping
-                this.cartData.line_items = this.getCart
-                console.log(getUserInfo[1])
-            } catch (error) {
-                console.log(error)
-            }
+        beforeMount() {
+            this.cartData.customer_id = this.user.id
+            this.cartData.line_items = this.getCart
         }
     }
 </script>

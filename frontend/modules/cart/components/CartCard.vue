@@ -29,9 +29,9 @@
                     <td><strong>{{item.price}}</strong></td>
                     <td>
                         <div class="form-group--number">
-                            <button class="up" @click="increaseCartItem(item.product_id)"></button>
-                            <button class="down" @click="decreaseCartItem(item.product_id)"></button>
-                            <input class="form-control" type="text" :placeholder="`${item.quantity}`">
+                            <button id="form-group-number--increase" class="up" @click="increaseCartItem(item.product_id)"></button>
+                            <button id="form-group-number--decrease" class="down" @click="decreaseCartItem(item.product_id)"></button>
+                            <input id="form-group-number--quantity" class="form-control" type="text" :placeholder="`${item.quantity}`">
                         </div>
                     </td>
                     <td>

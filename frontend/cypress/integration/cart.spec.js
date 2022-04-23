@@ -26,7 +26,7 @@ describe('Cart Testing', () => {
     //     })
     // })
 
-    it('Should cart able add update store', () => {
+    it('Should cart able to update store', () => {
         cy.visit('shop/teaset/40')
         cy.get('button').contains('Add to cart').click({
             force: true
@@ -52,6 +52,62 @@ describe('Cart Testing', () => {
     })
 
 
+    it('Should be able to increase products ', () => {
+        cy.visit('shop/cheongsam/21')
+
+        cy.get('button').contains('Add to cart').click({
+            force: true
+        })
+
+        cy.get('.header__container .header__actions .header__cart').click({
+            force: true
+        })
+
+        cy.get('#cart__footer-view').click({
+            force: true
+        })
+
+        cy.get('#form-group-number--increase').click({
+            force: true
+        })
+
+        CartStore().its('cartItems').then((response) => {
+            const checkQuantity = response[0].quantity
+            expect(checkQuantity).to.eq(2)
+        })
+    })
+
+
+    it('Should be able to decrease products ', () => {
+        cy.visit('shop/cheongsam/21')
+
+        cy.get('button').contains('Add to cart').click({
+            force: true
+        })
+
+        cy.get('.header__container .header__actions .header__cart').click({
+            force: true
+        })
+
+        cy.get('#cart__footer-view').click({
+            force: true
+        })
+
+        cy.get('#form-group-number--increase').click({
+            force: true
+        })
+
+        cy.get('#form-group-number--decrease').click({
+            force: true
+        })
+
+        CartStore().its('cartItems').then((response) => {
+            const checkQuantity = response[0].quantity
+            expect(checkQuantity).to.eq(1)
+        })
+    })
+
+
     it('Should able to delete item from cart', () => {
         cy.visit('shop/teaset/40')
         cy.get('button').contains('Add to cart').click({
@@ -59,6 +115,10 @@ describe('Cart Testing', () => {
         })
 
         cy.get('.header__container .header__actions .header__cart').click({
+            force: true
+        })
+
+        cy.get('#cart__footer-view').click({
             force: true
         })
 

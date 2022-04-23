@@ -30,6 +30,16 @@
 
 const dummyUsername = 'wh-xadmin'
 const dummyPassword = 'ASDjkl1234'
+const dummyFirstname = 'cheok'
+const dummyLastname = 'xadmin'
+const dummyCompanyname = 'Airvity'
+const dummyCountry = 'Malaysia'
+const dummyAddress = 'Port Dickson no 14 conner over sea'
+const dummyPostcode = '71000'
+const dummyCity = 'Port Dickson'
+const dummyEmail = 'wh-xadmin@gmail.com'
+const dummyPhone = '123-456789'
+const dummyNotes = 'testing notes'
 
 // Cypress.Commands.add('requestlogin', () => {
 //     cy.request({
@@ -62,7 +72,6 @@ Cypress.Commands.add('auth', () => {
     })
 })
 
-
 Cypress.Commands.add('login', () => {
     cy.visit('/signin')
     cy.get('.form-group #username').type(dummyUsername)
@@ -72,6 +81,31 @@ Cypress.Commands.add('login', () => {
         cy.url().should('eq', 'http://localhost:3000/')
     })
 })
+
+// Cypress.Commands.add('checkoutaddress', () => {
+//     cy.visit('cart/checkout')
+
+//     cy.get('.form-group #checkout__form--firstname').type(dummyFirstname);
+
+//     cy.get('.form-group #checkout__form--lastname').type(dummyLastname);
+
+//     cy.get('.form-group #checkout__form--companyname').type(dummyCompanyname);
+
+//     cy.get(".form-group #checkout__form--country").select(dummyCountry);
+
+//     cy.get('.form-group #checkout__form--billingaddress').type(dummyAddress);
+
+//     cy.get('.form-group #checkout__form--postcode').type(dummyPostcode);
+
+//     cy.get('.form-group #checkout__form--city').type(dummyCity);
+
+//     cy.get('.form-group #checkout__form--email').type(dummyEmail);
+
+//     cy.get('.form-group #checkout__form--phone').type(dummyPhone);
+
+//     cy.get('.form-group #checkout__form--notes').type(dummyNotes);
+
+// })
 
 //
 //

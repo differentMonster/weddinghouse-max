@@ -36,6 +36,14 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
 
 # Logs
 ## Frontend
+Must have :
+** Shop Categorly Image should be able to zoom in and out
+** Card should only be remember once the user login and logout to empty the cart
+** Checkout validation on address
+
+Nice to have :
+** Checkout remember user shipping address using wordpress data to store and autoload.
+
 * DONE user authentication
   CLOSED: [2021-12-21 Tue 02:54]
   - Note taken on [2021-12-19 Sun 04:15] \\
@@ -68,7 +76,10 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
   CLOSED: [2022-03-30 Wed 03:31]
 * DONE UX cart sidebar added
   CLOSED: [2022-03-30 Wed 03:32]
-* PROGRESS Checkout Page added
+* CANCELLED Checkout Page added
+  CLOSED: [2022-04-21 Thu 22:21]
+  - cant let user change their data.
+  - nice to have do it on next feature, use plugin vuex-map-fields.
 * BUG Image Slider using keep-alive but have load plugin problem
 * CANCELLED test new import plugin to fix keep alive problem
   CLOSED: [2022-03-30 Wed 03:30]
@@ -78,26 +89,42 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
    - storage
 * CANCELLED remove jquery for less buggy propose
    CLOSED: [2022-02-18 Fri 00:06]
-* DONE [#B] Cart Pages [1/1]
+* DONE [#B] Cart Pages [0/1]
   CLOSED: [2022-02-13 Sun 23:32]
   - Note taken on [2022-02-06 Sun 21:02] \\
     - build cart page as component
-  - [X] Cart Systems
+  - [-] Cart Systems
     - [X] add products
     - [X] remove products
     - [X] edit quatity
       - add keep pressing add quantity
       - must add minms and add on cart page
     - [X] caculation totally price
-    - [ ] note additional comments
-    - [ ] one click check out process
+    - [X] note additional comments
+    - [X] one click check out process
+      - is better to build the cartData inside of store mutations
 * CANCELLED Adding Jest for TTD test
   CLOSED: [2022-03-15 Tue 06:05]
     Reason cancelled:
     repalce component test to cypress, for much more quicker and easy test.
-
+* DONE Single Page detail set mainImage problem.
+  CLOSED: [2022-04-23 Sat 23:27]
+   - Note taken on [2022-04-23 Sat 23:27] \\
+     - set mainImage on Higher Order ( _id page ) to control the image load.
+* DONE miniCart added
+  CLOSED: [2022-04-23 Sat 23:28]
+  - Note taken on [2022-04-23 Sat 23:28] \\
+    - must do a cypress test to minicart info should match cart info
+* TODO zoom in single page detail
 
 ## Backend
+Must have :
+** Wordpress become headless
+
+Nice to have :
+** SVG execl into wordpress products
+
+key:
   testing woocommerce
   Consumer key = ck_ca8dc3da04a18c79601e7b49c6e8e216da06cf82
   Consumer secret = cs_e8fdcde1886ae82182ef3fc7507b09ee20ede897
@@ -125,10 +152,40 @@ it was first design to be a B2C plaform targeting wedding product, setting up pi
 ### Bugs
 [![Build Status](https://travis-ci.org/vitiral/artifact.svg?branch=master)](https://travis-ci.org/vitiral/artifact)
   - Note taken on [2022-03-15 Tue 06:07] \\
-    - sometime login will redirect to logout page possible cookie issuse.
-    - check Dom render on signup page
+    * sometime login will redirect to logout page possible cookie issuse.
+    * fixed : check Dom render on signin page, check nuxt .#signin.vue
+
+* DONE logout : address_1 problem somehow
+  CLOSED: [2022-04-15 Fri 23:40]
+  - Note taken on [2022-04-15 Fri 23:42] \\
+    - Reason : user data form sttucture up wrongly and without v-if to showing data.
+    - Fix : injection edition billing data from wordpress and login in contain it.
+    - others way is to recall it again with woocommerce and add into user object.
+    ```
+            login() {
+                await this.$auth.loginWith("local", {
+                    data: this.userData
+                }).then((response) => {
+                    if (response.status === 200) {
+                        // this.$router.go('/')
+                    }
+                }).catch((error) => {
+                    throw new Error(error)
+                }).finally(() => {
+                    const user = this.$auth.user
+                    // user['scope'] = 'some_role_from_db'
+                    // this.$auth.setUser(user)
+                    // const userId = this.$auth.user.id
+                    //
+                    // this.$user.info(userId).then((meta) => {
+                    //     const userDetailBilling = meta[0].billing
+                    //     this.$auth.setUser(userDetailBilling)
+                    // })
+                })
+    ```
 
 ## Cypress
+all test are not functions after the templete change.
 * User Login Testing [2/2]
   - [X] object return from backend
   - [X] able to redirect to main page after succseful login

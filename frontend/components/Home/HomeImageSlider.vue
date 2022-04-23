@@ -6,7 +6,7 @@
                 <!-- start Image Slider - First Image -->
                 <div class="ps-carousel--nav owl-slider" data-owl-auto="false" data-owl-loop="false" data-owl-speed="15000" data-owl-gap="0" data-owl-nav="false" data-owl-dots="true" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
 
-                    <div class="ps-banner--3 bg--top-right" :style="{ background: `url(${landingPoster_1})` }">
+                    <div class="ps-banner--3 bg--top-right ps-banner--fade-in" :style="{ background: `url(${landingPoster_1})` }">
                         <div class="ps-banner__social">
                             <ul class="ps-list--social" data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
                                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -30,6 +30,7 @@
 
 <script>
     export default {
+        transition: "fade",
         data() {
             return {
                 landingPoster_1: [],
@@ -52,5 +53,18 @@
     }
 </script>
 
-<style scope>
+<style scoped>
+    .ps-banner--fade-in {
+        animation: fadeIn ease 1s;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 </style>

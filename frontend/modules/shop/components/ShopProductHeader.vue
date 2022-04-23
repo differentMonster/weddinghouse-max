@@ -2,15 +2,29 @@
     <!-- start Product Header -->
     <div class="ps-product__header">
         <div class="ps-product__thumbnail" data-vertical="false">
-            <figure>
-                <div class="ps-wrapper">
-                    <div class="ps-product__gallery" data-arrow="true" v-for="image in product.images" :key="image.id">
-                        <div class="item"><a href=""><img :src="`${image.src}`" alt=""></a></div>
+
+            <div class="ps-wrapper">
+                <div class="ps-product__gallery">
+                    <div class="col-12 px-md-2 d-none d-md-block">
+                        <div class="" style="cursor: pointer" @click="zoomImage()">
+                            <b-img :src="mainImage" alt="" class="image zoom"></b-img>
+                        </div>
                     </div>
                 </div>
-            </figure>
-            <div class="ps-product__variants" data-item="4" data-md="3" data-sm="3" data-arrow="false">
             </div>
+
+            <div class="ps-product__variants">
+                <div class="col-12 d-none d-md-block my-4">
+                    <div class="row">
+                        <div class="col-3" v-for="(image, index) in product.images" :key="index">
+                            <div class="thumbnail" style="cursor: pointer" @click="$emit('change-mainimage', `${image.src}`, product)">
+                                <b-img :src="`${image.src}`" alt="" class="image"></b-img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="ps-product__info">
             <div class="ps-product__info-header">
@@ -61,17 +75,37 @@
 </template>
 
 <script>
+    // import mediumZoom from 'medium-zoom'
+    //
+    // const initZoom = () => {
+    //     mediumZoom('#zoomImage', {
+    //         margin: 24,
+    //         background: '#BADA55',
+    //         // scrollOffset: 0,
+    //         // container: '#zoom-container',
+    //         // template: '#zoom-template',
+    //     })
+    // }
+
     export default {
         name: 'ShopProductHeader',
         props: {
             product: {
                 type: Object,
                 required: true
+            },
+            mainImage: {
+                type: String,
+                required: true
             }
-        }
+        },
+        methods: {
+            zoomImage() {
+                // initZoom()
+            }
+        },
     }
 </script>
 
 <style>
-
 </style>

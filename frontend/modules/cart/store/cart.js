@@ -1,12 +1,12 @@
-import {
-    WooComRestApi
-} from "~/plugins/woocommerce.js";
-
 export const namespaced = true
 
-export const state = () => ({
-    cartItems: [],
-})
+const cartState = () => {
+    return {
+        cartItems: [],
+    }
+}
+
+export const state = cartState()
 
 export const getters = {
     getCart: (state) => state.cartItems,
@@ -28,9 +28,21 @@ export const actions = {
         await commit('removeCartItem', id)
     },
     async addOrders({
-        commit
-    }, checkoutItem) {
-        await commit('setOrders', checkoutItem)
+        commit,
+        state,
+    }, checkOutItem) {
+        let checkCartLength = state.cartItems.length
+        await this.$cartalert.orderProcess().then(() => {
+            if (checkCartLength === 0) {
+                this.$cartalert.emptyCart()
+            } else {
+                this.$cart.postOrders(checkOutItem)
+                this.$cartalert.orderSuccess()
+            }
+        }).finally(() => {
+            commit('resetState')
+            this.$router.replace('/')
+        })
     },
     async increaseCartItem({
         commit
@@ -41,35 +53,21 @@ export const actions = {
         commit
     }, id) {
         await commit('decreaseItem', id)
+    },
+    async resetCartState({
+        commit
+    }) {
+        await commit('resetState')
     }
 }
 
 // searching must use product_id to match up woocommerce needs
 export const mutations = {
-    setOrders(state, checkoutItem) {
-        let checkCartLength = state.cartItems.length
-
-        try {
-            this.$cartalert.OrderProcess().then(() => {
-                if (checkCartLength === 0 || null) {
-                    this.$cartalert.EmptyCart()
-                    // throw new Error('WooCommerceCart Cart is empty, please select buying product and try again')
-                } else {
-                    const response = WooComRestApi.post("orders", checkoutItem)
-                    const responseMessages = 'WooCommerceCart add Orders = succesful'
-                    this.$cartalert.OrderSuccess()
-                    return [response.data, responseMessages]
-                }
-            })
-        } catch (error) {
-            throw new Error('WooCommerceCart add Orders' + checkoutItem + '=' + ' ' + error)
-        }
-    },
     addItemToCart(state, item) {
         let checkItemId = state.cartItems.find(product => product.product_id === item.product_id)
         if (checkItemId) {
             checkItemId.quantity++
-            this.$cartalert.CartUpdate()
+            this.$cartalert.cartUpdate()
         } else {
             state.cartItems.push({
                 ...item,
@@ -79,8 +77,8 @@ export const mutations = {
         }
     },
     removeCartItem(state, id) {
-        const CheckItemIndex = state.cartItems.findIndex(product => product.product_id === id)
-        state.cartItems.splice(CheckItemIndex, 1)
+        const checkItemIndex = state.cartItems.findIndex(product => product.product_id === id)
+        state.cartItems.splice(checkItemIndex, 1)
         this.$cartalert.removeProductSuccess()
     },
     increaseItem(state, id) {
@@ -88,15 +86,21 @@ export const mutations = {
 
         if (checkItemId) {
             checkItemId.quantity++
-            this.$cartalert.CartUpdate()
+            this.$cartalert.cartUpdate()
         }
     },
     decreaseItem(state, id) {
         let checkItemId = state.cartItems.find(product => product.product_id === id)
         if (checkItemId.quantity > 1) {
             checkItemId.quantity--
-            this.$cartalert.CartUpdate()
+            this.$cartalert.cartUpdate()
         }
+    },
+    resetState(state) {
+        const initial = cartState()
+        Object.keys(initial).forEach(key => {
+            state[key] = initial[key]
+        })
     }
 }
 

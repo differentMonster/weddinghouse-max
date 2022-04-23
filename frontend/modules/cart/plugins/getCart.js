@@ -1,7 +1,20 @@
 import Vue from 'vue'
 
+import {
+    WooComGateway
+} from "~/plugins/woocommerce.js";
+
+
 class Cart {
-    addProductToCartLabel() {}
+    async postOrders(checkOutItem) {
+        try {
+            const response = await WooComGateway.post("orders", checkOutItem)
+            const responseMessages = 'WooCommerceCart add Orders = succesful'
+            return [response.data, responseMessages]
+        } catch (error) {
+            throw new Error('WooCommerceCart add Orders' + checkOutItem + '=' + ' ' + error)
+        }
+    }
 }
 
 class CartAlert {
@@ -31,7 +44,7 @@ class CartAlert {
             backdrop: false
         })
     }
-    async CartUpdate() {
+    async cartUpdate() {
         await Vue.swal({
             position: 'top-end',
             title: "Cart Update",
@@ -44,7 +57,7 @@ class CartAlert {
             backdrop: false
         })
     }
-    async OrderSuccess() {
+    async orderSuccess() {
         await Vue.swal({
             title: "Order Succesful",
             text: "Thanks you for purchase with us, we will keep you updated",
@@ -56,7 +69,7 @@ class CartAlert {
             showConfirmButton: false
         })
     }
-    async OrderProcess() {
+    async orderProcess() {
         await Vue.swal({
             title: 'Processing your Order',
             text: 'Please Wait',
@@ -68,7 +81,7 @@ class CartAlert {
             showConfirmButton: false
         })
     }
-    async EmptyCart() {
+    async emptyCart() {
         await Vue.swal({
             title: "Empty Cart",
             text: "Your cart is empty, please select your buying product and try again",

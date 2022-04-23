@@ -6,6 +6,6 @@ import {
 export default ({
     app
 }, inject) => {
-    const setUser = new User()
-    inject('user', setUser)
+    const initUser = new User()
+    inject('user', initUser)
 }

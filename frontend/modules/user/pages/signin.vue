@@ -17,7 +17,6 @@
             <div class="ps-page__content">
                 <div class="ps-tab-root">
 
-
                     <div class="container--login">
                         <form class="ps-form--auth" id="login__tab" @submit.prevent="login">
                             <div class="ps-tabs">
@@ -46,13 +45,12 @@
 
                     <!-- start Account Social Network Content-->
                     <div class="ps-form--auth">
-                        <p>Connect with
-                            <ul class="ps-list--social">
-                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                            </ul>
-                        </p>
+                        <p>Connect with</p>
+                        <ul class="ps-list--social">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
                     </div>
                     <!-- end Account Social Network Content-->
 
@@ -74,7 +72,7 @@
                 userData: {
                     username: '',
                     password: ''
-                }
+                },
             }
         },
         methods: {
@@ -83,12 +81,12 @@
                     data: this.userData
                 }).then((response) => {
                     if (response.status === 200) {
-                        this.$router.go("/")
+                        this.$router.go('/')
                     }
                 }).catch((error) => {
                     throw new Error(error)
                 })
-            },
+            }
         }
     }
 </script>

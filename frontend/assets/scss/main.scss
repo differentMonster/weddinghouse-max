@@ -1,1 +1,15 @@
  $base-colory: #c6538c;
+
+ .form-control {
+     transition: none !important;
+ }
+
+ .form-error {
+     position: absolute !important;
+     margin-top: 5px;
+     margin-bottom: 5px;
+ }
+
+ .form-group--space {
+     margin-bottom: 35px;
+ }

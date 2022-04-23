@@ -21,44 +21,39 @@ require_once 'inc/frontend-origin.php';
 // CORS handling.
 require_once 'inc/cors.php';
 
-// add_action( 'rest_api_init', function () {
-//     register_rest_route( 'wc/v3', '/products/category/(?P<slug>[^/]+)', array(
-//         'methods' => 'GET',
-//         'callback' => 'wc_get_products_by_category',
-//     ) );
-// } );
+function add_custom_fields() {
+    register_rest_field(
+        'user',
+        'billing',
+        array(
+            'get_callback'    => 'get_custom_fields',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+}
 
-// function wc_get_products_by_category( $data ) {
+// injection into wordpress
+add_action( 'rest_api_init', 'add_custom_fields' );
 
-//     $products = array();
-//     $images_data = new stdClass;
-//     $images_data->images = new stdClass;
-
-//     try {
-//     $p = wc_get_products(array('status' => 'publish', 'category' => $data['slug']));
-//       foreach ($p as $product) {
-//           $products_data[] = array($product->get_data());
-//           $attachment_ids = $product->get_gallery_image_ids();
-
-//           foreach ($attachment_ids as $position => $attachment_id) {
-//               $attachment = wp_get_attachment_image_src($attachment_id, 'full');
-//               if (!is_array($attachment)) {
-//                   continue;
-//               }
-//               $images_data->images->src = current($attachment);
-//           }
-//           $products[] = $images_data;
-//       }
-//     }catch(HttpClientException $e){
-//         die("Reaspone wc_get_products_by_category : failure + $e");
-//     }
-
-//     return new WP_REST_Response($products, 200);
-// }
-
-// function get_images_by_category($src){
-
-// }
+// edition user data return
+function get_custom_fields( $object, $field_name, $request ) {
+    $user_info = get_user_by( 'id',  $object['id'] );
+    $billing = array (
+        'first_name' => $user_info->billing_first_name,
+        'last_name' => $user_info->billing_last_name,
+        'company' => $user_info->billing_company,
+        'address_1' => $user_info->billing_address_1,
+        'address_2' => $user_info->billing_address_2,
+        'city' => $user_info->billing_city,
+        'state' => $user_info->billing_state,
+        'postcode' => $user_info->billing_postcode,
+        'country' => $user_info->billing_country,
+        'email' => $user_info->billing_email,
+        'phone' => $user_info->billing_phone,
+    );
+    return $billing;
+}
 
 if ( ! function_exists( 'twenty_twenty_one_setup' ) ) {
 	/**

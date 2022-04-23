@@ -48,21 +48,5 @@
     }
 </script>
 
-
-<style>
-    /* .ps-shop__container {
-
-     } */
-
-    /* .product_container {
-     width: 100%;
-     text-align: center;
-     position: relative;
-     margin-top: 100px;
-     }
-
-     .product--images img {
-     width: 500px;
-     height: 670px;
-     } */
+<style lang="scss">
 </style>

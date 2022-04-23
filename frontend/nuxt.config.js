@@ -40,6 +40,8 @@ export default {
     css: [
         /* **main-customize */
         '@/assets/css/main-customize.css',
+        /* **animate css */
+        "@node_modules/animate.css/animate.compat.css",
         /* **supro font-awesome */
         '@/node_modules/font-awesome/css/font-awesome.min.css',
         /* **supro bootstrap */
@@ -71,6 +73,7 @@ export default {
         '@/modules/user/plugins/setUser.js',
         '@/modules/cart/plugins/setCart.js',
         '@/plugins/bootstrap-vue.js',
+        '@/plugins/medium-zoom.js',
         '@/plugins/vue-sweetalert2.js',
         '@/plugins/vee-validate.js',
         {
@@ -101,9 +104,12 @@ export default {
         'nuxt-font-loader'
     ],
     axios: {
+        // baseURL: wpUrl,
         baseURL: 'http://localhost:3080',
+
     },
     auth: {
+        plugins: ['@/plugins/auth.js'],
         strategies: {
             local: {
                 token: {
@@ -113,9 +119,10 @@ export default {
                     type: 'Bearer'
                 },
                 resetOnError: true, // kick the user if any error happnes w/ the auth
+                // rewriteRedirects: false,
                 user: {
                     property: false,
-                    autoFetch: false, // no need to fetch the user, will be done in gql
+                    // autoFetch: false, // no need to fetch the user, will be done in gql
                 },
                 endpoints: {
                     login: {
@@ -124,7 +131,7 @@ export default {
                     },
                     user: {
                         url: 'http://localhost:3080/wp-json/wp/v2/users/me',
-                        method: 'post',
+                        method: 'get',
                     },
                     logout: false
                 }
@@ -145,13 +152,6 @@ export default {
             '@/assets/scss/main.scss',
             '@/assets/scss/abstracts/*.scss',
         ]
-    },
-    fontLoader: {
-        // Paste a new custom link here (for example Typekit)
-        url: 'https://use.typekit.net/xxxxxxx.css',
-
-        prefetch: true,
-        preconnect: true
     },
     fontLoader: {
         // Paste a new custom link here (for example Typekit)

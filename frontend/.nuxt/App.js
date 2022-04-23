@@ -8,6 +8,8 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../assets/css/main-customize.css'
 
+import '../node_modules/animate.css/animate.compat.css'
+
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'

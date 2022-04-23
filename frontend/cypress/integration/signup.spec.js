@@ -1,7 +1,7 @@
 describe('Testing Register to backend', () => {
-    const dummyUsername = 'Nicole'
-    const dummyEmail = 'nicole@gmail.com'
-    const dummyPassword = 'nicole'
+    const dummyUsername = 'faustme'
+    const dummyEmail = 'faustme@gmail.com'
+    const dummyPassword = 'faust881014'
 
     beforeEach(function() {
         cy.login()
@@ -10,6 +10,7 @@ describe('Testing Register to backend', () => {
 
 
     it('Should able get through register return succesful response 200', () => {
+        // mocking register, only check the reponse, dont actually register it.
         // 'POST, '*' means any URL
         // times: 1 means catch once only
         // then turn off

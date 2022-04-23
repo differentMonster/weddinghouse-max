@@ -13,13 +13,21 @@
                     <th scope="col">ID</th>
                     <th scope="col">FullName</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Postcode</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Country</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr v-if="user">
                     <td>{{ user.id }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.roles}}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.billing.email }}</td>
+                    <td>{{ user.billing.address_1 }} {{ user.billing.address_2 }}</td>
+                    <td>{{ user.billing.postcode }}</td>
+                    <td>{{ user.billing.phone }}</td>
+                    <td>{{ user.billing.country }}</td>
                 </tr>
             </tbody>
         </table>

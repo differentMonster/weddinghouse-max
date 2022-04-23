@@ -1,11 +1,11 @@
 import {
-    WooComRestApi
+    WooComGateway
 } from "~/plugins/woocommerce.js";
 
 class User {
     async register(userData) {
         try {
-            const response = await WooComRestApi.post('customers', userData)
+            const response = await WooComGateway.post('customers', userData)
             const responseMessages = 'WooCommerceCustomer create = successful';
             return [response, responseMessages]
         } catch {
@@ -15,7 +15,7 @@ class User {
 
     async info(id) {
         try {
-            const response = await WooComRestApi.get('customers/' + id)
+            const response = await WooComGateway.get('customers/' + id)
             const responseMessages = 'WooCommerceCustomer getInfo = successful';
             return [response.data, responseMessages]
         } catch {

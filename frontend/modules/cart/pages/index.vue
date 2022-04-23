@@ -44,8 +44,7 @@
     export default {
         name: "Cart",
         computed: {
-            ...mapGetters('cart', ['getCart']),
-            ...mapGetters('cart', ['getCartTotal']),
+            ...mapGetters('cart', ['getCart', 'getCartTotal'])
         },
         components: {
             CartCard,

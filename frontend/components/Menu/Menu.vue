@@ -9,16 +9,16 @@
                 <div class="header__navigation">
                     <ul class="menu">
                         <li class="menu-item-has-children has-mega-menu">
-                            <nuxt-link to="/shop">Shop</nuxt-link><span class="sub-toggle"></span>
+                            <nuxt-link to="/shop" no-prefetch>Shop</nuxt-link><span class="sub-toggle"></span>
                             <div class="mega-menu">
                                 <div class="mega-menu__column">
                                     <h4>Shop Pages<span class="sub-toggle"></span></h4>
                                     <ul class="sub-menu--mega">
                                         <li>
-                                            <nuxt-link to="/shop/teaset">teaset</nuxt-link>
+                                            <nuxt-link to="/shop/teaset" no-prefetch>teaset</nuxt-link>
                                         </li>
                                         <li>
-                                            <nuxt-link to="/shop/cheongsam">cheongsam</nuxt-link>
+                                            <nuxt-link to="/shop/cheongsam" no-prefetch>cheongsam</nuxt-link>
                                         </li>
                                     </ul>
                                 </div>

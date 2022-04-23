@@ -6,7 +6,7 @@
                 <ShopProductBreadcrumbs :product="product"></ShopProductBreadcrumbs>
                 <!-- start Detail Content -->
                 <div class="ps-product--detail">
-                    <ShopProductHeader :product="product" v-on:add-product="addProduct()"></ShopProductHeader>
+                    <ShopProductHeader :product="product" :mainImage="mainImage" @add-product="addProduct()" @change-mainimage="changeMainImage($event)"></ShopProductHeader>
 
                     <!-- start Description, Addition Information, Review option -->
                     <div class="ps-product__content ps-tab-root">
@@ -64,13 +64,15 @@
                 product: {},
                 id: this.$route.params.id,
                 tabs: ["Description", "Addition", "Review"],
-                selected: "Description"
+                selected: "Description",
+                mainImage: "",
             }
         },
         async fetch() {
             try {
                 const getProduct = await this.$shop.getProduct(this.id)
                 this.product = getProduct[0]
+                this.mainImage = this.product.images[0].src
             } catch (error) {
                 console.log(error)
             }
@@ -90,7 +92,10 @@
                     price: this.product.price,
                 }
                 this.$store.dispatch("cart/addToCart", newProduct)
-            }
+            },
+            changeMainImage(image) {
+                this.mainImage = image
+            },
         },
         mounted() {}
     }

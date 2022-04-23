@@ -25,7 +25,7 @@
                                     <!-- Username Content -->
                                     <ValidationProvider rules="required">
                                         <b-form-group class="form-group form-group--space" slot-scope="{ valid, errors }">
-                                            <b-form-input class="form-control" type="text" v-model="userData.username" :state="errors[0] ? false : (valid ? true : null)" placeholder="What should we call you ?">
+                                            <b-form-input class="form-control" id="register__tab--username" type="text" v-model="userData.username" :state="errors[0] ? false : (valid ? true : null)" placeholder="What should we call you ?">
                                             </b-form-input>
                                             <b-form-invalid-feedback class="form-error">
                                                 {{ errors[0] }}
@@ -127,22 +127,8 @@
     }
 </script>
 
-<style scope lang="scss">
+<style scoped lang="scss">
     .ps-form--auth .ps-tab-list li .tabs__active {
         color: black;
-    }
-
-    .form-control {
-        transition: none !important;
-    }
-
-    .form-error {
-        position: absolute !important;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    .form-group--space {
-        margin-bottom: 35px;
     }
 </style>

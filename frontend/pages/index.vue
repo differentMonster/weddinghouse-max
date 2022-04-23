@@ -6,6 +6,8 @@
 
 <script>
     import HomeImageSlider from "@/components/Home/HomeImageSlider.vue";
+    // import authUser from '@/plugins/auth.js'
+
 
 
     export default {
@@ -28,7 +30,10 @@
         computed: {},
         methods: {},
         fetch: {},
-        mounted() {},
+        mounted() {
+            // const setAuthUser = new authUser()
+            // setAuthUser.get()
+        },
     };
 </script>
 

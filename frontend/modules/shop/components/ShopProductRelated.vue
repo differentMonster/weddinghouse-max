@@ -17,15 +17,6 @@
                             </div>
                         </div>
                         <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Aviator Sunglasses</a>
-                            <div class="ps-product__rating">
-                                <select class="ps-rating" data-read-only="true">
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                    <option value="1">4</option>
-                                    <option value="2">5</option>
-                                </select>
-                            </div>
                             <p class="ps-product__price"><span>£</span> 9.90</p>
                         </div>
                     </div>
@@ -46,15 +37,6 @@
                             </div>
                         </div>
                         <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Contrast Backpack</a>
-                            <div class="ps-product__rating">
-                                <select class="ps-rating" data-read-only="true">
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                    <option value="1">4</option>
-                                    <option value="2">5</option>
-                                </select>
-                            </div>
                             <p class="ps-product__price"><span>£</span> 69.90</p>
                         </div>
                     </div>
@@ -74,15 +56,6 @@
                             </div>
                         </div>
                         <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Embroidered Flowy Jacket</a>
-                            <div class="ps-product__rating">
-                                <select class="ps-rating" data-read-only="true">
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                    <option value="1">4</option>
-                                    <option value="2">5</option>
-                                </select>
-                            </div>
                             <p class="ps-product__price"><span>£</span> 56.89</p>
                         </div>
                     </div>
@@ -101,15 +74,6 @@
                             </div>
                         </div>
                         <div class="ps-product__content"><a class="ps-product__title" href="product-default.html">Floral Short Jumpsuit</a>
-                            <div class="ps-product__rating">
-                                <select class="ps-rating" data-read-only="true">
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                    <option value="1">4</option>
-                                    <option value="2">5</option>
-                                </select>
-                            </div>
                             <p class="ps-product__price"><span>£</span> 97.99</p>
                         </div>
                     </div>

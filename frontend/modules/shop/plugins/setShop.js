@@ -7,6 +7,6 @@ import {
 export default ({
     app
 }, inject) => {
-    const setShop = new Shop()
-    inject('shop', setShop)
+    const initShop = new Shop()
+    inject('shop', initShop)
 }

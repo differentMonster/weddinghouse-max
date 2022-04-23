@@ -18,15 +18,6 @@
                         </div>
                         <div class="ps-product__content">
                             <a class="ps-product__title" href="product-default.html">{{product.name}}</a>
-                            <div class="ps-product__rating">
-                                <select class="ps-rating" data-read-only="true">
-                                    <option value="1">1</option>
-                                    <option value="1">2</option>
-                                    <option value="1">3</option>
-                                    <option value="1">4</option>
-                                    <option value="2">5</option>
-                                </select>
-                            </div>
                             <p class="ps-product__price"><span>£</span>{{ product.price }}</p>
                         </div>
                     </div>
