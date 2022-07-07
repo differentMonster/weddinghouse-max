@@ -7,7 +7,7 @@
                 <div class="ps-product__gallery">
                     <div class="col-12 px-md-2 d-none d-md-block">
                         <div class="" style="cursor: pointer" @click="zoomImage()">
-                            <b-img :src="mainImage" alt="" class="image zoom"></b-img>
+                            <b-img id="zoomImageId" :src="teaserImage.src" alt="" class="image zoom"></b-img>
                         </div>
                     </div>
                 </div>
@@ -17,8 +17,8 @@
                 <div class="col-12 d-none d-md-block my-4">
                     <div class="row">
                         <div class="col-3" v-for="(image, index) in product.images" :key="index">
-                            <div class="thumbnail" style="cursor: pointer" @click="$emit('change-mainimage', `${image.src}`, product)">
-                                <b-img :src="`${image.src}`" alt="" class="image"></b-img>
+                            <div class="thumbnail" style="cursor: pointer">
+                                <b-img :src="`${image.src}`" alt="" class="image" @click="changeTeaserImage(index)"></b-img>
                             </div>
                         </div>
                     </div>
@@ -75,37 +75,57 @@
 </template>
 
 <script>
-    // import mediumZoom from 'medium-zoom'
-    //
-    // const initZoom = () => {
-    //     mediumZoom('#zoomImage', {
-    //         margin: 24,
-    //         background: '#BADA55',
-    //         // scrollOffset: 0,
-    //         // container: '#zoom-container',
-    //         // template: '#zoom-template',
-    //     })
-    // }
+    import mediumZoom from 'medium-zoom'
+
+    const initZoom = () => {
+        mediumZoom('#zoomImageId', {
+            margin: 24,
+            background: '#BADA55',
+            // scrollOffset: 0,
+            // container: '#zoom-container',
+            // template: '#zoom-template',
+        })
+    }
 
     export default {
         name: 'ShopProductHeader',
+        data() {
+            return {
+                activeIndex: 0
+            }
+        },
         props: {
             product: {
                 type: Object,
                 required: true
             },
-            mainImage: {
-                type: String,
-                required: true
+        },
+        computed: {
+            teaserImage() {
+                return this.product.images[this.activeIndex]
             }
         },
         methods: {
+            changeTeaserImage(i) {
+                this.activeIndex = i
+            },
             zoomImage() {
-                // initZoom()
-            }
+                initZoom()
+            },
         },
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    /* it has z-index: 10, will create problem for medium zoom */
+    .ps-product__thumbnail {
+        z-index: 0 !important;
+    }
+
+    .medium-zoom-overlay {
+        position: fixed !important;
+        /* z-index: 999 !important;/*  */
+        /* height: 100vh;
+         width: 100vw; */
+    }
 </style>

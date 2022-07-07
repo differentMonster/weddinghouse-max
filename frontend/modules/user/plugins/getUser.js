@@ -1,36 +1,34 @@
 import {
-    WooComGateway
-} from "~/plugins/woocommerce.js";
+  WooComGateway,
+  LandingPage } from "~/plugins/woocommerce.js"
 
 class User {
-    async register(userData) {
-        try {
-            const response = await WooComGateway.post('customers', userData)
-            const responseMessages = 'WooCommerceCustomer create = successful';
-            return [response, responseMessages]
-        } catch {
-            throw new Error('WooCommerceCustomer create =' + ' ' + error)
-        }
-    }
+   async register(userData) {
+      try {
+         const response = await WooComGateway.post("customers", userData)
+         const responseMessages = "WooCommerceCustomer create = successful"
+         return [response, responseMessages]
+      } catch {
+         throw new Error("WooCommerceCustomer create =" + " " + error)
+      }
+   }
 
-    async info(id) {
-        try {
-            const response = await WooComGateway.get('customers/' + id)
-            const responseMessages = 'WooCommerceCustomer getInfo = successful';
-            return [response.data, responseMessages]
-        } catch {
-            throw new Error('WooCommerceCustomer getInfo =' + ' ' + error)
-        }
-    }
+   async info(id) {
+      try {
+         const response = await WooComGateway.get("customers/" + id)
+         const responseMessages = "WooCommerceCustomer getInfo = successful"
+         return [response.data, responseMessages]
+      } catch {
+         throw new Error("WooCommerceCustomer getInfo =" + " " + error)
+      }
+   }
 
-    delete() {
-        console.log("delete")
-    }
+   delete() {
+      console.log("delete")
+   }
 }
 
-export {
-    User
-}
+export { User }
 
 // export class Authentication {
 //     constructor(username, password) {

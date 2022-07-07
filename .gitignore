@@ -8,8 +8,11 @@
 *.log
 npm-debug.log*
 
+# env
+.env
+
 # Dependency directories
-node_modules/
+/frontend/node_modules/
 
 ### Nuxtjs ###
 # Nuxt build
@@ -22,7 +25,7 @@ node_modules/
 * jest.setup.js
 * __tests__/*
 
-/db_data
+db_data/
 
 # Nuxt generate
 dist

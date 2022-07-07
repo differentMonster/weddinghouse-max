@@ -32,24 +32,24 @@
 </template>
 
 <script>
-    import CartCard from "@/modules/cart/components/CartCard.vue";
-    import CartCheckOut from "@/modules/cart/components/CartCheckOut.vue";
-    import CartDiscountCode from "@/modules/cart/components/CartDiscountCode.vue";
+    import CartCard from "@/modules/cart/components/CartCard.vue"
+    import CartCheckOut from "@/modules/cart/components/CartCheckOut.vue"
+    import CartDiscountCode from "@/modules/cart/components/CartDiscountCode.vue"
 
     import {
         mapState,
-        mapGetters,
-    } from "vuex";
+        mapGetters
+    } from "vuex"
 
     export default {
         name: "Cart",
         computed: {
-            ...mapGetters('cart', ['getCart', 'getCartTotal'])
+            ...mapGetters("cart", ["getCart", "getCartTotal"]),
         },
         components: {
             CartCard,
             CartCheckOut,
-            CartDiscountCode
-        }
+            CartDiscountCode,
+        },
     }
 </script>

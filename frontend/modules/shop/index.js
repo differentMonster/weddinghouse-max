@@ -20,7 +20,6 @@ export default function registerModules(moduleOptions) {
         })
     })
 
-
     // add modules routes teaset list
     this.extendRoutes((routes) => {
         routes.unshift({

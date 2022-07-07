@@ -115,7 +115,8 @@ Nice to have :
   CLOSED: [2022-04-23 Sat 23:28]
   - Note taken on [2022-04-23 Sat 23:28] \\
     - must do a cypress test to minicart info should match cart info
-* TODO zoom in single page detail
+* FIXME zoom in single page detail
+  - z-index have issuse
 
 ## Backend
 Must have :
